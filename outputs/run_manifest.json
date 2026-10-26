@@ -1,0 +1,22 @@
+{
+  "generated_at_seoul": "2026-10-26T16:46:14.119875+09:00",
+  "python": "3.12.6",
+  "config": {
+    "data_dir": "D:\\dataset\\gas+sensor+array+drift+dataset",
+    "random_state": 42,
+    "expected_samples": 13910,
+    "n_features": 128,
+    "uci_url": "https://archive.ics.uci.edu/dataset/224/gas+sensor+array+drift+dataset"
+  },
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "source_hashes_unchanged": true,
+  "classifiers_trained": false,
+  "analysis_file_sha256": "5e8345158763125e355b4940b4ef605b116a05c24af4ab8e3694ccd49a6dbea6"
+}

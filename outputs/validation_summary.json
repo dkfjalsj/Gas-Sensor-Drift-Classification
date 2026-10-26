@@ -1,0 +1,30 @@
+{
+  "samples": 13910,
+  "features": 128,
+  "classes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "class_counts": {
+    "Ethanol": 2565,
+    "Ethylene": 2926,
+    "Ammonia": 1641,
+    "Acetaldehyde": 1936,
+    "Acetone": 3009,
+    "Toluene": 1833
+  },
+  "class_imbalance_ratio": 1.83363802559415,
+  "missing_nan": 0,
+  "infinite": 0,
+  "expected_total_matches": true,
+  "expected_batch_totals_match": true,
+  "feature_duplicate_extra": 0,
+  "feature_duplicate_rows": 0,
+  "labeled_duplicate_extra": 0,
+  "conflicting_label_groups": 0,
+  "cross_batch_duplicate_groups": 0
+}

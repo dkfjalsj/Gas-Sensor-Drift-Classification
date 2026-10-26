@@ -1,0 +1,7 @@
+{
+  "data_dir": "D:/dataset/gas+sensor+array+drift+dataset",
+  "random_state": 42,
+  "expected_samples": 13910,
+  "n_features": 128,
+  "uci_url": "https://archive.ics.uci.edu/dataset/224/gas+sensor+array+drift+dataset"
+}
