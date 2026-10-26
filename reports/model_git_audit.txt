@@ -1,0 +1,59 @@
+Read-only Git audit after model experiments; no staging, commit, push, or remote changes.
+## main...origin/main
+ M .gitignore
+ M README.md
+?? outputs/model_comparison/
+?? reports/model_comparison_report.html
+?? reports/training_protocol.md
+?? src/model_report.py
+?? src/train_models.py
+?? tests/test_models.py
+?? training_config.json
+Model ignore checks:
+models/A_random__LogisticRegression.joblib
+models/A_random__RandomForest.joblib
+models/A_random__SVM_RBF.joblib
+models/B_early__LogisticRegression.joblib
+models/B_early__RandomForest.joblib
+models/B_early__SVM_RBF.joblib
+models/B_history__LogisticRegression.joblib
+models/B_history__RandomForest.joblib
+models/B_history__SVM_RBF.joblib
+Non-ignored new/modified candidates:
+outputs/model_comparison/batch_stability.csv
+outputs/model_comparison/confusion_matrices.csv
+outputs/model_comparison/experiment_config.json
+outputs/model_comparison/figures/batch_A_random.png
+outputs/model_comparison/figures/batch_B_early.png
+outputs/model_comparison/figures/batch_B_history.png
+outputs/model_comparison/figures/cm_A_random_test.png
+outputs/model_comparison/figures/cm_A_random_validation.png
+outputs/model_comparison/figures/cm_B_early_test.png
+outputs/model_comparison/figures/cm_B_early_validation.png
+outputs/model_comparison/figures/cm_B_history_test.png
+outputs/model_comparison/figures/cm_B_history_validation.png
+outputs/model_comparison/figures/pooled_comparison.png
+outputs/model_comparison/figures/stability.png
+outputs/model_comparison/fit_records.json
+outputs/model_comparison/metrics.csv
+outputs/model_comparison/per_class_metrics.csv
+outputs/model_comparison/predictions.csv
+outputs/model_comparison/preservation_checks.json
+outputs/model_comparison/random_batch_gap.csv
+outputs/model_comparison/run_manifest.json
+outputs/model_comparison/source_validation.csv
+outputs/model_comparison/split_assignments.csv
+outputs/model_comparison/split_audit.json
+outputs/model_comparison/test_results.txt
+reports/model_comparison_report.html
+reports/training_protocol.md
+src/model_report.py
+src/train_models.py
+tests/test_models.py
+training_config.json
+.gitignore
+README.md
+Tracked model/raw data paths (must be empty):
+No newly generated model files or original raw data are tracked.
+Non-ignored new candidates exceeding 10 MiB:
+None

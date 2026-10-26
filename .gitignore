@@ -24,3 +24,6 @@ datasets/
 *.parquet
 *.pkl
 *.joblib
+
+# Local trained pipelines and metadata
+models/

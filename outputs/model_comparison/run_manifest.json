@@ -1,0 +1,38 @@
+{
+  "generated_at_seoul": "2026-10-26T17:03:24.375685+09:00",
+  "python": "3.12.6",
+  "package_versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0",
+    "pytest": "9.1.1"
+  },
+  "training_config_sha256": "0956191bff17ef45fad8b5f9b7dedb487cc9b852be9eee48a25771fbf6392dbb",
+  "code_sha256": {
+    "src/train_models.py": "e30797dde8e854415bd80df6b222219830e0eca05ae249f5b4894aa600782055",
+    "src/model_report.py": "e724aa716643194b5cab7d30341d819a2b6771364680e159575809e99a2bdad3",
+    "src/data.py": "2adcd085c767f9fc675e60220392b7e7ea89808a0f1ade2d2ca491a3306d723b"
+  },
+  "random_state": 42,
+  "threadpool_limits": 2,
+  "validation_used_for_tuning": false,
+  "refit_on_train_plus_validation": false,
+  "models_fitted": 9,
+  "final_model_selected": false,
+  "raw_data_dir": "D:\\dataset\\gas+sensor+array+drift+dataset",
+  "source_sha256": {
+    "batch1.dat": "f346beee8e0c5e31ac5961845b6d96a70dc1ccf799481592fb2f0d96a81952e6",
+    "batch2.dat": "07f7e94a9bf4377240f9b230d20c750932fc785d4766b6a4b7fc370a035c825a",
+    "batch3.dat": "a4c7a1a6744df32f0ca139c75c3b4dade7cc99f57a7785d28cb0f62577dd2061",
+    "batch4.dat": "bd76f86be34ffe89f46a27c6fc2b5b8c6ebfcf984dff4b3e5befc76d98034b7f",
+    "batch5.dat": "3f95cb6e4a39a94bbacd2f1984f1754c9fb5eb3221812975ad70edbcea7abaec",
+    "batch6.dat": "83348c504105a5aa5264d1209f2a5d7ba7d9c8bcae60290395f201ac4708ff95",
+    "batch7.dat": "3168cb56d5c9bc29c36184e2e73c9f3474adb3c4a893b1ce0d88b6c47698cfdb",
+    "batch8.dat": "296346b932893ea18c513e23ac5b660f35e1c499fde8254d4804a2ce8a1b4ca7",
+    "batch9.dat": "e019f11f4fa8336ab1f41f7503eb456b3679da0a84eb8032fe6cef90f0547826",
+    "batch10.dat": "30011067c7c05c2b01038f84c73af0c6f1820b622fa2b0ad89111cb4c649f791"
+  }
+}

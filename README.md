@@ -77,3 +77,36 @@ Git에 올릴 파일: 코드, 테스트, README, config(공개 가능한 데이�
 Git에서 제외할 파일: `.venv/`, `__pycache__/`, `.pytest_cache/`, `.env*`, 원본 `.dat`,
 데이터 디렉터리, 압축 파일, 임시 캐시, 모델 바이너리.
 Git 점검 내역은 `reports/git_audit.txt`에 저장한다. 파일을 stage하지 않고 dry-run으로 포함 후보를 검토했다.
+
+## 모델 학습 및 성능 비교
+
+이제 고정 기준선 모델 학습 실험도 추가되었다. 위의 EDA 단계 설명은 당시 작업 기록이다.
+Logistic Regression, Random Forest, RBF SVM을 같은 분할로 비교하며 튜닝·최종 모델 선정은 수행하지 않는다.
+
+```powershell
+.\.venv\Scripts\python.exe -m src.train_models
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+- 설정: `training_config.json` (시드·고정 파라미터·Batch 구성)
+- 설계 변경 및 실행 원칙: `reports/training_protocol.md`
+- 보고서: `reports/model_comparison_report.html` (이미지 내장, 오프라인 열람 가능)
+- 모델: `models/{experiment}__{model}.joblib` 9개 (전처리 포함 Pipeline, Git 제외)
+- 새 산출물: `outputs/model_comparison/`의 분할·지표·클래스별 성능·개별 예측·혼동행렬·경고·실행 환경
+- A=Train/Validation/Test 60/20/20. Test 20%는 기존 EDA 분할과 동일하다.
+- B_early=Train Batch 1, Validation 2, Test 3–10.
+- B_history=Train Batch 1–3, Validation 4, Test 5–10.
+- Validation은 진단용이며 설정 변경 또는 재학습에 사용하지 않는다. 예측 시 입력은 f001–f128만 사용한다.
+- LR/SVM은 Train에만 Fit한 median imputer+StandardScaler, RF는 Train median imputer만 사용한다.
+- 기존 EDA 및 원본은 보존하며 재실행은 새 모델 비교 산출물을 덮어쓴다.
+- Commit·Push는 실행하지 않는다. 새 코드·설정·프로토콜·보고서·비교 CSV/JSON/PNG는 Git 포함 후보이며 `models/` 전체와 `*.joblib`은 제외한다.
+
+저장 모델의 재사용 예:
+
+```python
+import joblib
+from src.data import FEATURES
+pipeline = joblib.load('models/A_random__SVM_RBF.joblib')
+# frame은 동일한 f001–f128 스키마의 특징 DataFrame이다.
+y_pred = pipeline.predict(frame[FEATURES])
+```
