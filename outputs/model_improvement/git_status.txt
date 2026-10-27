@@ -1,0 +1,12 @@
+No staging, commit, push, or remote changes. New pipelines saved in ignored model subdirectory.
+## main...origin/main
+?? outputs/model_improvement/
+?? reports/model_improvement_protocol.md
+?? reports/model_improvement_report.html
+?? reports/model_selection_rationale.md
+?? src/improve_models.py
+?? src/improvement_report.py
+?? tests/test_improvement.py
+models/improvement_strict/LR_base.joblib
+models/improvement_strict/RF_base.joblib
+models/improvement_strict/SVM_base.joblib

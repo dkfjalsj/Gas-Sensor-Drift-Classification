@@ -1,0 +1,583 @@
+[
+  {
+    "trial_id": "LR_base",
+    "family": "LogisticRegression",
+    "group": "baseline",
+    "scaler": "standard",
+    "class_weight": null,
+    "overrides": {},
+    "parent": null,
+    "order": 0,
+    "fit_seconds": 0.2071810999768786,
+    "validation_predict_seconds": 0.005424799979664385,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\LR_base.joblib",
+    "model_sha256": "01f5cf28dd1640410f0af76509afa70e41a7d1894da3cacc538f0651bb49e117",
+    "params": {
+      "C": 1.0,
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 10000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 11587,
+      "support_vectors": null,
+      "tree_count": null
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "LR_balanced",
+    "family": "LogisticRegression",
+    "group": "C_weight",
+    "scaler": "standard",
+    "class_weight": "balanced",
+    "overrides": {},
+    "parent": null,
+    "order": 1,
+    "fit_seconds": 0.10381180001422763,
+    "validation_predict_seconds": 0.005998499982524663,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\LR_balanced.joblib",
+    "model_sha256": "221c4f032915ce0dce1eca0f9b886068d721ca9ec5df1c4b133ef86b6f34ebe6",
+    "params": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 10000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 11593,
+      "support_vectors": null,
+      "tree_count": null
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "LR_robust",
+    "family": "LogisticRegression",
+    "group": "D_scaler",
+    "scaler": "robust",
+    "class_weight": null,
+    "overrides": {},
+    "parent": null,
+    "order": 2,
+    "fit_seconds": 0.06942149996757507,
+    "validation_predict_seconds": 0.004879299958702177,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\LR_robust.joblib",
+    "model_sha256": "8431bad8fd4c06777478535adc0e268f44ece657a5dbc7ae916e02a28ae3da62",
+    "params": {
+      "C": 1.0,
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 10000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 9566,
+      "support_vectors": null,
+      "tree_count": null
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "RF_base",
+    "family": "RandomForest",
+    "group": "baseline",
+    "scaler": "none",
+    "class_weight": null,
+    "overrides": {},
+    "parent": null,
+    "order": 3,
+    "fit_seconds": 0.20286670001223683,
+    "validation_predict_seconds": 0.03154440002981573,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\RF_base.joblib",
+    "model_sha256": "3e5cc5d3cdd02b45a9027b2f39ea27732cb38036cb46b9ea39b57704a51bf1b1",
+    "params": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 114125,
+      "support_vectors": null,
+      "tree_count": 100
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "RF_balanced",
+    "family": "RandomForest",
+    "group": "C_weight",
+    "scaler": "none",
+    "class_weight": "balanced",
+    "overrides": {},
+    "parent": null,
+    "order": 4,
+    "fit_seconds": 0.18435629998566583,
+    "validation_predict_seconds": 0.030259699968155473,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\RF_balanced.joblib",
+    "model_sha256": "05c0d2194e0f1d24021d41d911518d21d1f2b503511c4803db07ce0ba4ff1c90",
+    "params": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": "balanced",
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 112997,
+      "support_vectors": null,
+      "tree_count": 100
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "SVM_base",
+    "family": "SVM_RBF",
+    "group": "baseline",
+    "scaler": "standard",
+    "class_weight": null,
+    "overrides": {},
+    "parent": null,
+    "order": 5,
+    "fit_seconds": 0.029386600013822317,
+    "validation_predict_seconds": 0.050689199997577816,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\SVM_base.joblib",
+    "model_sha256": "045125a933b3e34cd84993864bfcc5fbb316a36d5e8829c6c41990971f0d5b42",
+    "params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "complexity": {
+      "model_bytes": 195720,
+      "support_vectors": 189,
+      "tree_count": null
+    },
+    "warnings": [
+      {
+        "category": "FutureWarning",
+        "message": "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      }
+    ]
+  },
+  {
+    "trial_id": "SVM_balanced",
+    "family": "SVM_RBF",
+    "group": "C_weight",
+    "scaler": "standard",
+    "class_weight": "balanced",
+    "overrides": {},
+    "parent": null,
+    "order": 6,
+    "fit_seconds": 0.020008800027426332,
+    "validation_predict_seconds": 0.036279399995692074,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\SVM_balanced.joblib",
+    "model_sha256": "0965af1ddfd8b7e25879d7f95933bb11b4b055f48413a3536a8acbc0c7fcdf26",
+    "params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "complexity": {
+      "model_bytes": 204708,
+      "support_vectors": 198,
+      "tree_count": null
+    },
+    "warnings": [
+      {
+        "category": "FutureWarning",
+        "message": "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      }
+    ]
+  },
+  {
+    "trial_id": "SVM_robust",
+    "family": "SVM_RBF",
+    "group": "D_scaler",
+    "scaler": "robust",
+    "class_weight": null,
+    "overrides": {},
+    "parent": null,
+    "order": 7,
+    "fit_seconds": 0.03186329995514825,
+    "validation_predict_seconds": 0.032687699946109205,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\SVM_robust.joblib",
+    "model_sha256": "3a1a74f7854c61ec21bd6b993ab397d93c5d0ad8785f41ac73aad33ec2fb97bc",
+    "params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "complexity": {
+      "model_bytes": 195714,
+      "support_vectors": 191,
+      "tree_count": null
+    },
+    "warnings": [
+      {
+        "category": "FutureWarning",
+        "message": "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      }
+    ]
+  },
+  {
+    "trial_id": "LR_tune_C0p1",
+    "family": "LogisticRegression",
+    "group": "E_tuning",
+    "scaler": "robust",
+    "class_weight": null,
+    "overrides": {
+      "C": 0.1
+    },
+    "parent": "LR_robust",
+    "order": 8,
+    "fit_seconds": 0.06034840003121644,
+    "validation_predict_seconds": 0.00644939998164773,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\LR_tune_C0p1.joblib",
+    "model_sha256": "18816fa9fb57607064390cb8defb6127bce06e97791e20e9516d2fea712e5f35",
+    "params": {
+      "C": 0.1,
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 10000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 9564,
+      "support_vectors": null,
+      "tree_count": null
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "LR_tune_C10",
+    "family": "LogisticRegression",
+    "group": "E_tuning",
+    "scaler": "robust",
+    "class_weight": null,
+    "overrides": {
+      "C": 10.0
+    },
+    "parent": "LR_robust",
+    "order": 9,
+    "fit_seconds": 0.07535229995846748,
+    "validation_predict_seconds": 0.004813499981537461,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\LR_tune_C10.joblib",
+    "model_sha256": "bf458a219677b8a696e8a9e948355e986b5ecd3bd60f9d59bde49d8edd7bc7e3",
+    "params": {
+      "C": 10.0,
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 10000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 9568,
+      "support_vectors": null,
+      "tree_count": null
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "RF_tune_trees200",
+    "family": "RandomForest",
+    "group": "E_tuning",
+    "scaler": "none",
+    "class_weight": null,
+    "overrides": {
+      "n_estimators": 200
+    },
+    "parent": "RF_base",
+    "order": 10,
+    "fit_seconds": 0.33325450000120327,
+    "validation_predict_seconds": 0.05310190003365278,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\RF_tune_trees200.joblib",
+    "model_sha256": "35eda7e4b93f0004c356ef326d881a91c44eddd1632b6f38de56322d3448230f",
+    "params": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 200,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 223158,
+      "support_vectors": null,
+      "tree_count": 200
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "RF_tune_depth12_leaf3",
+    "family": "RandomForest",
+    "group": "E_tuning",
+    "scaler": "none",
+    "class_weight": null,
+    "overrides": {
+      "max_depth": 12,
+      "min_samples_leaf": 3
+    },
+    "parent": "RF_base",
+    "order": 11,
+    "fit_seconds": 0.18292779999319464,
+    "validation_predict_seconds": 0.031207299965899438,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\RF_tune_depth12_leaf3.joblib",
+    "model_sha256": "6aeb0e7aedd00e42a740eb97f6903843031aa6440d6f0ff0cc7aba09eb6e3381",
+    "params": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 12,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 3,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 100,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "complexity": {
+      "model_bytes": 104800,
+      "support_vectors": null,
+      "tree_count": 100
+    },
+    "warnings": []
+  },
+  {
+    "trial_id": "SVM_tune_C10",
+    "family": "SVM_RBF",
+    "group": "E_tuning",
+    "scaler": "robust",
+    "class_weight": null,
+    "overrides": {
+      "C": 10.0
+    },
+    "parent": "SVM_robust",
+    "order": 12,
+    "fit_seconds": 0.029795899987220764,
+    "validation_predict_seconds": 0.025049899995792657,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\SVM_tune_C10.joblib",
+    "model_sha256": "5f6ce0962c0e2f4b7a1a391e0033d02de2fbe699da611fd20b59bb1bf24cd60e",
+    "params": {
+      "C": 10.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "complexity": {
+      "model_bytes": 139450,
+      "support_vectors": 134,
+      "tree_count": null
+    },
+    "warnings": [
+      {
+        "category": "FutureWarning",
+        "message": "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      }
+    ]
+  },
+  {
+    "trial_id": "SVM_tune_gamma0p001",
+    "family": "SVM_RBF",
+    "group": "E_tuning",
+    "scaler": "robust",
+    "class_weight": null,
+    "overrides": {
+      "gamma": 0.001
+    },
+    "parent": "SVM_robust",
+    "order": 13,
+    "fit_seconds": 0.03360549994977191,
+    "validation_predict_seconds": 0.0475754999788478,
+    "train_n": 370,
+    "model_file": "models\\improvement_strict\\SVM_tune_gamma0p001.joblib",
+    "model_sha256": "373f4f4066b9ba1371cdcca09ebe948a8304cd63d3ebe18a24d0cb732c656b56",
+    "params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": null,
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": 0.001,
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "complexity": {
+      "model_bytes": 299277,
+      "support_vectors": 297,
+      "tree_count": null
+    },
+    "warnings": [
+      {
+        "category": "FutureWarning",
+        "message": "The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`"
+      }
+    ]
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "frozen_at_seoul": "2026-10-27T09:49:49.367943+09:00",
+  "joint_candidates": [
+    "LR_robust",
+    "RF_tune_depth12_leaf3",
+    "SVM_tune_C10"
+  ],
+  "priority_candidate": "LR_robust",
+  "selection_data": "validation_only",
+  "independent_validation": false,
+  "final_confirmed": false,
+  "rationale": "Only 4 Toluene validation samples; retain all three family representatives.",
+  "selected_model_hashes": {
+    "LR_robust": "8431bad8fd4c06777478535adc0e268f44ece657a5dbc7ae916e02a28ae3da62",
+    "RF_tune_depth12_leaf3": "6aeb0e7aedd00e42a740eb97f6903843031aa6440d6f0ff0cc7aba09eb6e3381",
+    "SVM_tune_C10": "5f6ce0962c0e2f4b7a1a391e0033d02de2fbe699da611fd20b59bb1bf24cd60e"
+  }
+}
