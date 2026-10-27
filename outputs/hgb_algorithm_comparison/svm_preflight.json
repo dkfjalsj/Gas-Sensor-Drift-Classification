@@ -1,0 +1,50 @@
+[
+  {
+    "fold": "A",
+    "can_reuse": true,
+    "path": "models\\nonlinear_feature_transformation\\A_baseline.joblib",
+    "sha256": "54b7746576ea912f874c7bd26074108be6ce03143decc45b847908ccaabf0fec",
+    "reason": "",
+    "train_n": 3275,
+    "train_max_batch": 3,
+    "row_sha256": "977796d2826fc0f2ecdca406cbededc2e8f78cb370b9229ddd274bee172dc4ef",
+    "input_sha256": "9b9373b46a511aa2401b18e35fc3828442dc64773c44d4283d011dfc546a800f",
+    "scaler_n": 3275,
+    "actual_gamma": 0.0078125,
+    "train_only": true,
+    "feature_count": 128,
+    "class_order": "1,2,3,4,5,6"
+  },
+  {
+    "fold": "B",
+    "can_reuse": true,
+    "path": "models\\nonlinear_feature_transformation\\B_baseline.joblib",
+    "sha256": "ced45b37c1c9623fad9a960aefabef9c5a53d1c629995a4e60898734e1a88631",
+    "reason": "",
+    "train_n": 5933,
+    "train_max_batch": 6,
+    "row_sha256": "a0cd20e20d29b8bb28d1eba0d10b8452ee8a76b39e5223fbc8c4b0b1aab9b466",
+    "input_sha256": "bb7260a255e7f59dbc4b51cca94fdb0c3bc51e70884b061c1e9af2f8c8574a0d",
+    "scaler_n": 5933,
+    "actual_gamma": 0.0078125,
+    "train_only": true,
+    "feature_count": 128,
+    "class_order": "1,2,3,4,5,6"
+  },
+  {
+    "fold": "C",
+    "can_reuse": true,
+    "path": "models\\nonlinear_feature_transformation\\C_baseline.joblib",
+    "sha256": "8a975b9f3685fab9f70bcfb53e54cfd67793f88a8b34c095116436bc2ee788bd",
+    "reason": "",
+    "train_n": 9546,
+    "train_max_batch": 7,
+    "row_sha256": "b43cd6a603b114de2a8eb816ea630149d41b77026bc587cc6dd6e7694e45f0cd",
+    "input_sha256": "0b2f3d247a33e4fe9c7a47620c5e9e29e334fcb50a92e327cb2590203f1cac21",
+    "scaler_n": 9546,
+    "actual_gamma": 0.0078125,
+    "train_only": true,
+    "feature_count": 128,
+    "class_order": "1,2,3,4,5,6"
+  }
+]

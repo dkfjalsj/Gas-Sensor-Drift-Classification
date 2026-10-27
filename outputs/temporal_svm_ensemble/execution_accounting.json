@@ -1,0 +1,54 @@
+{
+  "expert_configurations": 9,
+  "ensemble_configurations": 2,
+  "conditional_ensemble_fold_evaluations": 6,
+  "oracle_diagnostic_folds": 3,
+  "aborted_repeated_full_expert_validation": 1,
+  "total_expert_fold_evaluations_including_aborted_run": 10,
+  "reused_unique_models": 9,
+  "new_expert_models_fitted_and_used": 0,
+  "technical_aborted_svc_fits": 1,
+  "new_saved_models": 0,
+  "study_budget_note": "One repeated full-expert diagnostic preceded the technical abort. No new expert/configuration or rule added; disclosed separately from9 unique evaluations.",
+  "some_correct": 1481,
+  "all_wrong": 1025,
+  "disagreement": 1897,
+  "full_wrong_oracle_rescue": 87,
+  "exclusive_correct": {
+    "full_only_correct": 337,
+    "recent_only_correct": 18,
+    "spread_only_correct": 66
+  },
+  "technical_repairs": [
+    {
+      "reason": "sklearn1.9 SVC probability default string deprecated means disabled, same as False. Audit now accepts both without changing model settings, rows, gate or combination. One unnecessary fallback SVC fit aborted before predictions and saving. Frozen plan and before snapshot unchanged.",
+      "files": {
+        "src\\temporal_svm_ensemble.py": {
+          "before": "0e481391e3815b33898ddd971dbb5d1da87667949acc4d812b6e18229234e87b",
+          "after": "6412a3c788f35a35297d1342f915ed17741cb80ea21a1b9fca338562de7c91f8"
+        },
+        "tests\\test_temporal_svm_ensemble.py": {
+          "before": "046120b89580e035e28ce7be06a4341c3c4de56137baa8bde1b29d41b11c6259",
+          "after": "4c07fd7b2affda96d5513267f01639a37c24f3d039cc58d6596269684dde4cce"
+        }
+      },
+      "aborted_classifier_fits": 1,
+      "aborted_fit_fold": "A",
+      "aborted_fit_expert": "recent",
+      "aborted_fit_train_n": 843,
+      "aborted_model_evaluated": false,
+      "aborted_model_saved": false,
+      "preflight": "5 unit checks passed; 1 post-run timing check was selected before run and missing started.json; no test code relaxation."
+    },
+    {
+      "reason": "All expert, gate and ensemble calculations completed. JSON serialization of NumPy bool failed during metadata output. Convert persisted audit CSV to native JSON types; finalize regenerates metadata/report only, no fit/predict/selection change. Earlier plan, gate, conclusion and tables unchanged.",
+      "files": {
+        "src\\temporal_svm_ensemble.py": {
+          "before": "6412a3c788f35a35297d1342f915ed17741cb80ea21a1b9fca338562de7c91f8",
+          "after": "3ffbd85a2b144a8b3daa2e8de8833204185cdd5119d512032be07981abae36e8"
+        }
+      },
+      "additional_classifier_fits": 0
+    }
+  ]
+}

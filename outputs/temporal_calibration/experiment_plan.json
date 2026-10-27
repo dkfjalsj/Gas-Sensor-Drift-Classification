@@ -1,0 +1,102 @@
+{
+  "stage": 17,
+  "frozen_at": "2026-10-27T16:30:19.802277+09:00",
+  "folds": {
+    "A": [
+      3,
+      6
+    ],
+    "B": [
+      6,
+      7
+    ],
+    "C": [
+      7,
+      8
+    ]
+  },
+  "seeds": [
+    11,
+    23,
+    42
+  ],
+  "rates": [
+    0,
+    5,
+    10,
+    20
+  ],
+  "split": "Per Fold/seed whole target Batch: Evaluation=floor(N/2); remaining rows candidate pool. Evaluation per-gas Hamilton allocation with >=1 and <=n_g-1; ties lower gas id. Per-gas SeedSequence(seed,target_batch,gas) permutation, first quota Evaluation, rest pool.",
+  "calibration": "Counts floor(N*rate/100), denominator full target Batch. Start1 per gas; sequential proportional-deficit fill using pool class counts, capacity-capped, tie lower gas id. Same per-gas pool permutation prefix for5/10/20 so nested.",
+  "impossible": "If any class<2 or calibration target<6 or capacity insufficient, stop before fits; no class synthesis, silent relaxation, new seed or ratio.",
+  "labels": "True labels used for retrospective stratified split. Only selected calibration labels enter refit. Collecting class-balanced calibration prospectively may require controlled gas exposures/additional labels; percentages are training-label counts, not proven deployment cost.",
+  "temporal": "Past Train precedes target Batch. Calibration/Evaluation are random same-Batch subsets; no exact within-Batch timestamps, so not proof of chronological online adaptation.",
+  "svm": {
+    "kernel": "rbf",
+    "C": 1.0,
+    "gamma": "scale",
+    "class_weight": "balanced",
+    "probability": false,
+    "random_state": 42
+  },
+  "pipeline": "Train-only median imputer -> StandardScaler -> SVC. Refit from scratch on past+calibration. balanced n/(6*n_g) from combined Train labels only; no sample_weight.",
+  "metric": "Accuracy, MacroF1 present true classes, WeightedF1, per-gas P/R/F1/support/predicted_n, 6x6 confusion, zero recall, directional focus errors. Unsupported truth NA not zero.",
+  "aggregation": "Primary: for each seed equal3-Fold MacroF1 mean, then equal3-seed mean. Per-gas supported-Fold mean within seed then equal-seed mean; other-four F1 equal gas means1,2,3,5. Seed SD ddof1 descriptive only; overlapping repeated data.",
+  "protection": {
+    "macro_gain_min": 0.005,
+    "per_gas_mean_recall_loss_max": 0.05,
+    "focus_mean_precision_recall_f1_loss_max": 0.05,
+    "other_four_mean_f1_loss_max": 0.02,
+    "no_new_zero": true,
+    "inclusive": true,
+    "tolerance": 1e-12
+  },
+  "consistency": "A requires all3 Fold mean paired MacroF1 deltas>1e-12, >=2/3 seed mean deltas>1e-12 and>=6/9 paired Fold-seed deltas>1e-12, plus all guards.",
+  "conclusion": "Per rate independently: A if guards+consistency; B otherwise if any paired Fold-seed MacroF1 gain>1e-12 or any gas aggregate F1 gain>1e-12; C otherwise. Do not pick a winning ratio or replace official Model A.",
+  "regression": "Fold A only: existing B_history Validation Batch4 and Test Batch5,358 rows, five true gas classes with no Toluene. Re-register as past held-out retention diagnostic, not independent future test; disjoint from Train1-3 and target6. B/C no past rows outside full past Train; retention unavailable. No Train-score proxy.",
+  "budget": {
+    "max_new_adaptive_SVM_fits": 27,
+    "baseline_unique_models": 3,
+    "baseline_evaluation_conditions": 9,
+    "adaptive_evaluation_conditions": 27,
+    "regression_logical_conditions": 12,
+    "baseline_fallback_fits": 0
+  },
+  "reuse": "Verify source sha, Train medians/scaler/support vectors/classes/params before fitting. If unavailable stop and report required replacements, do not train extra baseline.",
+  "stop": "No tuning, extra seeds/ratios, feature selection, weighting experiment, new algorithm, ensemble, drift detector or Batch9/10 scientific evaluation. Fit failure recorded; no altered retry. Leakage or preservation failure aborts.",
+  "source_models": [
+    {
+      "fold": "A",
+      "path": "models\\nonlinear_feature_transformation\\A_baseline.joblib",
+      "sha256": "54b7746576ea912f874c7bd26074108be6ce03143decc45b847908ccaabf0fec"
+    },
+    {
+      "fold": "B",
+      "path": "models\\nonlinear_feature_transformation\\B_baseline.joblib",
+      "sha256": "ced45b37c1c9623fad9a960aefabef9c5a53d1c629995a4e60898734e1a88631"
+    },
+    {
+      "fold": "C",
+      "path": "models\\nonlinear_feature_transformation\\C_baseline.joblib",
+      "sha256": "8a975b9f3685fab9f70bcfb53e54cfd67793f88a8b34c095116436bc2ee788bd"
+    }
+  ],
+  "official_model": {
+    "path": "models/temporal_expansion/B_SVM_balanced.joblib",
+    "train_end": 6,
+    "sha256": "1d6b20c94d1580d799e05ab5a9ce746bdb272d74f70ec2ff964011fffecfde32"
+  },
+  "environment": {
+    "python": "3.12.6",
+    "packages": {
+      "scikit-learn": "1.9.1",
+      "numpy": "2.5.4",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "joblib": "1.6.0"
+    }
+  },
+  "independent_test": false,
+  "future_batches_evaluated": [],
+  "warning": "정답이 확인된 새 시기 자료를 이용한 지도학습 모델 적응이며 물리적 센서 교정이나 드리프트 감지 실험이 아님. 반복 사용한 개발 Batch 내부의 평가이며 독립 Test가 아님. Batch 9~10 신규 평가 없음. 공식 Model A 유지."
+}

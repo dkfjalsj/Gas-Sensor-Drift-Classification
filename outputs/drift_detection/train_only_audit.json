@@ -1,0 +1,11 @@
+{
+  "imputer_median_reference_only": true,
+  "scaler_reference_only": true,
+  "scaler_n": 2966,
+  "rff_reference_only": true,
+  "threshold_calibration_only": true,
+  "gas_labels_used": false,
+  "target_fit_rows": 0,
+  "full_reference_refit": false,
+  "official_classifier_preprocessing_unchanged": true
+}

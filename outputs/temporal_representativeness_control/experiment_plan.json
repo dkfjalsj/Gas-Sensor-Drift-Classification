@@ -1,0 +1,159 @@
+{
+  "frozen_at": "2026-10-27T14:10:56.591186+09:00",
+  "folds": {
+    "A": [
+      3,
+      6
+    ],
+    "B": [
+      6,
+      7
+    ],
+    "C": [
+      7,
+      8
+    ]
+  },
+  "seeds": [
+    11,
+    23,
+    42,
+    67,
+    101
+  ],
+  "budgets": {
+    "small": {
+      "1": 63,
+      "2": 108,
+      "3": 45,
+      "4": 34,
+      "5": 150,
+      "6": 19
+    },
+    "mid": {
+      "1": 127,
+      "2": 216,
+      "3": 91,
+      "4": 69,
+      "5": 301,
+      "6": 39
+    },
+    "max": {
+      "1": 254,
+      "2": 432,
+      "3": 183,
+      "4": 139,
+      "5": 602,
+      "6": 79
+    }
+  },
+  "settings": [
+    {
+      "setting": "early_mid",
+      "scheme": "early",
+      "budget": "mid",
+      "preprocessing": "native",
+      "weight": "balanced",
+      "experiment": "A"
+    },
+    {
+      "setting": "spread_mid",
+      "scheme": "spread",
+      "budget": "mid",
+      "preprocessing": "native",
+      "weight": "balanced",
+      "experiment": "A"
+    },
+    {
+      "setting": "recent_mid",
+      "scheme": "recent",
+      "budget": "mid",
+      "preprocessing": "native",
+      "weight": "balanced",
+      "experiment": "A"
+    },
+    {
+      "setting": "spread_small",
+      "scheme": "spread",
+      "budget": "small",
+      "preprocessing": "native",
+      "weight": "balanced",
+      "experiment": "B"
+    },
+    {
+      "setting": "spread_max",
+      "scheme": "spread",
+      "budget": "max",
+      "preprocessing": "native",
+      "weight": "balanced",
+      "experiment": "B"
+    },
+    {
+      "setting": "spread_mid_unit",
+      "scheme": "spread",
+      "budget": "mid",
+      "preprocessing": "native",
+      "weight": "unit",
+      "experiment": "C"
+    },
+    {
+      "setting": "spread_mid_anchor",
+      "scheme": "spread",
+      "budget": "mid",
+      "preprocessing": "anchor",
+      "weight": "balanced",
+      "experiment": "C"
+    },
+    {
+      "setting": "spread_mid_anchor_unit",
+      "scheme": "spread",
+      "budget": "mid",
+      "preprocessing": "anchor",
+      "weight": "unit",
+      "experiment": "C"
+    }
+  ],
+  "classifier_fits": 120,
+  "native_preprocessing_fits": 90,
+  "common_anchor_preprocessing_fits": 1,
+  "per_seed_models": 24,
+  "candidate_selection": false,
+  "official_main_candidate": "Model A",
+  "svm": {
+    "kernel": "rbf",
+    "C": 1.0,
+    "gamma": "scale",
+    "feature_count": 128
+  },
+  "early": "Strict initial pool Batch1-2. Greedy ascending Batch allocation per gas.",
+  "spread": "Round-robin equal counts across existing gas-Batch cells, capacity capped; ascending tie.",
+  "recent": "Greedy descending Batch allocation per gas. No future samples.",
+  "budget_definition": "25%,50%,100% (floor per gas) of Batch1-2 gas counts. Max means largest under strict early pool, NOT dataset maximum. Identical six gas counts across schemes and folds at each budget.",
+  "sampling": "Fixed per-cell SeedSequence(seed,gas,Batch) permutation prefixes. No replacement. Spread budgets nested. Same row subsets across C contrasts.",
+  "primary": "Five-seed average of equal-weight Fold6/7/8 Macro F1; also report each Fold.",
+  "consistent_effect": "Descriptive only: paired delta mean >=0.005, each of three Fold mean deltas >0 and at least4/5 seed-level equal-Fold deltas >0. Not a significance test or future generalization claim. Report all negative effects.",
+  "protection": "Separately flag any gas mean Recall drop >0.05, other-four mean F1 drop >0.02, or increased gas-Fold zero Recall pairs vs spread_mid. No best setting or seed selection; ties yield no superiority conclusion.",
+  "anchor": "Counterfactual common median imputer and StandardScaler fitted once on all Batch1-2 (1689 rows), strictly past all Validation. Additional unsupervised training reference beyond selected classifier rows; C contrasts are NOT matched total information-budget experiments.",
+  "weight": "balanced from selected Train labels; fixed unit dict {1..6:1.0} as equal-penalty control. No sample_weight. Same gas budgets imply identical balanced weights within A. Rounding may alter weights slightly across B budgets.",
+  "gamma": "gamma=scale always. Native standardization gives1/128; common anchor may change actual gamma via Train transformed variance. C preprocessing effect includes automatic bandwidth change, not isolated scaler-only causal effect.",
+  "future_settings": [
+    "early_mid",
+    "spread_mid",
+    "recent_mid",
+    "spread_max"
+  ],
+  "future_fold": "C",
+  "future_seeds": [
+    11,
+    23,
+    42,
+    67,
+    101
+  ],
+  "future": "After historical findings frozen, reuse20 Fold C models; evaluate9/10 and pooled. No new future-fit, winner, seed choice or tuning. Stored A/B only unmatched-size reference table. No new independent Test.",
+  "uncertainty": "Seed SD(ddof=1) describes subset randomness only. Folds overlap, seeds share data and cell permutations; no IID repeated-trial claim or p-value.",
+  "missing": "Unsupported gas-Batch cells stay0 support, never synthetic rows. Unavailable comparisons are NA, not performance0.",
+  "compute_budget": "120 SVC fits of419-1689 rows,128 features. No search/early stopping. All five seeds retained. Historical full-data SVC runs suggest manageable CPU cost.",
+  "sample_assignments_sha256": "659b513f199b9fb6bf405184b1460680995e5747c6417f1c6624b4d9b8456579",
+  "sample_composition_sha256": "76ee2fc7d7ebdcd68bea424599e4802d75f43c802d8e8636bff4c42a1d4f9f07"
+}

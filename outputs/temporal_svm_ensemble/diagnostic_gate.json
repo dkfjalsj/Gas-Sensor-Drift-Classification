@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "nonidentical": true,
+    "partial_correct": true,
+    "macro_gain": true,
+    "focus_room": true,
+    "provenance": true
+  },
+  "passed": true,
+  "oracle_mean_macro_f1": 0.8126723496185839,
+  "best_expert_mean_macro_f1": 0.7970823430636615,
+  "oracle_macro_gain": 0.015590006554922375,
+  "focus": [
+    {
+      "gas_id": 6,
+      "recall_gain": 0.02699530516431925,
+      "rescued": 62,
+      "passes": true
+    },
+    {
+      "gas_id": 4,
+      "recall_gain": 0.02289019224503086,
+      "rescued": 8,
+      "passes": false
+    }
+  ],
+  "decided_at": "2026-10-27T15:41:57.958728+09:00",
+  "oracle_warning": "정답을 알고 전문가를 선택한 가상 상한이며 실제 배포 가능한 모델이 아님. Accuracy·가스 Recall은 선택형 상한. Macro F1은 공동 오답에서 full 예측을 유지한 고정 Oracle의 점수이며 모든 오답 배치를 최적화한 수학적 상한은 아님."
+}

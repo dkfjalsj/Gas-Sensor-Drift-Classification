@@ -1,0 +1,28 @@
+{
+  "completed_at": "2026-10-27T14:39:58.323522+09:00",
+  "test_status": {
+    "passed": 129,
+    "failed": 5,
+    "prior_legacy_failures": 3,
+    "prior_inventory_conflicts": 2,
+    "new_failures": 0,
+    "new_tests": 16,
+    "failed_tests": [
+      "tests.test_diagnostics::test_existing_results_and_models_unchanged",
+      "tests.test_models::test_eda_and_sources_preserved_report_complete",
+      "tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files",
+      "tests.test_temporal_generalization_validation::test_existing_files_raw_and_model_inventory_preserved",
+      "tests.test_toluene_deep_diagnostic::test_preserved_files_raw_models_and_config"
+    ]
+  },
+  "prior_files_unchanged": 936,
+  "old_models_unchanged": 260,
+  "raw_files_unchanged": 10,
+  "new_classifier_fits": 25,
+  "official_model": "Model A unchanged",
+  "report_sha256": {
+    "gas_specific_temporal_balancing_report.html": "57dbce8356d272af2230993b88bc53589c86d9427d8ae260c08043ec96db5b53",
+    "gas_specific_temporal_balancing_summary.md": "6b00bf0acf08a053c1a72cbfdd3b6994d20eebefe8584142aed3d79ac2431208",
+    "gas_specific_temporal_balancing_limitations.md": "ba9da5fe572298c898e841eb7d551fa4a882d71dc73a0ad407bda7f7ccf9c933"
+  }
+}

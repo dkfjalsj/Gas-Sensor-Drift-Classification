@@ -1,0 +1,44 @@
+{
+  "frozen_at": "2026-10-27T13:52:01.632644+09:00",
+  "models": {
+    "A": {
+      "path": "models\\temporal_expansion\\B_SVM_balanced.joblib",
+      "sha256": "1d6b20c94d1580d799e05ab5a9ce746bdb272d74f70ec2ff964011fffecfde32",
+      "train_end": 6,
+      "official_main_candidate": true
+    },
+    "B": {
+      "path": "models\\temporal_weighting\\selected_train1_7_class_balanced.joblib",
+      "sha256": "39427ad75b146ed4d9d608ebd7dbbb154f4318649a5a1fd87d3092f9115645cb",
+      "train_end": 7,
+      "official_main_candidate": false
+    }
+  },
+  "seed": 42,
+  "sources": {
+    "uci": "https://archive.ics.uci.edu/dataset/224/gas+sensor+array+drift+dataset",
+    "svm": "https://scikit-learn.org/stable/modules/svm.html#multi-class-classification"
+  },
+  "focus_gases": [
+    4,
+    6
+  ],
+  "batches": [
+    8,
+    9,
+    10
+  ],
+  "classifier_fits": 0,
+  "preprocessing_fits": 0,
+  "diagnostic_pca": "Two separate 2-D PCA fits, only each frozen model training rows; svd_solver=full. Never used by classifier. No other estimator fit.",
+  "ovo": "Stored classifier._decision_function on frozen transformed data; verified against copied classifier with public decision_function_shape=ovo. Positive pair score favors earlier classes_ entry; zero treated as later for libsvm votes. OvR reconstruction separately uses dec<0 as installed sklearn.",
+  "boundary": "For three focus pairs raw margin divided by exact RBF RKHS weight norm. This is signed distance to binary hyperplane in RKHS, not input-space distance, probability, calibrated confidence or nearest multiclass boundary. Compare empirical Train abs-distance quartile; no operational threshold.",
+  "neighbors": "Exact Euclidean, all 128 frozen preprocessed features. k=1,5; stable Train-row-order ties. Native A/B spaces plus A-space range control.",
+  "sensor_mapping": "UCI224 confirms 16 consecutive 8-feature blocks: delta_R, normalized_R, EMA rise .001/.01/.1, EMA decay .001/.01/.1. Sensor index is feature block; physical hardware serial mapping unavailable.",
+  "sensor_selection": "Post-hoc diagnostic only. Rank 16 sensors by mean of eight Wasserstein distances: Batch9 Toluene vs Train1-7 Toluene, divided by same-gas Train population SD; choose top two, sensor id tie break. All sensors and 128 features retained in original classifiers.",
+  "sensor_space": "Common frozen A scaler for comparable means/correlations/PCA support plots. Conditional Wasserstein normalization per reference gas SD.",
+  "clustering": "Batch9 Toluene only, frozen A standardized 128-D; Ward hierarchical descriptive partitions k=2,3,4, no prediction model fit. No choice of best k; k2 main display, others sensitivity, not sessions.",
+  "independent_test": false,
+  "model_selection_changed": false,
+  "interpretation": "Retrospective diagnostic, not causal attribution or model selection."
+}

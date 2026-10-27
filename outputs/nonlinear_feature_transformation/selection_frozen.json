@@ -1,0 +1,11 @@
+{
+  "selected_candidate": null,
+  "conclusion": "B",
+  "official_model": "Model A unchanged",
+  "pipeline_evaluations": 9,
+  "new_classifier_fits": 6,
+  "reused_classifier_fits": 3,
+  "frozen_at": "2026-10-27T15:15:54.636695+09:00",
+  "future_batches_evaluated": [],
+  "limitation": "새 독립 Test 없음. 과거 Fold는 반복 사용된 개발 자료이며 서로 독립적인 반복 표본이 아님. Batch 9~10 신규 평가 없음. 공식 Model A 유지."
+}

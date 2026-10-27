@@ -1,0 +1,13 @@
+model,gas_id,n,correct_n,recall,role
+A,1,1225,1204,0.9828571428571429,resubstitution_only_not_generalization
+A,2,1579,1579,1.0,resubstitution_only_not_generalization
+A,3,541,529,0.977818853974122,resubstitution_only_not_generalization
+A,4,484,476,0.9834710743801653,resubstitution_only_not_generalization
+A,5,1558,1539,0.9878048780487805,resubstitution_only_not_generalization
+A,6,546,546,1.0,resubstitution_only_not_generalization
+B,1,1874,1848,0.9861259338313767,resubstitution_only_not_generalization
+B,2,2241,2240,0.999553770638108,resubstitution_only_not_generalization
+B,3,901,882,0.978912319644839,resubstitution_only_not_generalization
+B,4,1228,1220,0.993485342019544,resubstitution_only_not_generalization
+B,5,2188,2174,0.993601462522852,resubstitution_only_not_generalization
+B,6,1114,1114,1.0,resubstitution_only_not_generalization

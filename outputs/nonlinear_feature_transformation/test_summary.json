@@ -1,0 +1,43 @@
+{
+  "total": 151,
+  "passed": 146,
+  "failed": 5,
+  "skipped": 0,
+  "historical_failures": 5,
+  "new_failures": 0,
+  "new_test_cases": 17,
+  "new_test_passed": 17,
+  "failures": [
+    {
+      "classname": "tests.test_diagnostics",
+      "name": "test_existing_results_and_models_unchanged",
+      "historical": true,
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\Gas-Sensor-Drift-Classification\\\\outputs\\\\model_comparison\\\\zNex~$haremetrics.csv'"
+    },
+    {
+      "classname": "tests.test_models",
+      "name": "test_eda_and_sources_preserved_report_complete",
+      "historical": true,
+      "message": "AssertionError: assert '32974e022d81...49a573513c6bc' == '2adcd085c767...491a3306d723b'\n  \n  - 2adcd085c767f9fc675e60220392b7e7ea89808a0f1ade2d2ca491a3306d723b\n  + 32974e022d81b0f382d1f8a4c35f75a6f5d3c0b3009fd28659a49a573513c6bc"
+    },
+    {
+      "classname": "tests.test_temporal_failure_diagnostics",
+      "name": "test_no_new_fit_calls_or_new_model_files",
+      "historical": true,
+      "message": "AssertionError: assert {'models\\\\A_r....joblib', ...} == {'models\\\\A_r....joblib', ...}\n  \n  Extra items in the right set:\n  'models\\\\nonlinear_feature_transformation\\\\C_baseline.joblib'\n  'models\\\\temporal_representativeness_control\\\\C_spread_small_seed67.joblib'\n  'models\\\\temporal_robustness\\\\C\\\\SVM_variance.joblib'\n  'models\\\\temporal_representativeness_control\\\\B_spread_max_seed11.joblib'\n  'models\\\\gas_specific_temporal_balancing\\\\A_coverage_mid_seed11.joblib'...\n  \n  ...Full output truncated (247 lines hidden), use '-vv' to show"
+    },
+    {
+      "classname": "tests.test_temporal_generalization_validation",
+      "name": "test_existing_files_raw_and_model_inventory_preserved",
+      "historical": true,
+      "message": "AssertionError: assert {'models\\\\A_r....joblib', ...} == {'models\\\\A_r....joblib', ...}\n  \n  Extra items in the left set:\n  'models\\\\nonlinear_feature_transformation\\\\C_baseline.joblib'\n  'models\\\\temporal_representativeness_control\\\\C_spread_small_seed67.joblib'\n  'models\\\\nonlinear_feature_transformation\\\\A_baseline.joblib'\n  'models\\\\temporal_representativeness_control\\\\B_spread_max_seed11.joblib'\n  'models\\\\temporal_representativeness_control\\\\A_recent_mid_seed42.joblib'...\n  \n  ...Full output truncated (150 lines hidden), use '-vv' to show"
+    },
+    {
+      "classname": "tests.test_toluene_deep_diagnostic",
+      "name": "test_preserved_files_raw_models_and_config",
+      "historical": true,
+      "message": "AssertionError: assert ({'models\\\\A_r....joblib', ...} == {'models\\\\A_r....joblib', ...}\n  \n  Extra items in the right set:\n  'models\\\\nonlinear_feature_transformation\\\\C_baseline.joblib'\n  'models\\\\temporal_representativeness_control\\\\C_spread_small_seed67.joblib'\n  'models\\\\nonlinear_feature_transformation\\\\A_baseline.joblib'\n  'models\\\\temporal_representativeness_control\\\\B_spread_max_seed11.joblib'\n  'models\\\\temporal_representativeness_control\\\\A_recent_mid_seed42.joblib'...\n  \n  ...Full output truncated (150 lines hidden), use '-vv' to show)"
+    }
+  ],
+  "historical_failure_reference": "outputs\\gas_specific_temporal_balancing\\test_results.xml"
+}

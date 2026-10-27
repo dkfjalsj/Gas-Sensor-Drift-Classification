@@ -1,0 +1,26 @@
+{
+  "completed_at": "2026-10-27T13:49:45.298998+09:00",
+  "test_status": {
+    "passed": 101,
+    "failed": 3,
+    "legacy_failures": [
+      "tests.test_diagnostics::test_existing_results_and_models_unchanged",
+      "tests.test_models::test_eda_and_sources_preserved_report_complete",
+      "tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files"
+    ],
+    "new_tests": 12,
+    "new_failures": 0
+  },
+  "prior_files_unchanged": 622,
+  "raw_files_unchanged": 10,
+  "models_unchanged": 140,
+  "report_sha256": {
+    "toluene_failure_deep_diagnostic_report.html": "9d6274add660a41095a6002cf153b5ebe08bf549bac6d8afd11389fe246a98d0",
+    "toluene_failure_deep_diagnostic_summary.md": "81e67d98a9393965b5691f16d57178db41098f618e85fa30dcc861c47908441c",
+    "toluene_failure_hypothesis_review.md": "d9d0841d3a26b6e5f25b2273e079b93ac3fdb2df392e0fab85b51ce2aaca1bd9"
+  },
+  "classifier_fits": 0,
+  "preprocessing_fits": 0,
+  "diagnostic_pca_fits": 2,
+  "model_selection_changed": false
+}

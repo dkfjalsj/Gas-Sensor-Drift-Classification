@@ -1,0 +1,92 @@
+{
+  "frozen_at": "2026-10-27T14:36:23.657730+09:00",
+  "folds": {
+    "A": [
+      3,
+      6
+    ],
+    "B": [
+      6,
+      7
+    ],
+    "C": [
+      7,
+      8
+    ]
+  },
+  "seeds": [
+    11,
+    23,
+    42,
+    67,
+    101
+  ],
+  "budgets": {
+    "mid": {
+      "1": 127,
+      "2": 216,
+      "3": 91,
+      "4": 69,
+      "5": 301,
+      "6": 39
+    },
+    "max": {
+      "1": 254,
+      "2": 432,
+      "3": 183,
+      "4": 139,
+      "5": 602,
+      "6": 79
+    }
+  },
+  "mid_settings": [
+    "spread_mid",
+    "recent_mid",
+    "mixed_mid",
+    "coverage_mid"
+  ],
+  "max_candidates": [
+    "mixed_max",
+    "coverage_max"
+  ],
+  "baseline_max": "spread_max: reuse stage12",
+  "mixed": "Per gas, largest actual Train Batch share >=0.50 -> spread; otherwise recent. Threshold fixed before new evaluation, no gas identity or Batch9/10 score rule.",
+  "coverage": "For q gas rows over m observed Train batches, reserve min(cell_capacity,max(1,floor(q/(2m)))) in every observed cell, then fill remaining budget greedily from newest batches. No nonexistent cells.",
+  "sampling": "Same SeedSequence(seed,gas,Batch) prefixes as stage12; fixed row order.",
+  "primary": "Mean of3 Fold Macro F1, then mean across5 seeds; SD across seed means(ddof1).",
+  "balance": "Mean Macro F1 delta vs spread_mid >=0.005; Toluene/Acetaldehyde mean Recall delta >-0.05; each of other4 gas mean Recall delta >-0.10; all Fold mean deltas >=0 (tolerance1e-12), >=2 strictly positive; all5 seed equal-Fold mean deltas >0. Identical subsets count as neutral, never artificially perturbed. Rules descriptive, not safety/significance standards.",
+  "expansion": "Only prespecified mixed/coverage are eligible for1689: 843 mean Macro delta>=0.005, all Recall guards, >=2 positive Fold means and >=4 positive seed means. At most2 targets, all3Folds/all5seeds. Always reuse spread_max reference. Expanded strategies are additionally judged against equal-size spread_max; same Validation reused, not independent. No after-result substitution.",
+  "conclusion": "A if a new strategy satisfies full balance; B if Macro gain>=0.005 or any mean gas Recall gain>=0.02 exists but loss/inconsistency remains; otherwise C. No official model replacement or seed winner.",
+  "svm": {
+    "C": 1.0,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "class_weight": "balanced",
+    "features": 128,
+    "imputer": "median",
+    "scaler": "StandardScaler_selected_Train_only"
+  },
+  "maximum_new_fits": 55,
+  "expected_mid_new_fits": 25,
+  "reuse": "Stage12 stored models for exact matching rows/order,settings,seed. All new fits only under models/gas_specific_temporal_balancing.",
+  "future_settings": [
+    "spread_mid",
+    "recent_mid",
+    "mixed_mid",
+    "coverage_mid"
+  ],
+  "future_fold": "C",
+  "future_seeds": [
+    11,
+    23,
+    42,
+    67,
+    101
+  ],
+  "future": "After all historical and expansion findings are frozen, evaluate only four843 strategies x5seeds (20 logical models), Batch9/10 and pooled. No expansion models in future evaluation, no reselection, new independent Test absent.",
+  "limitations": "Historical windows and seeds overlap; five seeds quantify subset randomness, not independent temporal replication. Research motivated by already seen9/10; no future-independent or fully causal claim.",
+  "official_model": "Model A unchanged",
+  "independent_test": false,
+  "samples_sha256": "9a0e984ff36c58d33cbae253819ade093615e2b3472e940e4b15a325ccb592c7",
+  "composition_sha256": "c6acc3ccd9e210553cb12aec383a04287c61ca7659c15803728235133b000758"
+}

@@ -1,0 +1,23 @@
+{
+  "frozen_at": "2026-10-27T14:36:53.896612+09:00",
+  "settings": [
+    "spread_mid",
+    "recent_mid",
+    "mixed_mid",
+    "coverage_mid"
+  ],
+  "seeds": [
+    11,
+    23,
+    42,
+    67,
+    101
+  ],
+  "historical_metrics_sha256": "8b6b8bb1e6527790cf0863eea06945e588087a4a791b0053f4dc487b39c35529",
+  "guards_sha256": "30882fe637115378f4206ca216923ff76628138b65941d4d4140188c502f38b1",
+  "max_matched_guards_sha256": "3fd63da3ef51fa63fef3ee4cb7daf4552c2cce766d757d97024d52d58ca69e93",
+  "research_conclusion_sha256": "5affdda441301b6926ccc4cd9b5229436db4fb91c5d683ba43f2c3ef3ee1b8fc",
+  "expansion_decision_sha256": "bcb63cc6833596bece78c8dc6a98c90130a43ed147ac4426229e2b6e1edbf46c",
+  "official_model": "Model A unchanged",
+  "no_reselection": true
+}

@@ -1,0 +1,74 @@
+{
+  "rates": [
+    {
+      "rate": 5,
+      "mean_macro_delta": 0.12015206295020686,
+      "other_four_f1_delta": 0.021620477536116844,
+      "new_zero_pairs": 0,
+      "positive_cells": 8,
+      "min_cell_macro_delta": 0.0,
+      "checks": {
+        "complete": true,
+        "macro_guard": true,
+        "recall_guard": true,
+        "focus_guard": true,
+        "other_four_guard": true,
+        "no_new_zero_guard": true,
+        "fold_consistency": true,
+        "seed_consistency": true,
+        "cell_consistency": true
+      },
+      "conclusion": "A",
+      "all_passed": true
+    },
+    {
+      "rate": 10,
+      "mean_macro_delta": 0.13701678700086042,
+      "other_four_f1_delta": 0.03460271015941675,
+      "new_zero_pairs": 0,
+      "positive_cells": 9,
+      "min_cell_macro_delta": 0.010911051986102871,
+      "checks": {
+        "complete": true,
+        "macro_guard": true,
+        "recall_guard": true,
+        "focus_guard": true,
+        "other_four_guard": true,
+        "no_new_zero_guard": true,
+        "fold_consistency": true,
+        "seed_consistency": true,
+        "cell_consistency": true
+      },
+      "conclusion": "A",
+      "all_passed": true
+    },
+    {
+      "rate": 20,
+      "mean_macro_delta": 0.14365481906928576,
+      "other_four_f1_delta": 0.037693768590769595,
+      "new_zero_pairs": 0,
+      "positive_cells": 9,
+      "min_cell_macro_delta": 0.018885971909074595,
+      "checks": {
+        "complete": true,
+        "macro_guard": true,
+        "recall_guard": true,
+        "focus_guard": true,
+        "other_four_guard": true,
+        "no_new_zero_guard": true,
+        "fold_consistency": true,
+        "seed_consistency": true,
+        "cell_consistency": true
+      },
+      "conclusion": "A",
+      "all_passed": true
+    }
+  ],
+  "official_model": "Model A unchanged",
+  "new_adaptive_fits": 27,
+  "reused_unique_models": 3,
+  "baseline_evaluation_conditions": 9,
+  "adaptive_evaluation_conditions": 27,
+  "regression_conditions": 12,
+  "future_batches_evaluated": []
+}

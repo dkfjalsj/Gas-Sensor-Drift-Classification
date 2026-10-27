@@ -1,0 +1,7 @@
+{
+  "conclusion": "A — 운영 가능한 감지 프로토타입",
+  "physical_drift_accuracy_verified": false,
+  "web_deployment_verified": false,
+  "independent_test": false,
+  "detector_version": "rff_mmd_v1"
+}

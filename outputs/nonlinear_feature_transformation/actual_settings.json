@@ -1,0 +1,458 @@
+[
+  {
+    "fold": "A",
+    "method": "baseline",
+    "path": "models\\nonlinear_feature_transformation\\A_baseline.joblib",
+    "sha256": "54b7746576ea912f874c7bd26074108be6ce03143decc45b847908ccaabf0fec",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.0078125,
+    "train_n": 3275,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 0.1815827999962493
+  },
+  {
+    "fold": "A",
+    "method": "signed_log",
+    "path": "models\\nonlinear_feature_transformation\\A_signed_log.joblib",
+    "sha256": "7fc7f991a92c1f83b66624e87554bccf863c1369e8f1337e7457f0f77c35dbb3",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "transform",
+        "TrainTransform"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.007812499999999998,
+    "train_n": 3275,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 0.1757439000066369
+  },
+  {
+    "fold": "A",
+    "method": "yeo_johnson",
+    "path": "models\\nonlinear_feature_transformation\\A_yeo_johnson.joblib",
+    "sha256": "34b851898e953f51edc1b10fe6bc6bf03c3cc0aff91cf9a896c267c45782326d",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "transform",
+        "TrainTransform"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.0078125,
+    "train_n": 3275,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 3.1155117999296635
+  },
+  {
+    "fold": "B",
+    "method": "baseline",
+    "path": "models\\nonlinear_feature_transformation\\B_baseline.joblib",
+    "sha256": "ced45b37c1c9623fad9a960aefabef9c5a53d1c629995a4e60898734e1a88631",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.0078125,
+    "train_n": 5933,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 0.4227065999875776
+  },
+  {
+    "fold": "B",
+    "method": "signed_log",
+    "path": "models\\nonlinear_feature_transformation\\B_signed_log.joblib",
+    "sha256": "faaa88b32cbcafd1490a398aebf941c6896eba6f5fea8e927ec232a64bf55320",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "transform",
+        "TrainTransform"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.0078125,
+    "train_n": 5933,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 0.3890108000487089
+  },
+  {
+    "fold": "B",
+    "method": "yeo_johnson",
+    "path": "models\\nonlinear_feature_transformation\\B_yeo_johnson.joblib",
+    "sha256": "3417fec759ea4b6aad6b95e4f12818556350b488ecfefafd9d7d3a1ae629a16d",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "transform",
+        "TrainTransform"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.0078125,
+    "train_n": 5933,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 3.982890599989332
+  },
+  {
+    "fold": "C",
+    "method": "baseline",
+    "path": "models\\nonlinear_feature_transformation\\C_baseline.joblib",
+    "sha256": "8a975b9f3685fab9f70bcfb53e54cfd67793f88a8b34c095116436bc2ee788bd",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.0078125,
+    "train_n": 9546,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 0.9823834000271744
+  },
+  {
+    "fold": "C",
+    "method": "signed_log",
+    "path": "models\\nonlinear_feature_transformation\\C_signed_log.joblib",
+    "sha256": "edbf71f987f00b51e0dff6f76667dab0368c44ae98c4e32fbd98d083fbb17060",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "transform",
+        "TrainTransform"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.0078125,
+    "train_n": 9546,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 0.8608341000508517
+  },
+  {
+    "fold": "C",
+    "method": "yeo_johnson",
+    "path": "models\\nonlinear_feature_transformation\\C_yeo_johnson.joblib",
+    "sha256": "0603ad1df3592b4ca205ba0046458c41a68d29e4ae0716c0f2a83dc6a683dc51",
+    "steps": [
+      [
+        "imputer",
+        "SimpleImputer"
+      ],
+      [
+        "transform",
+        "TrainTransform"
+      ],
+      [
+        "scaler",
+        "StandardScaler"
+      ],
+      [
+        "classifier",
+        "SVC"
+      ]
+    ],
+    "classifier_params": {
+      "C": 1.0,
+      "break_ties": false,
+      "cache_size": 512,
+      "class_weight": "balanced",
+      "coef0": 0.0,
+      "decision_function_shape": "ovr",
+      "degree": 3,
+      "gamma": "scale",
+      "kernel": "rbf",
+      "max_iter": -1,
+      "probability": false,
+      "random_state": 42,
+      "shrinking": true,
+      "tol": 0.001,
+      "verbose": false
+    },
+    "actual_gamma": 0.007812500000000003,
+    "train_n": 9546,
+    "classes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "original_fit_seconds": 5.558701999951154
+  }
+]

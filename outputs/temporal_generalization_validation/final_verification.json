@@ -1,0 +1,25 @@
+{
+  "completed_at_seoul": "2026-10-27T12:31:42.410948+09:00",
+  "test_status": {
+    "passed": 89,
+    "failed": 3,
+    "failed_tests": [
+      "tests.test_diagnostics::test_existing_results_and_models_unchanged",
+      "tests.test_models::test_eda_and_sources_preserved_report_complete",
+      "tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files"
+    ],
+    "new_tests": 12,
+    "new_failures": 0
+  },
+  "prior_files_unchanged": 574,
+  "raw_files_unchanged": 10,
+  "new_model_fits": 0,
+  "confirmed_independent_rows": 0,
+  "final_model_selection_changed": false,
+  "final_report_sha256": {
+    "temporal_generalization_validation_report.html": "dbcb6a59b1160b094121a25ea8836f070cc16ec7790c1ab6eaad0412ad754c37",
+    "temporal_generalization_validation_summary.md": "e77e912fc53d135150ae30c2f3ecd51df755d080694d353017bd829d928e2837",
+    "temporal_generalization_limitations.md": "0b33e7b72faf9fe5c9a13b9ce4a4d334bdd18b56e3d250899012444b87129368"
+  },
+  "graph_validation_sha256": "a320eaf0ed4f92466135901ad888a32d44cb625e1d06d2bb302b66c432b2d299"
+}

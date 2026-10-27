@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-10-27T14:11:35.929872+09:00",
+  "findings_frozen_before_evaluation": true,
+  "findings_sha256": "50b6c59684a47e5cbd8f72a627daf1e9567abeb8464ff8fde877a59772064a77",
+  "evaluated_settings": [
+    "early_mid",
+    "spread_mid",
+    "recent_mid",
+    "spread_max"
+  ],
+  "seeds": [
+    11,
+    23,
+    42,
+    67,
+    101
+  ],
+  "model_count": 20,
+  "independent_test": false,
+  "model_selection_changed": false
+}

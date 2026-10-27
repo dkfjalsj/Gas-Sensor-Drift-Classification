@@ -1,0 +1,4 @@
+scope,alert,windows,rows,errors,error_rate
+pooled_7_8,True,38,3800,391,0.10289473684210526
+batch7,True,36,3600,378,0.105
+batch8,True,2,200,13,0.065

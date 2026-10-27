@@ -1,0 +1,16 @@
+setting,fold,seed,macro_delta
+spread_max,A,11,0.0
+spread_max,A,23,0.0
+spread_max,A,42,0.0
+spread_max,A,67,0.0
+spread_max,A,101,0.0
+spread_max,B,11,0.0
+spread_max,B,23,0.0
+spread_max,B,42,0.0
+spread_max,B,67,0.0
+spread_max,B,101,0.0
+spread_max,C,11,0.0
+spread_max,C,23,0.0
+spread_max,C,42,0.0
+spread_max,C,67,0.0
+spread_max,C,101,0.0

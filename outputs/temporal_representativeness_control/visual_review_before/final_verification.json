@@ -1,0 +1,29 @@
+{
+  "completed_at": "2026-10-27T14:14:32.135481+09:00",
+  "test_status": {
+    "passed": 113,
+    "failed": 5,
+    "prior_failures": 3,
+    "additional_inventory_conflicts": 2,
+    "failed_tests": [
+      "tests.test_diagnostics::test_existing_results_and_models_unchanged",
+      "tests.test_models::test_eda_and_sources_preserved_report_complete",
+      "tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files",
+      "tests.test_temporal_generalization_validation::test_existing_files_raw_and_model_inventory_preserved",
+      "tests.test_toluene_deep_diagnostic::test_preserved_files_raw_models_and_config"
+    ],
+    "new_tests": 14,
+    "new_failures": 0
+  },
+  "prior_files_unchanged": 747,
+  "raw_files_unchanged": 10,
+  "old_models_unchanged": 140,
+  "new_model_files": 120,
+  "official_main_candidate": "Model A",
+  "model_selection_changed": false,
+  "report_sha256": {
+    "temporal_representativeness_control_report.html": "1e2bf9e34bcf00c98b5b43624aeb4644ab4608578a8dd4f14cc2bb56d481731c",
+    "temporal_representativeness_control_summary.md": "1583cf25cf56a47f092dc61eaf2a55d0860857cb17ecfa8e7d4fdb75a6c8a6b6",
+    "temporal_representativeness_control_limitations.md": "fdbd9a71b114683e16b3ec946f2550d81a33fff493b0a582992a58742540a5ad"
+  }
+}

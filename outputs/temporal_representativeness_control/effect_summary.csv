@@ -1,0 +1,9 @@
+comparison,base,treatment,mean_delta,seed_sd_delta,positive_seed_n,positive_fold_n,consistent_descriptive,protection_flag,statistical_significance_established
+spread_vs_early,early_mid,spread_mid,0.2627239157302444,0.02748102864526356,5,3,True,True,False
+recent_vs_early,early_mid,recent_mid,0.3073554771523637,0.039651309057863855,5,3,True,True,False
+recent_vs_spread,spread_mid,recent_mid,0.04463156142211931,0.016158669436448198,5,2,False,True,False
+size_mid_vs_small,spread_small,spread_mid,0.06261515703774374,0.047417991548850486,5,3,True,True,False
+size_max_vs_mid,spread_mid,spread_max,0.09021963053990592,0.016828580669422288,5,3,True,False,False
+unit_vs_balanced,spread_mid,spread_mid_unit,0.08730125926296263,0.019496144567708838,5,2,False,True,False
+anchor_vs_native,spread_mid,spread_mid_anchor,-0.019314077384087844,0.01200790786321204,0,0,False,True,False
+anchor_unit_vs_native_unit,spread_mid_unit,spread_mid_anchor_unit,-0.0480492306590104,0.0345387952529526,1,0,False,True,False
