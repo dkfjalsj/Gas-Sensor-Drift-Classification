@@ -1,0 +1,4 @@
+model,trial_id,n,exact_replay,class_mapping_ok,train_preprocessing_ok,model_sha256
+LR,B_LR_tune_C0p1,7977,True,True,True,a8860b64f1f9396b152def78dbd0c37735f6fa728c148c583c2541651295578a
+RF,B_RF_balanced,7977,True,True,True,e00c84666b8a321d91d92a4420c85515e0496ac335c2d2a0aeeadc09ecf7318b
+SVM,B_SVM_balanced,7977,True,True,True,1d6b20c94d1580d799e05ab5a9ce746bdb272d74f70ec2ff964011fffecfde32

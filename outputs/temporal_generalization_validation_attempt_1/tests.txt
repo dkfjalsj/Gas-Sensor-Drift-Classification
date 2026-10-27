@@ -1,0 +1,162 @@
+..F..................F..............F....F....F......................... [ 78%]
+....................                                                     [100%]
+================================== FAILURES ===================================
+_________________ test_existing_results_and_models_unchanged __________________
+
+    def test_existing_results_and_models_unchanged():
+        state=json.loads((OUT/'preservation.json').read_text(encoding='utf-8'))
+        assert state['existing_artifacts_unchanged'] and state['raw_files_unchanged']
+        for name,expected in state['before'].items():
+>           assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==expected
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_diagnostics.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python312\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Gas-Sensor-Drift-Classification/outputs/model_comparison/zNex~$haremetrics.csv')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Gas-Sensor-Drift-Classification\\outputs\\model_comparison\\zNex~$haremetrics.csv'
+
+C:\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_______________ test_eda_and_sources_preserved_report_complete ________________
+
+real_data = (       batch  source_line  gas  ...       f127        f128      row_id
+0          1            1    1  ...  -0.902241...3430, 3431, 3432, 3433, 3434, 3435]), 'test': array([ 3436,  3437,  3438, ..., 13907, 13908, 13909], shape=(10474,))}})
+
+    def test_eda_and_sources_preserved_report_complete(real_data):
+        state=json.loads((OUT/'preservation_checks.json').read_text(encoding='utf-8'))
+        assert state['eda_files_unchanged'] and state['source_files_unchanged']
+        for name,expected in state['before'].items():
+>           assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==expected
+E           AssertionError: assert '32974e022d81...49a573513c6bc' == '2adcd085c767...491a3306d723b'
+E             
+E             - 2adcd085c767f9fc675e60220392b7e7ea89808a0f1ade2d2ca491a3306d723b
+E             + 32974e022d81b0f382d1f8a4c35f75a6f5d3c0b3009fd28659a49a573513c6bc
+
+tests\test_models.py:137: AssertionError
+__________________ test_no_new_fit_calls_or_new_model_files ___________________
+
+    def test_no_new_fit_calls_or_new_model_files():
+        for name in ['temporal_failure_diagnostics.py', 'temporal_failure_report.py']:
+            tree = ast.parse((ROOT / 'src' / name).read_text(encoding='utf-8'))
+            assert not any(isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) and
+                           node.func.attr in ['fit', 'fit_transform', 'partial_fit'] for node in ast.walk(tree))
+        state = read_json('run_manifest.json')
+        assert state['new_model_fits'] == state['preprocessing_fits'] == 0
+        old_models = {name for name in state['before'] if name.endswith('.joblib')}
+        actual_models = {str(p.relative_to(ROOT)) for p in (ROOT / 'models').rglob('*.joblib')}
+>       assert old_models == actual_models
+E       AssertionError: assert {'models\\A_r....joblib', ...} == {'models\\A_r....joblib', ...}
+E         
+E         Extra items in the right set:
+E         'models\\temporal_robustness\\candidate_SVM_all.joblib'
+E         'models\\temporal_robustness\\C\\RF_kbest64.joblib'
+E         'models\\temporal_weighting\\C\\class_balanced.joblib'
+E         'models\\temporal_robustness\\A\\SVM_all.joblib'
+E         'models\\temporal_robustness\\A\\SVM_kbest32.joblib'...
+E         
+E         ...Full output truncated (93 lines hidden), use '-vv' to show
+
+tests\test_temporal_failure_diagnostics.py:157: AssertionError
+________________ test_historical_predictions_and_metrics_exact ________________
+
+    def test_historical_predictions_and_metrics_exact():
+        replay = pd.read_csv(OUT / 'historical_prediction_replay.csv')
+        assert replay.predictions_exact.all() and replay.labels_exact.all() and replay.model_hashes_match.all()
+>       assert set(replay.source.str.split('/').str[1]) >= {
+            'model_comparison', 'model_diagnostics', 'toluene_analysis', 'model_improvement',
+            'temporal_expansion', 'temporal_failure_diagnostics', 'temporal_robustness', 'temporal_weighting'}
+E       AssertionError: assert {'temporal_fa...nostics', nan} >= {'model_compa...ustness', ...}
+E         
+E         Extra items in the right set:
+E         'model_diagnostics'
+E         'model_comparison'
+E         'toluene_analysis'
+E         'temporal_expansion'
+E         'temporal_robustness'
+E         'temporal_weighting'
+E         'model_improvement'
+
+tests\test_temporal_generalization_validation.py:99: AssertionError
+__________________ test_graph_values_and_numeric_batch_order __________________
+
+    def test_graph_values_and_numeric_batch_order():
+        checks = pd.read_csv(OUT / 'graph_value_checks.csv', dtype={'scope': str})
+        metrics = pd.read_csv(OUT / 'evaluation_metrics.csv', dtype={'scope': str})
+        classes = pd.read_csv(OUT / 'class_metrics.csv', dtype={'scope': str})
+        matrices = pd.read_csv(OUT / 'confusion_matrices.csv', dtype={'scope': str})
+        assert checks.matches.all()
+        np.testing.assert_allclose(checks.displayed_value, checks.expected_value, atol=1e-10)
+        numeric = checks[checks.scope.isin(['8', '9', '10'])]
+        for _, group in numeric.groupby(['figure', 'series', 'model', 'gas_id', 'predicted_id', 'statistic'], sort=False):
+            values = group.scope.astype(int).tolist()
+            assert values == sorted(values)
+        for _, row in numeric.iterrows():
+            if row.statistic == 'macro_f1_pct':
+                expected = metrics[(metrics.model == row.model) & (metrics.scope == row.scope)].macro_f1.iloc[0] * 100
+            elif row.statistic == 'row_fraction_pct':
+                expected = matrices[(matrices.model == row.model) & (matrices.scope == row.scope) &
+                                    (matrices.actual_id == row.gas_id) & (matrices.predicted_id == row.predicted_id)].row_fraction.iloc[0] * 100
+            elif row.statistic == 'recall_delta_pp':
+                sub = classes[(classes.scope == row.scope) & (classes.gas_id == row.gas_id)].set_index('model')
+                expected = 100 * (sub.loc['B', 'recall'] - sub.loc['A', 'recall'])
+            else:
+>               sub = classes[(classes.model == row.model) & (classes.scope == row.scope) & (classes.gas_id == row.gas_id)].iloc[0]
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_temporal_generalization_validation.py:175: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.venv\Lib\site-packages\pandas\core\indexing.py:1192: in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.venv\Lib\site-packages\pandas\core\indexing.py:1753: in _getitem_axis
+    self._validate_integer(key, axis)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <pandas.core.indexing._iLocIndexer object at 0x000001FF0CC65C20>, key = 0
+axis = 0
+
+    def _validate_integer(self, key: int | np.integer, axis: AxisInt) -> None:
+        """
+        Check that 'key' is a valid position in the desired axis.
+    
+        Parameters
+        ----------
+        key : int
+            Requested position.
+        axis : int
+            Desired axis.
+    
+        Raises
+        ------
+        IndexError
+            If 'key' is not a valid position in axis 'axis'.
+        """
+        len_axis = len(self.obj._get_axis(axis))
+        if key >= len_axis or key < -len_axis:
+>           raise IndexError("single positional indexer is out-of-bounds")
+E           IndexError: single positional indexer is out-of-bounds
+
+.venv\Lib\site-packages\pandas\core\indexing.py:1686: IndexError
+=========================== short test summary info ===========================
+FAILED tests/test_diagnostics.py::test_existing_results_and_models_unchanged
+FAILED tests/test_models.py::test_eda_and_sources_preserved_report_complete
+FAILED tests/test_temporal_failure_diagnostics.py::test_no_new_fit_calls_or_new_model_files
+FAILED tests/test_temporal_generalization_validation.py::test_historical_predictions_and_metrics_exact
+FAILED tests/test_temporal_generalization_validation.py::test_graph_values_and_numeric_batch_order
+5 failed, 87 passed in 113.91s (0:01:53)

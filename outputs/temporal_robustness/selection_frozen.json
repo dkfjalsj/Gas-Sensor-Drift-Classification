@@ -1,0 +1,114 @@
+{
+  "frozen_at_seoul": "2026-10-27T11:00:58.417181+09:00",
+  "selected_candidate": "hard_representatives",
+  "raw_mean_leader": "hard_representatives",
+  "family_representatives": {
+    "LR": "LR_variance",
+    "RF": "RF_all",
+    "SVM": "SVM_variance"
+  },
+  "eligible_candidates": [
+    "LR_all",
+    "LR_variance",
+    "LR_correlation",
+    "RF_all",
+    "SVM_all",
+    "SVM_variance",
+    "SVM_correlation",
+    "hard_full",
+    "hard_representatives",
+    "rank_equal",
+    "rank_svm2"
+  ],
+  "selected_models": {
+    "hard_representatives": {
+      "path": "models\\temporal_robustness\\candidate_hard_representatives.joblib",
+      "sha256": "1c4fdf68214b1b7548ae0a5646864e9963a5592cc1a71805454744b1b3523133"
+    },
+    "SVM_all": {
+      "path": "models\\temporal_robustness\\candidate_SVM_all.joblib",
+      "sha256": "ffeb99f8df5907435d1c866b5704c67021f108031a1d0abd713064e0eb8245b0"
+    },
+    "LR_variance": {
+      "path": "models\\temporal_robustness\\candidate_LR_variance.joblib",
+      "sha256": "2df155001745e5e20df3955b86ebc37387a61663b299b3b0e8336789f0a38819"
+    },
+    "RF_all": {
+      "path": "models\\temporal_robustness\\candidate_RF_all.joblib",
+      "sha256": "606243db9d7b7637386061ee1e18b0ad71540917ed51592a8fb63b6133164edb"
+    },
+    "SVM_variance": {
+      "path": "models\\temporal_robustness\\candidate_SVM_variance.joblib",
+      "sha256": "d12dd6caf99a213b8eecde98e0e6d01dcc85402c5252edbb9c91074ba837955f"
+    }
+  },
+  "ensembles": [
+    {
+      "config_id": "hard_full",
+      "components": [
+        "LR_all",
+        "RF_all",
+        "SVM_all"
+      ],
+      "mode": "hard",
+      "weights": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "config_id": "hard_representatives",
+      "components": [
+        "LR_variance",
+        "RF_all",
+        "SVM_variance"
+      ],
+      "mode": "hard",
+      "weights": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "config_id": "rank_equal",
+      "components": [
+        "LR_variance",
+        "RF_all",
+        "SVM_variance"
+      ],
+      "mode": "rank",
+      "weights": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "config_id": "rank_svm2",
+      "components": [
+        "LR_variance",
+        "RF_all",
+        "SVM_variance"
+      ],
+      "mode": "rank",
+      "weights": [
+        1,
+        1,
+        2
+      ]
+    }
+  ],
+  "final_train_batches": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "based_on": "Folds A/B/C only",
+  "evaluation_seen_in_this_run": false,
+  "final_confirmed_model": false
+}

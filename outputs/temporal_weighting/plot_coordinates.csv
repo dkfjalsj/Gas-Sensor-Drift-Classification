@@ -1,0 +1,9 @@
+panel_train_end,model_id,batch,macro_f1
+6,stage6_SVM,9,0.6708477628484625
+6,stage6_SVM,10,0.5345630522709256
+6,train6_class_balanced,9,0.6708477628484625
+6,train6_class_balanced,10,0.5345630522709256
+7,stage6_SVM,9,0.6708477628484625
+7,stage6_SVM,10,0.5345630522709256
+7,train7_class_balanced,9,0.7378115649844896
+7,train7_class_balanced,10,0.6630895244303088

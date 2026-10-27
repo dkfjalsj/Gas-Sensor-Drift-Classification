@@ -1,0 +1,43 @@
+{
+  "frozen_at_seoul": "2026-10-27T10:18:19.893369+09:00",
+  "seed": 42,
+  "retrospective_reassignment": true,
+  "train_A_batches": [
+    1,
+    2,
+    3
+  ],
+  "train_B_batches": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "validation_batches": [
+    7,
+    8
+  ],
+  "exploratory_evaluation_batches": [
+    9,
+    10
+  ],
+  "split_sha256": "5ff210e64e5b9ef08a2cc024a0c59ba47ad1f5f1be8c1442d5a1fbe92e7c1e9c",
+  "new_fits": 17,
+  "initial_fits": 11,
+  "followup_fits": 6,
+  "base_settings_source": "training_config.json; original Standard LR/SVM, unscaled RF",
+  "base_settings_sha256": "0956191bff17ef45fad8b5f9b7dedb487cc9b852be9eee48a25771fbf6392dbb",
+  "initial_B": "base/ balanced for three families; robust-none for LR/SVM",
+  "tuning_B": "LR C=.1 or 10; RF trees=200 or depth=12+leaf=3; SVM C=10 or gamma=.001. Initial Validation winner fixes weight/scaler.",
+  "primary": "Validation per-Batch macro-F1 equal-weight mean over batches 7 and 8",
+  "eligibility": "Other four gas pooled Validation mean F1 must not fall more than .03 below same-family B baseline; focus gases are IDs 4 and 6.",
+  "tie": "Within .005 of best primary: larger min(Toluene F1,Acetaldehyde F1), larger minimum-class recall, larger pooled macro-F1, smaller Validation Batch SD, then fixed trial order. Margins are exploratory rules, not significance tests.",
+  "selection_pool": "Only condition B. One representative per family; global close joint candidates are representatives within .005 of highest primary.",
+  "refit_on_validation": false,
+  "feature_selection": false,
+  "pca": false,
+  "evaluation_gate": "Freeze selection and selected model bytes before any 9–10 predictions.",
+  "independent_final_test": false
+}

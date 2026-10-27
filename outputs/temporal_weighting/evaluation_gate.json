@@ -1,0 +1,8 @@
+{
+  "evaluation_started_at_seoul": "2026-10-27T11:22:49.048267+09:00",
+  "selection_sha256": "d9083b878a5e84cf7a8fc8f1df0493950079358d063dc75da5c6010400d8b402",
+  "selection_before_evaluation": true,
+  "evaluation_used_for_selection": false,
+  "original_SVM_reproduced": true,
+  "stage8_HardVoting_reproduced": true
+}

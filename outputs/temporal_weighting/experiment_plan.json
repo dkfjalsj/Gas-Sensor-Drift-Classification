@@ -1,0 +1,67 @@
+{
+  "frozen_at_seoul": "2026-10-27T11:22:22.713429+09:00",
+  "seed": 42,
+  "schemes": [
+    "class_balanced",
+    "time_linear",
+    "time_exp",
+    "time_recent",
+    "class_sample",
+    "gas_batch",
+    "time_class_shrink",
+    "time_gas_batch"
+  ],
+  "setting_count": 8,
+  "classifier_fits": 24,
+  "folds": {
+    "A": [
+      3,
+      6
+    ],
+    "B": [
+      6,
+      7
+    ],
+    "C": [
+      7,
+      8
+    ]
+  },
+  "final_comparison_train_ends": [
+    6,
+    7
+  ],
+  "primary_candidate_train_end": 6,
+  "model": "SVM RBF, StandardScaler, C=1, gamma=scale, 128 features; original other settings",
+  "preprocessing": "Unweighted median imputer and StandardScaler fitted only on each Train. Weights passed only to classifier. No feature selection or PCA.",
+  "formulas": {
+    "class_balanced": "c=N/(6*n_g), class_weight=balanced, sample_weight=None",
+    "time_linear": "raw=c*(1+u), class_weight=balanced, sample=(1+u)/mean(raw)",
+    "time_exp": "raw=c*2**u, class_weight=balanced, sample=2**u/mean(raw)",
+    "time_recent": "raw=c*t, t=1.75 for last two observed Train batches, else1",
+    "class_sample": "raw=c, class_weight=None, sample=c/mean(c); equivalence control",
+    "gas_batch": "raw=c*r; r=clip(sqrt(n_g/(m_g*n_gb)), .75,1.5); class_weight=None",
+    "time_class_shrink": "raw=sqrt(c)*(1+u); class_weight=None",
+    "time_gas_batch": "raw=c*r*sqrt(1+u); class_weight=None"
+  },
+  "normalization": "effective=raw/mean(raw); class multiplier*sample multiplier=effective; C_i=C*effective. u=ordinal rank among observed Train batches/(B-1), not elapsed time.",
+  "primary": "Equal-weight mean of Fold macro F1",
+  "guards": {
+    "mean_macro_max_drop": 0.005,
+    "mean_focus_recall_max_drop": 0.03,
+    "mean_other_four_f1_max_drop": 0.02,
+    "each_other_mean_f1_max_drop": 0.05,
+    "minimum_recall_max_drop": 0.02,
+    "each_fold_min_recall_max_drop": 0.05,
+    "no_new_zero_recall_pairs": true,
+    "evidence": "Nonbaseline must reduce zero pairs OR improve mean macro F1 by at least .002"
+  },
+  "tie": "Among guard-passing candidates and baseline, within .005 of best mean macro: fewer zero pairs, higher min recall, higher min(mean Toluene recall, mean Acetaldehyde recall), higher pooled macro, smaller Fold SD, fixed scheme order. Baseline retained if none pass.",
+  "range_comparison": "Baseline Train1-6 vs1-7 on common Batch8; not a range selection. Candidate weighting also paired at both ranges. No evaluation of Train1-7 on Batch7.",
+  "evaluation_gate": "Freeze candidate, selected model hashes and rules before any Batch9-10 predictions.",
+  "candidate_fallback": "Keep original stage6 saved SVM bytes if no nonbaseline candidate passes guards.",
+  "independent_test": false,
+  "test_reused": true,
+  "training_config_sha256": "0956191bff17ef45fad8b5f9b7dedb487cc9b852be9eee48a25771fbf6392dbb",
+  "official_weight_reference": "https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html"
+}

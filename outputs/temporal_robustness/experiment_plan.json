@@ -1,0 +1,143 @@
+{
+  "frozen_at_seoul": "2026-10-27T11:00:12.551799+09:00",
+  "seed": 42,
+  "folds": {
+    "A": [
+      3,
+      6
+    ],
+    "B": [
+      6,
+      7
+    ],
+    "C": [
+      7,
+      8
+    ]
+  },
+  "single_configurations": [
+    {
+      "config_id": "LR_all",
+      "family": "LR",
+      "method": "all"
+    },
+    {
+      "config_id": "LR_variance",
+      "family": "LR",
+      "method": "variance"
+    },
+    {
+      "config_id": "LR_correlation",
+      "family": "LR",
+      "method": "correlation"
+    },
+    {
+      "config_id": "LR_stability64",
+      "family": "LR",
+      "method": "stability64"
+    },
+    {
+      "config_id": "LR_kbest32",
+      "family": "LR",
+      "method": "kbest32"
+    },
+    {
+      "config_id": "LR_kbest64",
+      "family": "LR",
+      "method": "kbest64"
+    },
+    {
+      "config_id": "RF_all",
+      "family": "RF",
+      "method": "all"
+    },
+    {
+      "config_id": "RF_variance",
+      "family": "RF",
+      "method": "variance"
+    },
+    {
+      "config_id": "RF_correlation",
+      "family": "RF",
+      "method": "correlation"
+    },
+    {
+      "config_id": "RF_stability64",
+      "family": "RF",
+      "method": "stability64"
+    },
+    {
+      "config_id": "RF_kbest32",
+      "family": "RF",
+      "method": "kbest32"
+    },
+    {
+      "config_id": "RF_kbest64",
+      "family": "RF",
+      "method": "kbest64"
+    },
+    {
+      "config_id": "SVM_all",
+      "family": "SVM",
+      "method": "all"
+    },
+    {
+      "config_id": "SVM_variance",
+      "family": "SVM",
+      "method": "variance"
+    },
+    {
+      "config_id": "SVM_correlation",
+      "family": "SVM",
+      "method": "correlation"
+    },
+    {
+      "config_id": "SVM_stability64",
+      "family": "SVM",
+      "method": "stability64"
+    },
+    {
+      "config_id": "SVM_kbest32",
+      "family": "SVM",
+      "method": "kbest32"
+    },
+    {
+      "config_id": "SVM_kbest64",
+      "family": "SVM",
+      "method": "kbest64"
+    }
+  ],
+  "single_settings": 18,
+  "ensemble_settings": 4,
+  "total_settings": 22,
+  "classifier_fits": 54,
+  "final_train_batches": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "final_uses_existing_fold_B_fits": true,
+  "exploratory_evaluation_batches": [
+    9,
+    10
+  ],
+  "baseline": "saved B_SVM_balanced",
+  "variance": "Keep 115 highest Train variances after Train min-max range normalization; remove bottom 13 (approximately 10%); not raw-unit variance.",
+  "correlation": "Greedy original feature order; remove a feature if abs(Train Pearson r)>.98 with any retained earlier feature.",
+  "stability": "Keep 64 lowest mean absolute same-gas Train batch mean shifts divided by global Train SD; equal gas/batch groups, exclude gases appearing in only one batch.",
+  "supervised": "SelectKBest ANOVA f_classif k=32 or64; fit y uses Train only.",
+  "model_settings": "LR balanced C=.1; RF balanced100 trees; SVM balanced C1 gamma=scale. StandardScaler LR/SVM, RF unscaled; median imputer then selector then scaling/classifier.",
+  "ensembles": "hard_full; hard_representatives; rank_equal; rank_svm2. Rank points5..0; weights(1,1,1) or(1,1,2); no probability averaging.",
+  "soft_voting": "Not run: saved SVM probability=False; no time-respecting calibration validated.",
+  "primary": "Equal-weight mean of three Fold macro F1 values",
+  "protection": "Mean other-four F1 >= reference-.03 and each other-four mean class F1 >= reference-.10. Reference own-family full for family representatives; SVM_all globally.",
+  "ties": "Within .005 primary: fewer zero-recall fold/class pairs; higher minimum recall; higher min(mean Toluene F1, mean Acetaldehyde F1); higher pooled fold macro F1; lower fold SD; fixed config order.",
+  "fold_dependence": "Overlapping training ranges; no independent-replicate significance claims. Family selection followed by ensemble validation is not nested; optimistic exploration.",
+  "evaluation_gate": "Freeze candidate, weights, selected model hashes before 9–10 predictions.",
+  "prior_test_reuse": true,
+  "independent_test": false,
+  "training_config_sha256": "0956191bff17ef45fad8b5f9b7dedb487cc9b852be9eee48a25771fbf6392dbb"
+}

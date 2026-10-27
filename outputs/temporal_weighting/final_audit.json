@@ -1,0 +1,23 @@
+{
+  "completed_at_seoul": "2026-10-27T11:35:21.847596+09:00",
+  "full_suite_passed": 77,
+  "full_suite_failed": 3,
+  "failed_tests": [
+    "tests.test_diagnostics::test_existing_results_and_models_unchanged",
+    "tests.test_models::test_eda_and_sources_preserved_report_complete",
+    "tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files"
+  ],
+  "new_tests": 11,
+  "new_failures": 0,
+  "prior_files_unchanged": 445,
+  "raw_files_unchanged": 10,
+  "frozen_selection_sha256": "d9083b878a5e84cf7a8fc8f1df0493950079358d063dc75da5c6010400d8b402",
+  "current_report_sha256": "6deeb84be841b3bd1f631c672dfe8fbb9881ea6bae23a5ccf1f5d247697bf60f",
+  "current_selection_doc_sha256": "a599ec943806cfb3b929bfd71c538f1968ce2260086b5241ee9a9dbac84964ab",
+  "initial_verification_sha256": "b5ce7f4f84623c298312a1fa28b8d24dd8a6d47361007a751561aa57ba6fda74",
+  "plot_correction_sha256": "06ce75420021b29aa4cc96574e7b9b824cb8396b685cf8d79392df40bd6bf1da",
+  "closeout_document_sha256": "92510af362b733f29d91c46b660d1038174e87684198428063608ac5acae60c3",
+  "closeout_source_sha256": "11a38d778eb3189613c6f24a294d7991de31b0cedbf877bb19611180415e66bd",
+  "initial_test_records_preserved": true,
+  "model_or_prediction_changes": false
+}

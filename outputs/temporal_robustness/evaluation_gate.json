@@ -1,0 +1,9 @@
+{
+  "evaluation_started_at_seoul": "2026-10-27T11:00:59.088680+09:00",
+  "selection_sha256": "eb9c8f6df944552557f80427e4faedd46a3c63f647ed02cc7d0b379ab886ac95",
+  "selection_frozen_at_seoul": "2026-10-27T11:00:58.417181+09:00",
+  "selection_before_evaluation": true,
+  "evaluation_used_for_selection": false,
+  "baseline_exact_replay": true,
+  "fresh_full_SVM_matches_stage6": true
+}

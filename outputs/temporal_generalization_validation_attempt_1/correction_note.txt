@@ -1,0 +1,6 @@
+Stage10 attempt1 retained without changing previous stages or historical hash records.
+Initial suite: 87 passed, 5 failed; three historical failures plus two new test issues.
+Corrections: Windows path separator handling and sensor-median graph lookup in new tests.
+Visual improvements: ASCII minus for font coverage, all-used-glyph audit, tight PNG bounds for legends.
+No classifier/preprocessor fit, model change, parameter change or evaluation result change.
+Original Stage10 source versions and reports retained in source_snapshots and report_snapshots.

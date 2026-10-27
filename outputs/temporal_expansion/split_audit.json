@@ -1,0 +1,87 @@
+[
+  {
+    "partition": "A",
+    "n": 3275,
+    "batches": [
+      1,
+      2,
+      3
+    ],
+    "class_counts": {
+      "1": 619,
+      "2": 922,
+      "3": 399,
+      "4": 379,
+      "5": 877,
+      "6": 79
+    },
+    "toluene_n": 79,
+    "acetaldehyde_n": 379,
+    "row_overlap": 0,
+    "exact_feature_overlap": 0
+  },
+  {
+    "partition": "B",
+    "n": 5933,
+    "batches": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "class_counts": {
+      "1": 1225,
+      "2": 1579,
+      "3": 541,
+      "4": 484,
+      "5": 1558,
+      "6": 546
+    },
+    "toluene_n": 546,
+    "acetaldehyde_n": 484,
+    "row_overlap": 0,
+    "exact_feature_overlap": 0
+  },
+  {
+    "partition": "validation",
+    "n": 3907,
+    "batches": [
+      7,
+      8
+    ],
+    "class_counts": {
+      "1": 679,
+      "2": 692,
+      "3": 400,
+      "4": 777,
+      "5": 773,
+      "6": 586
+    },
+    "toluene_n": 586,
+    "acetaldehyde_n": 777,
+    "row_overlap": 0,
+    "exact_feature_overlap": 0
+  },
+  {
+    "partition": "evaluation",
+    "n": 4070,
+    "batches": [
+      9,
+      10
+    ],
+    "class_counts": {
+      "1": 661,
+      "2": 655,
+      "3": 700,
+      "4": 675,
+      "5": 678,
+      "6": 701
+    },
+    "toluene_n": 701,
+    "acetaldehyde_n": 675,
+    "row_overlap": 0,
+    "exact_feature_overlap": 0
+  }
+]

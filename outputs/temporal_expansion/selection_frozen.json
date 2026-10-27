@@ -1,0 +1,30 @@
+{
+  "frozen_at_seoul": "2026-10-27T10:18:42.594715+09:00",
+  "selection_data": "validation_batches_7_8_only",
+  "primary_metric": "val_equal_batch_macro_f1",
+  "family_representatives": [
+    "B_LR_tune_C0p1",
+    "B_RF_balanced",
+    "B_SVM_balanced"
+  ],
+  "close_joint_candidates": [
+    "B_SVM_balanced"
+  ],
+  "priority_candidate": "B_SVM_balanced",
+  "selected_models": {
+    "B_LR_tune_C0p1": {
+      "path": "models\\temporal_expansion\\B_LR_tune_C0p1.joblib",
+      "sha256": "a8860b64f1f9396b152def78dbd0c37735f6fa728c148c583c2541651295578a"
+    },
+    "B_RF_balanced": {
+      "path": "models\\temporal_expansion\\B_RF_balanced.joblib",
+      "sha256": "e00c84666b8a321d91d92a4420c85515e0496ac335c2d2a0aeeadc09ecf7318b"
+    },
+    "B_SVM_balanced": {
+      "path": "models\\temporal_expansion\\B_SVM_balanced.joblib",
+      "sha256": "1d6b20c94d1580d799e05ab5a9ce746bdb272d74f70ec2ff964011fffecfde32"
+    }
+  },
+  "refit_on_validation": false,
+  "final_model_confirmed": false
+}

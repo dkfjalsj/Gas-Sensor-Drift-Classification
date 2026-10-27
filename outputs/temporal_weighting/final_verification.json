@@ -1,0 +1,22 @@
+{
+  "full_suite_passed": 76,
+  "full_suite_failed": 3,
+  "failed_tests": [
+    "tests.test_diagnostics::test_existing_results_and_models_unchanged",
+    "tests.test_models::test_eda_and_sources_preserved_report_complete",
+    "tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files"
+  ],
+  "new_tests": 10,
+  "new_code_test_failures": 0,
+  "existing_failure_count": 3,
+  "old_files_preserved": 445,
+  "old_models_preserved": 114,
+  "new_model_files": 26,
+  "selection_sha256": "d9083b878a5e84cf7a8fc8f1df0493950079358d063dc75da5c6010400d8b402",
+  "candidate_unchanged_after_evaluation": true,
+  "report_before_review_sha256": "dc62e178eb1cc740a0733c14b22f42daf8d3ea06cc0636f0771db5680179f453",
+  "report_final_sha256": "f09c2a6acbba53f5caa062fbd332f5ecfbba27e10f1e0bac52ffd50d8ca8c6e9",
+  "selection_document_sha256": "e5bfcf41fc7cedda123c37d639d04cc4bb71ddaa863c9bbeb83a818cc7791098",
+  "review_code_sha256": "f0f2382487d4af169f45f446503bff20b8dc7a138e1d17a94aa4d1c676a01604",
+  "independent_test": false
+}

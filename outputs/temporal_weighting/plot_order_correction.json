@@ -1,0 +1,16 @@
+{
+  "corrected_at_seoul": "2026-10-27T11:31:04.495760+09:00",
+  "reason": "Numeric batch order replaces lexicographic order in one new plot.",
+  "snapshots": {
+    "report_before_plot_order_fix.html": "f09c2a6acbba53f5caa062fbd332f5ecfbba27e10f1e0bac52ffd50d8ca8c6e9",
+    "selection_before_plot_order_fix.md": "e5bfcf41fc7cedda123c37d639d04cc4bb71ddaa863c9bbeb83a818cc7791098",
+    "evaluation_range_comparison_before_order_fix.png": "acc2693d09f6da12fd2863093b2805c15d840fddd03a259676014826328e8ccb"
+  },
+  "corrected_plot_sha256": "1da272f986b43c2e0296943c10e37a1309873635a4df73103a87f96f00774282",
+  "report_current_sha256": "6deeb84be841b3bd1f631c672dfe8fbb9881ea6bae23a5ccf1f5d247697bf60f",
+  "selection_document_current_sha256": "a599ec943806cfb3b929bfd71c538f1968ce2260086b5241ee9a9dbac84964ab",
+  "frozen_selection_sha256": "d9083b878a5e84cf7a8fc8f1df0493950079358d063dc75da5c6010400d8b402",
+  "correction_code_sha256": "7b49894245215deee1c58a41b796a3098aa14da9edb8c7216a263efa8835acd5",
+  "model_or_metric_changes": false,
+  "older_hash_records_modified": false
+}
