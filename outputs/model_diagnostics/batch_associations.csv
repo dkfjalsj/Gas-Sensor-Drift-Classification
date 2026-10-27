@@ -1,0 +1,7 @@
+experiment,model,n_batches,spearman_shift_vs_f1_loss
+B_early,LogisticRegression,5,0.3
+B_early,RandomForest,5,0.09999999999999999
+B_early,SVM_RBF,5,0.6
+B_history,LogisticRegression,5,0.49999999999999994
+B_history,RandomForest,5,0.6
+B_history,SVM_RBF,5,-0.09999999999999999

@@ -1,0 +1,10 @@
+experiment,model,rows,exact_match
+A_random,LogisticRegression,5564,True
+A_random,RandomForest,5564,True
+A_random,SVM_RBF,5564,True
+B_early,LogisticRegression,13465,True
+B_early,RandomForest,13465,True
+B_early,SVM_RBF,13465,True
+B_history,LogisticRegression,10635,True
+B_history,RandomForest,10635,True
+B_history,SVM_RBF,10635,True

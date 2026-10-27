@@ -1,0 +1,18 @@
+{
+  "generated_at_seoul": "2026-10-26T17:22:28.582675+09:00",
+  "new_classifier_fits": 0,
+  "diagnostic_pca_fit": "2 exploratory PCA fits, Train only; no classifier changes",
+  "prediction_source": "existing predictions verified by replay; Train predictions added as resubstitution diagnostics",
+  "prediction_replay_rows": 88992,
+  "benchmark_repetitions": 3,
+  "common_batches": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "code_sha256": "de1dab10b851654cd4842a3366990905a88d1ba34bc0c7baf8772ac0494ced3d",
+  "post_test_exploratory": true,
+  "final_model_selected": false
+}

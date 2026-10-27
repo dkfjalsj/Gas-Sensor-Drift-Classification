@@ -1,0 +1,89 @@
+..F..........F...F..F..............                                      [100%]
+================================== FAILURES ===================================
+_________________ test_existing_results_and_models_unchanged __________________
+
+    def test_existing_results_and_models_unchanged():
+        state=json.loads((OUT/'preservation.json').read_text(encoding='utf-8'))
+        assert state['existing_artifacts_unchanged'] and state['raw_files_unchanged']
+        for name,expected in state['before'].items():
+>           assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==expected
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_diagnostics.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python312\Lib\pathlib.py:1019: in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('D:/Gas-Sensor-Drift-Classification/outputs/model_comparison/zNex~$haremetrics.csv')
+mode = 'rb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Gas-Sensor-Drift-Classification\\outputs\\model_comparison\\zNex~$haremetrics.csv'
+
+C:\Python312\Lib\pathlib.py:1013: FileNotFoundError
+_______________ test_eda_and_sources_preserved_report_complete ________________
+
+real_data = (       batch  source_line  gas  ...       f127        f128      row_id
+0          1            1    1  ...  -0.902241...3430, 3431, 3432, 3433, 3434, 3435]), 'test': array([ 3436,  3437,  3438, ..., 13907, 13908, 13909], shape=(10474,))}})
+
+    def test_eda_and_sources_preserved_report_complete(real_data):
+        state=json.loads((OUT/'preservation_checks.json').read_text(encoding='utf-8'))
+        assert state['eda_files_unchanged'] and state['source_files_unchanged']
+        for name,expected in state['before'].items():
+>           assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest()==expected
+E           AssertionError: assert '32974e022d81...49a573513c6bc' == '2adcd085c767...491a3306d723b'
+E             
+E             - 2adcd085c767f9fc675e60220392b7e7ea89808a0f1ade2d2ca491a3306d723b
+E             + 32974e022d81b0f382d1f8a4c35f75a6f5d3c0b3009fd28659a49a573513c6bc
+
+tests\test_models.py:137: AssertionError
+_____________________ test_distance_and_overlap_reference _____________________
+
+    def test_distance_and_overlap_reference():
+        assert marginal_overlap([0, 1], [0, 1], [-np.inf, .5, np.inf]) == 1
+        assert marginal_overlap([0, 0], [1, 1], [-np.inf, .5, np.inf]) == 0
+        frame, _ = load_dataset(read_config())
+        train = frame[frame.batch <= 3]
+        ref = train[train.gas == 6].f001
+        target = frame[(frame.batch == 10) & (frame.gas == 6)].f001
+        d = pd.read_csv(OUT / 'feature_distances.csv')
+        row = d[(d.experiment == 'B_history') & (d.reference_gas_id == 6) & (d.batch == 10) & (d.feature == 'f001')].iloc[0]
+        assert row.wasserstein_raw == pytest.approx(wasserstein_distance(ref, target))
+        assert row.wasserstein_scaled == pytest.approx(wasserstein_distance(ref, target) / train.f001.std(ddof=0))
+>       assert d.histogram_overlap.between(0, 1).all()
+E       assert np.False_
+E        +  where np.False_ = all()
+E        +    where all = 0        True\n1        True\n2        True\n3        True\n4        True\n         ... \n10747    True\n10748    True\n10749    True\n10750    True\n10751    True\nName: histogram_overlap, Length: 10752, dtype: bool.all
+E        +      where 0        True\n1        True\n2        True\n3        True\n4        True\n         ... \n10747    True\n10748    True\n10749    True\n10750    True\n10751    True\nName: histogram_overlap, Length: 10752, dtype: bool = between(0, 1)
+E        +        where between = 0        0.710811\n1        0.631532\n2        0.611111\n3        0.693994\n4        0.722823\n           ...   \n10747    0...  0.090000\n10749    0.735738\n10750    0.831540\n10751    0.584747\nName: histogram_overlap, Length: 10752, dtype: float64.between
+E        +          where 0        0.710811\n1        0.631532\n2        0.611111\n3        0.693994\n4        0.722823\n           ...   \n10747    0...  0.090000\n10749    0.735738\n10750    0.831540\n10751    0.584747\nName: histogram_overlap, Length: 10752, dtype: float64 =       experiment  batch  ... wasserstein_scaled  histogram_overlap\n0        B_early      1  ...           0.221264    ...108486           0.831540\n10751  B_history     10  ...           0.218079           0.584747\n\n[10752 rows x 10 columns].histogram_overlap
+
+tests\test_toluene.py:69: AssertionError
+_____________ test_no_fit_or_model_overwrite_and_report_complete ______________
+
+    def test_no_fit_or_model_overwrite_and_report_complete():
+        for name in ['analyze_toluene.py', 'toluene_report.py']:
+            tree = ast.parse((ROOT / 'src' / name).read_text(encoding='utf-8'))
+            calls = [node for node in ast.walk(tree) if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)]
+>           assert not any(node.func.attr in ['fit', 'fit_transform', 'dump'] for node in calls)
+E           assert not True
+E            +  where True = any(<generator object test_no_fit_or_model_overwrite_and_report_complete.<locals>.<genexpr> at 0x0000029699D63920>)
+
+tests\test_toluene.py:102: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_diagnostics.py::test_existing_results_and_models_unchanged
+FAILED tests/test_models.py::test_eda_and_sources_preserved_report_complete
+FAILED tests/test_toluene.py::test_distance_and_overlap_reference - assert np...
+FAILED tests/test_toluene.py::test_no_fit_or_model_overwrite_and_report_complete
+4 failed, 31 passed in 18.61s
