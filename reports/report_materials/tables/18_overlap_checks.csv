@@ -1,0 +1,11 @@
+left,right,row_overlap,exact_feature_overlap
+reference,calibration,0,0
+reference,internal,0,0
+reference,batch7,0,0
+reference,batch8,0,0
+calibration,internal,0,0
+calibration,batch7,0,0
+calibration,batch8,0,0
+internal,batch7,0,0
+internal,batch8,0,0
+batch7,batch8,0,0

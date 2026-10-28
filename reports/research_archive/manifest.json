@@ -1,0 +1,674 @@
+[
+  {
+    "path": ".pytest_cache/.gitignore",
+    "bytes": 37,
+    "sha256": "3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd.gz",
+    "compressed_sha256": "9f93a52edc94486d7259bf0910fa3362d56ff2a81bbdc30ec8ea496fd3cb9653"
+  },
+  {
+    "path": ".pytest_cache/CACHEDIR.TAG",
+    "bytes": 191,
+    "sha256": "37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4.gz",
+    "compressed_sha256": "ba76677f3a30716eb868223271a70f4455d38606f0f40739a789c6815f777d95"
+  },
+  {
+    "path": ".pytest_cache/README.md",
+    "bytes": 302,
+    "sha256": "73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad.gz",
+    "compressed_sha256": "bd86753639ff0cb3936a48383b871346ad819d1aa4ea5052900b87ba625d3411"
+  },
+  {
+    "path": ".pytest_cache/v/cache/lastfailed",
+    "bytes": 166,
+    "sha256": "5163ef0b43e7f3281fa2758022215b540d6c647cc0f3c93f5515ae9adb25caca",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/5163ef0b43e7f3281fa2758022215b540d6c647cc0f3c93f5515ae9adb25caca.gz",
+    "compressed_sha256": "203aea9e4fe8dc0ac46987f0c97c0721fece1df147511bece88ad439077f9748"
+  },
+  {
+    "path": ".pytest_cache/v/cache/nodeids",
+    "bytes": 8276,
+    "sha256": "1adc9f9b76527599f1c10388e7d9cfa9455ea0c9cb421b7cc50cfa4125b58920",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/1adc9f9b76527599f1c10388e7d9cfa9455ea0c9cb421b7cc50cfa4125b58920.gz",
+    "compressed_sha256": "66b7a9204e72cb8ae2bbcf868f46fc446d8f32442cf5fde9ecc82bb0f1cd3e96"
+  },
+  {
+    "path": "outputs/gas_specific_temporal_balancing/visual_review_before/gas_specific_temporal_balancing_report.html",
+    "bytes": 1469257,
+    "sha256": "57dbce8356d272af2230993b88bc53589c86d9427d8ae260c08043ec96db5b53",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/57dbce8356d272af2230993b88bc53589c86d9427d8ae260c08043ec96db5b53.gz",
+    "compressed_sha256": "d3e628f3b2f5bdb2217dd8355171ee216685fbb0e621fdd189c562a7f53fa383"
+  },
+  {
+    "path": "outputs/temporal_generalization_validation_attempt_1/report_snapshots/temporal_generalization_validation_report.html",
+    "bytes": 1262994,
+    "sha256": "307f420cc68d2ca4c5a6195b14e50047e01c51c328a4afea443e17cb45803811",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/307f420cc68d2ca4c5a6195b14e50047e01c51c328a4afea443e17cb45803811.gz",
+    "compressed_sha256": "3730c0b8b7b349dfa79b5337b9c6be480c132f2a26e1b3d4121abf4738d36b3d"
+  },
+  {
+    "path": "outputs/temporal_representativeness_control/visual_review_before/temporal_representativeness_control_report.html",
+    "bytes": 989640,
+    "sha256": "1e2bf9e34bcf00c98b5b43624aeb4644ab4608578a8dd4f14cc2bb56d481731c",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/1e2bf9e34bcf00c98b5b43624aeb4644ab4608578a8dd4f14cc2bb56d481731c.gz",
+    "compressed_sha256": "3c9a6190b313b6714887d6a3905e3da13d7f835180f35f1489340674435203b7"
+  },
+  {
+    "path": "outputs/temporal_weighting/report_before_plot_order_fix.html",
+    "bytes": 632519,
+    "sha256": "f09c2a6acbba53f5caa062fbd332f5ecfbba27e10f1e0bac52ffd50d8ca8c6e9",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/f09c2a6acbba53f5caa062fbd332f5ecfbba27e10f1e0bac52ffd50d8ca8c6e9.gz",
+    "compressed_sha256": "878657d2b2648311064b08ede3e9d386d1a914e768ed098999e29b73da40b085"
+  },
+  {
+    "path": "outputs/toluene_analysis_attempt_1/toluene_failure_analysis.html",
+    "bytes": 1246652,
+    "sha256": "92dc4080bac0a4799960d5eee25d5965b705210d4f57bcc31fe1406d2dee6bb4",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/92dc4080bac0a4799960d5eee25d5965b705210d4f57bcc31fe1406d2dee6bb4.gz",
+    "compressed_sha256": "a723d18ec8fc28f66644c2e7b41d1678807dcdb39a7df509c0dd4b259e1e11fd"
+  },
+  {
+    "path": "outputs/toluene_failure_deep_diagnostic_first_review/review_report_snapshot/toluene_failure_deep_diagnostic_report.html",
+    "bytes": 1931825,
+    "sha256": "9d6274add660a41095a6002cf153b5ebe08bf549bac6d8afd11389fe246a98d0",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/9d6274add660a41095a6002cf153b5ebe08bf549bac6d8afd11389fe246a98d0.gz",
+    "compressed_sha256": "130fff2f6697e8d79bd7bd57478b2fda4ea09782b88179c087cecdd676f88e62"
+  },
+  {
+    "path": "reports/drift_detection_limitations.md",
+    "bytes": 4867,
+    "sha256": "907e7c1fe53fa92d9866db996bee4124acef7963088b712a39ba876d054ca6b6",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/907e7c1fe53fa92d9866db996bee4124acef7963088b712a39ba876d054ca6b6.gz",
+    "compressed_sha256": "57efb8d40310527cc626adc1b1c05247a223e481d25f347467d1d9e19a8c05e7"
+  },
+  {
+    "path": "reports/drift_detection_report.html",
+    "bytes": 679365,
+    "sha256": "7402d86021ad5f2c40abbfc1e51160c18edcdd516c03183108656aa0888dda3f",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/7402d86021ad5f2c40abbfc1e51160c18edcdd516c03183108656aa0888dda3f.gz",
+    "compressed_sha256": "0d7eebc9911bc6f91949bdc46a4bbbe4bf53ccee87c74714f94e9f66b8241feb"
+  },
+  {
+    "path": "reports/drift_detection_sensitivity_report.html",
+    "bytes": 640466,
+    "sha256": "1cd6657fb597258f2b942aa49fcdb11e3cbd56ec1c24e03b2c6de4d6992a28d4",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/1cd6657fb597258f2b942aa49fcdb11e3cbd56ec1c24e03b2c6de4d6992a28d4.gz",
+    "compressed_sha256": "481d3a02cea838f0af052f3e5d44ccdde0c394834e55869e49f2e2d33db1edbe"
+  },
+  {
+    "path": "reports/drift_detection_sensitivity_report.md",
+    "bytes": 40925,
+    "sha256": "8aa0c25cf156605c7defe74f5c34887715f0b35ef235c196da199e1fdb209fe5",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/8aa0c25cf156605c7defe74f5c34887715f0b35ef235c196da199e1fdb209fe5.gz",
+    "compressed_sha256": "5f8df1d6d7cf789e144a7afea11fcdb59c9cd0d413a1c550cf6c0f209330a21f"
+  },
+  {
+    "path": "reports/drift_detection_summary.md",
+    "bytes": 11299,
+    "sha256": "3e3437c3a531512f2597ea4ed5eb107dde862a5c8f5bf3a2ad1756cc0d0dffde",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/3e3437c3a531512f2597ea4ed5eb107dde862a5c8f5bf3a2ad1756cc0d0dffde.gz",
+    "compressed_sha256": "2284d72bcb6001029b8024faa79215d6a6bb48e093585eea2e4d2caf89812e0a"
+  },
+  {
+    "path": "reports/eda_report.html",
+    "bytes": 1608988,
+    "sha256": "c6a7b1b4f38211169dd7111dd4349eb219d4a330030ec59d94e3077aac263bd9",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/c6a7b1b4f38211169dd7111dd4349eb219d4a330030ec59d94e3077aac263bd9.gz",
+    "compressed_sha256": "43c83c8b88a10ff847dfc352f7cf5e10ff369de6f7c7e828f7bde9f62ab34b5a"
+  },
+  {
+    "path": "reports/evaluation_design.md",
+    "bytes": 5609,
+    "sha256": "df167c648596b3dfc62113c5846c59162e687b4596b2387ce29abbdfb6dbedbe",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/df167c648596b3dfc62113c5846c59162e687b4596b2387ce29abbdfb6dbedbe.gz",
+    "compressed_sha256": "85495415a4f0e26b3b4698f80f3dd88c72e5443e24da4c0005bc396fe7cd1ef7"
+  },
+  {
+    "path": "reports/Gas_Sensor_Drift_Final_Report.md",
+    "bytes": 1898775,
+    "sha256": "dc60a7ff0d074ee67117000f748dc3c4838e7e0d5315a06bab503163ab9581a4",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/dc60a7ff0d074ee67117000f748dc3c4838e7e0d5315a06bab503163ab9581a4.gz",
+    "compressed_sha256": "59c8328287d75ca0f4076898e6c6eee4dd02b15b2f4b0b4954a588a9457fc43b"
+  },
+  {
+    "path": "reports/gas_specific_temporal_balancing_limitations.md",
+    "bytes": 1727,
+    "sha256": "ba9da5fe572298c898e841eb7d551fa4a882d71dc73a0ad407bda7f7ccf9c933",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/ba9da5fe572298c898e841eb7d551fa4a882d71dc73a0ad407bda7f7ccf9c933.gz",
+    "compressed_sha256": "224c241ec4ca2fe4b37809928ca28da58a9398004d4d8c9f97f7217f35bef692"
+  },
+  {
+    "path": "reports/gas_specific_temporal_balancing_report.html",
+    "bytes": 1468435,
+    "sha256": "99e2358d9e1b31768391408d96559ea9d1b23aaa3cd29e31df80cdaa1be2f9ba",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/99e2358d9e1b31768391408d96559ea9d1b23aaa3cd29e31df80cdaa1be2f9ba.gz",
+    "compressed_sha256": "f614de11520b4824cda6dfb6a2c66bfa2246e25c148b1c273edcfe8d024e7c1b"
+  },
+  {
+    "path": "reports/gas_specific_temporal_balancing_summary.md",
+    "bytes": 6263,
+    "sha256": "c111f3fefd077934585a85389f8cc0017ca677d2452c370af730508e59ab5fc4",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/c111f3fefd077934585a85389f8cc0017ca677d2452c370af730508e59ab5fc4.gz",
+    "compressed_sha256": "2c331c18e57677cefd7bbd7fca59b7a2d2abaf90f1c064ef2642f2f7b82133e6"
+  },
+  {
+    "path": "reports/hgb_algorithm_comparison_limitations.md",
+    "bytes": 1770,
+    "sha256": "665ee36aa0fb8e2b31765f775879f52650c26c58edc0ab7dde21189c07ba2cf7",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/665ee36aa0fb8e2b31765f775879f52650c26c58edc0ab7dde21189c07ba2cf7.gz",
+    "compressed_sha256": "6ebf5e5af4b32d878a61a634e9edaf02d5de326522bbbf3acb51e3cf155d6f09"
+  },
+  {
+    "path": "reports/hgb_algorithm_comparison_report.html",
+    "bytes": 885587,
+    "sha256": "a1996ee6a1c784cdf32155a367bf99a53b365b96eb2ca3d38a995190cf89bab3",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/a1996ee6a1c784cdf32155a367bf99a53b365b96eb2ca3d38a995190cf89bab3.gz",
+    "compressed_sha256": "0d32870cd99ef4b54b9ad357c3e2216a0e273af18a74f46e3321df1944df350e"
+  },
+  {
+    "path": "reports/hgb_algorithm_comparison_summary.md",
+    "bytes": 10493,
+    "sha256": "92015cb1f35911cd67b3264fb982b34b983b1275a02334bb8eb6fe09dcab86f2",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/92015cb1f35911cd67b3264fb982b34b983b1275a02334bb8eb6fe09dcab86f2.gz",
+    "compressed_sha256": "4bd1e1f81c96ecf46c9503adf4f3cd329e07be5fde32d511fe78ff93745c0ef2"
+  },
+  {
+    "path": "reports/model_comparison_report.html",
+    "bytes": 3044968,
+    "sha256": "123eabf6dc42d2234fdb2e6673321d38c748d6193c1d9556056ad756753c5514",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/123eabf6dc42d2234fdb2e6673321d38c748d6193c1d9556056ad756753c5514.gz",
+    "compressed_sha256": "5927529b1a56b0e7c4907e22b6df5bdf6987158f1fc439f143549fb771221e9e"
+  },
+  {
+    "path": "reports/model_diagnostic_report.html",
+    "bytes": 3244619,
+    "sha256": "ef6b9c2ea9a733d5e0a9d858e0a461c15603b2112fd0268dd299772282a9fc31",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/ef6b9c2ea9a733d5e0a9d858e0a461c15603b2112fd0268dd299772282a9fc31.gz",
+    "compressed_sha256": "f80082d7e52de99ced89bd6a534164cdfec1854c6e0aad58e16cd019badc9888"
+  },
+  {
+    "path": "reports/model_improvement_protocol.md",
+    "bytes": 3406,
+    "sha256": "836f1600b3a27d5f82f769105aeb62d48ecb3aa79b238dd0510d626891b92386",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/836f1600b3a27d5f82f769105aeb62d48ecb3aa79b238dd0510d626891b92386.gz",
+    "compressed_sha256": "51def7e62633c84aea8b8a26a8d8f6c6609991eacb3c5839cee01dd488a03e2a"
+  },
+  {
+    "path": "reports/model_improvement_report.html",
+    "bytes": 1023837,
+    "sha256": "3c0c202d85688ca5c1c1ff6bc7d86430bd5c1c5718bea46620f54b505d98ac82",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/3c0c202d85688ca5c1c1ff6bc7d86430bd5c1c5718bea46620f54b505d98ac82.gz",
+    "compressed_sha256": "365aa1b20ca4259b981d14baddba1fb4f14f3e742ef2d6cfb4fadc4e4b9c3d84"
+  },
+  {
+    "path": "reports/model_selection_rationale.md",
+    "bytes": 4830,
+    "sha256": "f3f399348f8df0e9e1f0a9c58b8156040f0784e60b70be815d7bf5443549cf3f",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/f3f399348f8df0e9e1f0a9c58b8156040f0784e60b70be815d7bf5443549cf3f.gz",
+    "compressed_sha256": "d60da73e8c100f21635f8ac2ee22670e8786b2e077fbda89fc198674b1d34b99"
+  },
+  {
+    "path": "reports/nonlinear_feature_transformation_limitations.md",
+    "bytes": 1197,
+    "sha256": "b02fd224e44629ebc44ff1dfe24c2fcb39986a1d441c64bac3de19043010fc4b",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/b02fd224e44629ebc44ff1dfe24c2fcb39986a1d441c64bac3de19043010fc4b.gz",
+    "compressed_sha256": "544ca77bdb428f99f87d3ad9fb45291cfef5d3835e951a653757515c2b080f0f"
+  },
+  {
+    "path": "reports/nonlinear_feature_transformation_report.html",
+    "bytes": 1119866,
+    "sha256": "e1017a8229e747cd254241bb9acf619b3302fa67ddc21209c65aafc80b169d78",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/e1017a8229e747cd254241bb9acf619b3302fa67ddc21209c65aafc80b169d78.gz",
+    "compressed_sha256": "903b19e8ee6261b89329fbbf3c3fffbe660b91e5d4699b354b48b155ed161e15"
+  },
+  {
+    "path": "reports/nonlinear_feature_transformation_summary.md",
+    "bytes": 8057,
+    "sha256": "139edc9d73205c65d0f74e5a15ea1a1181863aa3c2605dd2ad1373fcc00c8e8f",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/139edc9d73205c65d0f74e5a15ea1a1181863aa3c2605dd2ad1373fcc00c8e8f.gz",
+    "compressed_sha256": "836105ae0b8d6e05637c3b43b3b43322200ac04428e78ac0c834c43bc767d600"
+  },
+  {
+    "path": "reports/retraining_data_preparation_report.md",
+    "bytes": 13149,
+    "sha256": "241333ea291cd0f1ec72eed48102af2c5718d5e7614fe41a512e1842f12b885e",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/241333ea291cd0f1ec72eed48102af2c5718d5e7614fe41a512e1842f12b885e.gz",
+    "compressed_sha256": "5b181e95a84037f633e4f224b2a1650fb685edd6c2838f09af7d09e7738f4430"
+  },
+  {
+    "path": "reports/streamlit_integration_report.md",
+    "bytes": 7647,
+    "sha256": "2ab8ebabae940e81507a66eeffea2d7fdf2a7c29fa754c0ee16e9e9349db4cd2",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/2ab8ebabae940e81507a66eeffea2d7fdf2a7c29fa754c0ee16e9e9349db4cd2.gz",
+    "compressed_sha256": "47399284b8d5294edd98df18da6809ad603672e03906f0401bc607c8b0555ee3"
+  },
+  {
+    "path": "reports/streamlit_ui_readability_report.md",
+    "bytes": 9233,
+    "sha256": "7965ceb844b0b6608dbfb4984a8db9d6cda796bef44e52094a99f5064a124783",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/7965ceb844b0b6608dbfb4984a8db9d6cda796bef44e52094a99f5064a124783.gz",
+    "compressed_sha256": "26cb4a5490a3abae5d86928d853bd48f579719c21660835653591fa756bb0147"
+  },
+  {
+    "path": "reports/streamlit_ux_improvement_report.md",
+    "bytes": 7968,
+    "sha256": "1e430c85088eafa7441ec2933dcd05896e13b3480f633cb3c860d90c713c9256",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/1e430c85088eafa7441ec2933dcd05896e13b3480f633cb3c860d90c713c9256.gz",
+    "compressed_sha256": "1f9e200a537cf00835f58adbaacca9c619592e548aa120293f7f6e788dd8a08d"
+  },
+  {
+    "path": "reports/temporal_calibration_limitations.md",
+    "bytes": 2345,
+    "sha256": "f61bf1d6a813760e5b48b86014535d4b8b10f5fcbcda6c41bbcf5b41de860192",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/f61bf1d6a813760e5b48b86014535d4b8b10f5fcbcda6c41bbcf5b41de860192.gz",
+    "compressed_sha256": "c95667f4e8a5a99c30cf25f14f2dc561ed8b321ac86a60035e159eaa9be9bc7c"
+  },
+  {
+    "path": "reports/temporal_calibration_report.html",
+    "bytes": 982632,
+    "sha256": "be93a52e3d4eeab4bc59247a50d9134eec97956846ec429aff136dd1b92e5fd0",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/be93a52e3d4eeab4bc59247a50d9134eec97956846ec429aff136dd1b92e5fd0.gz",
+    "compressed_sha256": "4418b6f3a1c83964ff25c76ee31fd428bcdf0c101cbb61f78d51321e3a4b9bec"
+  },
+  {
+    "path": "reports/temporal_calibration_summary.md",
+    "bytes": 14917,
+    "sha256": "2c527d359f6b22a5a273baef113e247f4fcf77b1df3e4873f0f99e5674184a73",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/2c527d359f6b22a5a273baef113e247f4fcf77b1df3e4873f0f99e5674184a73.gz",
+    "compressed_sha256": "d98d4bd8a59f1d32e7f6f9e77f750e5d53a2997e924579e2cb8695bd67125760"
+  },
+  {
+    "path": "reports/temporal_expansion_model_selection.md",
+    "bytes": 5951,
+    "sha256": "bbe1cce0f0fcfbf94ed1d873af293680a9362f92942db2ba9f7ff58422a2a2d9",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/bbe1cce0f0fcfbf94ed1d873af293680a9362f92942db2ba9f7ff58422a2a2d9.gz",
+    "compressed_sha256": "21e9e5df4897915a39b34842f13d5d6f145f5221eb2ffb73d81bfdef7b18158f"
+  },
+  {
+    "path": "reports/temporal_expansion_protocol.md",
+    "bytes": 3459,
+    "sha256": "6b77a2dd1af43a0371f5a5d24e8fa94877cc7b5e239cd3f22ab26f9832569624",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/6b77a2dd1af43a0371f5a5d24e8fa94877cc7b5e239cd3f22ab26f9832569624.gz",
+    "compressed_sha256": "1dc96d866f9447b856f98a5c55c441e40765b2a7b492ffe0bd2c5191c15a09c3"
+  },
+  {
+    "path": "reports/temporal_expansion_report.html",
+    "bytes": 372184,
+    "sha256": "71c992daf8630bc7c8b9d5122cef7ceee7eab301b72d695d29f93866df22ea29",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/71c992daf8630bc7c8b9d5122cef7ceee7eab301b72d695d29f93866df22ea29.gz",
+    "compressed_sha256": "64746f2cc84617176a459e895a9790a267a3770c356f704185f290aaff4e3a02"
+  },
+  {
+    "path": "reports/temporal_expansion_verification.md",
+    "bytes": 5088,
+    "sha256": "ac606a5fc8a03510deda23b08029ef13de1d4b91bd2738163fd84c778b769303",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/ac606a5fc8a03510deda23b08029ef13de1d4b91bd2738163fd84c778b769303.gz",
+    "compressed_sha256": "e55678c238bd8fea411d14a467b1aaab27b3cd11652f1c8661f9cd0049eacf1e"
+  },
+  {
+    "path": "reports/temporal_failure_diagnostic_report.html",
+    "bytes": 843649,
+    "sha256": "4a965b811f3664ff93c190ad0ec76668ddd27430434ed16ba56e12b288a9305b",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/4a965b811f3664ff93c190ad0ec76668ddd27430434ed16ba56e12b288a9305b.gz",
+    "compressed_sha256": "e93f5b7115fa8b93fd0a0b35cb45ce0a9d32652147609b1fa72405b8ff329bdb"
+  },
+  {
+    "path": "reports/temporal_failure_improvement_proposal.md",
+    "bytes": 9101,
+    "sha256": "e6dbf36d0e74f31c741f6f05e2a1fe266759b7a24ec733275db4dedf29dd9aaa",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/e6dbf36d0e74f31c741f6f05e2a1fe266759b7a24ec733275db4dedf29dd9aaa.gz",
+    "compressed_sha256": "80e7e91ac7ed53767cf889bf36c0edadeb60c4731943e7cb4df4a4b5099b9ea8"
+  },
+  {
+    "path": "reports/temporal_generalization_limitations.md",
+    "bytes": 3088,
+    "sha256": "0b33e7b72faf9fe5c9a13b9ce4a4d334bdd18b56e3d250899012444b87129368",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/0b33e7b72faf9fe5c9a13b9ce4a4d334bdd18b56e3d250899012444b87129368.gz",
+    "compressed_sha256": "12730b9ce0b0c5a64cc17639467d34ca2bdb514acffc1aa7de83347e33d4c4b1"
+  },
+  {
+    "path": "reports/temporal_generalization_validation_report.html",
+    "bytes": 1249249,
+    "sha256": "dbcb6a59b1160b094121a25ea8836f070cc16ec7790c1ab6eaad0412ad754c37",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/dbcb6a59b1160b094121a25ea8836f070cc16ec7790c1ab6eaad0412ad754c37.gz",
+    "compressed_sha256": "d02b93573a905eedd88110c9850263ed5f607deb557627d94e821acb578e9e5d"
+  },
+  {
+    "path": "reports/temporal_generalization_validation_summary.md",
+    "bytes": 5980,
+    "sha256": "e77e912fc53d135150ae30c2f3ecd51df755d080694d353017bd829d928e2837",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/e77e912fc53d135150ae30c2f3ecd51df755d080694d353017bd829d928e2837.gz",
+    "compressed_sha256": "b3cc52f6fb1ca44d26bf0c7b090848912a24563f52b64b027ebf6ccb30787781"
+  },
+  {
+    "path": "reports/temporal_representativeness_control_limitations.md",
+    "bytes": 1788,
+    "sha256": "fdbd9a71b114683e16b3ec946f2550d81a33fff493b0a582992a58742540a5ad",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/fdbd9a71b114683e16b3ec946f2550d81a33fff493b0a582992a58742540a5ad.gz",
+    "compressed_sha256": "1f2e1d5d3883603b3d95f163758c21862b838d1577e1d9dfc7033545888996ba"
+  },
+  {
+    "path": "reports/temporal_representativeness_control_report.html",
+    "bytes": 990840,
+    "sha256": "3dbf69db27abd11bee69342052b4d28dfdec41436694b97b1d32decfad7902b1",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/3dbf69db27abd11bee69342052b4d28dfdec41436694b97b1d32decfad7902b1.gz",
+    "compressed_sha256": "cceb6827e7a4eabf41e169c782b5ce57e7bb21a250abea499fad9e0c71a8cb3c"
+  },
+  {
+    "path": "reports/temporal_representativeness_control_summary.md",
+    "bytes": 5480,
+    "sha256": "1583cf25cf56a47f092dc61eaf2a55d0860857cb17ecfa8e7d4fdb75a6c8a6b6",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/1583cf25cf56a47f092dc61eaf2a55d0860857cb17ecfa8e7d4fdb75a6c8a6b6.gz",
+    "compressed_sha256": "35bb296f9e503ba062fc6aff139541113802be4ca400a5199598ec72a09f9e02"
+  },
+  {
+    "path": "reports/temporal_robustness_improvement_report.html",
+    "bytes": 576494,
+    "sha256": "152e25c3a28adb26f22b75a402e3163f811b2081190dbfbb10136ae3a580e78a",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/152e25c3a28adb26f22b75a402e3163f811b2081190dbfbb10136ae3a580e78a.gz",
+    "compressed_sha256": "2bd1cb2b1ea27ca844462a6aaaf805dbeb60ca90d2fc6b5c77fd201fd2c522dc"
+  },
+  {
+    "path": "reports/temporal_robustness_model_selection.md",
+    "bytes": 18177,
+    "sha256": "3ddc13f2f957d22e1589390a7b68af0a46142bb2f82a693d23934b98422a3e07",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/3ddc13f2f957d22e1589390a7b68af0a46142bb2f82a693d23934b98422a3e07.gz",
+    "compressed_sha256": "0a9210944cd4ce01ce2d2f3fad882652ee95b5019c0e762d7eeba98fa38b01ba"
+  },
+  {
+    "path": "reports/temporal_robustness_protocol.md",
+    "bytes": 3983,
+    "sha256": "b3f164b6bfec007eaba64d6c66a111e86da41b5eddc4a5233a4a22149751d646",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/b3f164b6bfec007eaba64d6c66a111e86da41b5eddc4a5233a4a22149751d646.gz",
+    "compressed_sha256": "6787c12482f688e08470996e4916df8e4312ceaca18c572a9e9491275e50ab9d"
+  },
+  {
+    "path": "reports/temporal_svm_ensemble_limitations.md",
+    "bytes": 2020,
+    "sha256": "073f56354b17440aabf077af2a9e4f1f7a7c41605e84c4dcfd82b3b9308b5670",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/073f56354b17440aabf077af2a9e4f1f7a7c41605e84c4dcfd82b3b9308b5670.gz",
+    "compressed_sha256": "4fc57b0dea918abbe2ddae2feb57bd3300c699654d216a590700262da55e8e69"
+  },
+  {
+    "path": "reports/temporal_svm_ensemble_report.html",
+    "bytes": 1524002,
+    "sha256": "60e9f42c273df252ea7b59613fae6fac5ded071f9241fb118ec6e57910f3a5e6",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/60e9f42c273df252ea7b59613fae6fac5ded071f9241fb118ec6e57910f3a5e6.gz",
+    "compressed_sha256": "f7e62113b10d88bbfad54d2128031855b1856d101083553373f659173585e577"
+  },
+  {
+    "path": "reports/temporal_svm_ensemble_summary.md",
+    "bytes": 13165,
+    "sha256": "2b33609cf4e76ae8f70973f9d38d6d605724b2ab7df7e037d49c75cf25291bed",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/2b33609cf4e76ae8f70973f9d38d6d605724b2ab7df7e037d49c75cf25291bed.gz",
+    "compressed_sha256": "bcf2070cf70a693d47bbddf8cd926c320c8bcb408a9b161323c3108e845746ef"
+  },
+  {
+    "path": "reports/temporal_weighting_final_verification.md",
+    "bytes": 3222,
+    "sha256": "92510af362b733f29d91c46b660d1038174e87684198428063608ac5acae60c3",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/92510af362b733f29d91c46b660d1038174e87684198428063608ac5acae60c3.gz",
+    "compressed_sha256": "b2c21819fc4718720ec97730fc42cd6b3276799c949f65be0a179565e5c43912"
+  },
+  {
+    "path": "reports/temporal_weighting_model_selection.md",
+    "bytes": 17773,
+    "sha256": "a599ec943806cfb3b929bfd71c538f1968ce2260086b5241ee9a9dbac84964ab",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/a599ec943806cfb3b929bfd71c538f1968ce2260086b5241ee9a9dbac84964ab.gz",
+    "compressed_sha256": "41d1abd188a7b1f39e536ee9fa114f22253d9dddb0c9626203b15c8fd6b2b25b"
+  },
+  {
+    "path": "reports/temporal_weighting_protocol.md",
+    "bytes": 4213,
+    "sha256": "1d0724a5f8c18a9b2835d725416499421b28ebf18498befd9ef270d622188991",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/1d0724a5f8c18a9b2835d725416499421b28ebf18498befd9ef270d622188991.gz",
+    "compressed_sha256": "9309847e2a3b766e91d800e02e4b432a549933fcdd99d0a94055ca87e666199c"
+  },
+  {
+    "path": "reports/temporal_weighting_report.html",
+    "bytes": 633938,
+    "sha256": "6deeb84be841b3bd1f631c672dfe8fbb9881ea6bae23a5ccf1f5d247697bf60f",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/6deeb84be841b3bd1f631c672dfe8fbb9881ea6bae23a5ccf1f5d247697bf60f.gz",
+    "compressed_sha256": "1f5498bd3a18b14bc44a934b55e9696007bce21abaa5f4f476ca3068921d4e65"
+  },
+  {
+    "path": "reports/toluene_failure_analysis.html",
+    "bytes": 1246652,
+    "sha256": "92dc4080bac0a4799960d5eee25d5965b705210d4f57bcc31fe1406d2dee6bb4",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/92dc4080bac0a4799960d5eee25d5965b705210d4f57bcc31fe1406d2dee6bb4.gz",
+    "compressed_sha256": "a723d18ec8fc28f66644c2e7b41d1678807dcdb39a7df509c0dd4b259e1e11fd"
+  },
+  {
+    "path": "reports/toluene_failure_deep_diagnostic_report.html",
+    "bytes": 1907120,
+    "sha256": "0fbd4e69758f5d74d691ddcd21b3992072a57748ed5a8b524c98ef5af9809ea1",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/0fbd4e69758f5d74d691ddcd21b3992072a57748ed5a8b524c98ef5af9809ea1.gz",
+    "compressed_sha256": "566ac58cffea46d36ac56682ef05d9009faa1817b75f8f4af37c21710693e21d"
+  },
+  {
+    "path": "reports/toluene_failure_deep_diagnostic_summary.md",
+    "bytes": 7335,
+    "sha256": "81e67d98a9393965b5691f16d57178db41098f618e85fa30dcc861c47908441c",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/81e67d98a9393965b5691f16d57178db41098f618e85fa30dcc861c47908441c.gz",
+    "compressed_sha256": "b0cf8eada89d459cbff68e57ea614da487c498f83a4f796d36808d84cb90fa93"
+  },
+  {
+    "path": "reports/toluene_failure_hypothesis_review.md",
+    "bytes": 2789,
+    "sha256": "4483bd18e971873125e29935eceec809fc04d859799261a9b15caff56786d086",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/4483bd18e971873125e29935eceec809fc04d859799261a9b15caff56786d086.gz",
+    "compressed_sha256": "83d7087bea916ee20c68e3c496f5ee28c6f07f538105685c04eba4f7cc7e4cad"
+  },
+  {
+    "path": "reports/toluene_preservation_proposal.md",
+    "bytes": 2188,
+    "sha256": "d2cf9639fae15b093627dd81a279d358f650c5a6bbe02cb97784a773ab24f943",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/d2cf9639fae15b093627dd81a279d358f650c5a6bbe02cb97784a773ab24f943.gz",
+    "compressed_sha256": "dd425f5e1ea6b04179f25507d2cc7fbf2937a42e9a2a7f59c0dca3477466eb57"
+  },
+  {
+    "path": "reports/toluene_test_repair_note.md",
+    "bytes": 1265,
+    "sha256": "12dd0d10dd2461bbb28a2dbb279b6d56cad505d46a1add787a09398e870218b5",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/12dd0d10dd2461bbb28a2dbb279b6d56cad505d46a1add787a09398e870218b5.gz",
+    "compressed_sha256": "b2967d4a03cc4bdbf0abab95f56e7c9346ac00033e9dd5cfc1ccf077e36be257"
+  },
+  {
+    "path": "reports/training_protocol.md",
+    "bytes": 2809,
+    "sha256": "2cd4bfbf656d9227f3cf96d1519962de8ea91e3a0f5ef7535ee1af789b7beda2",
+    "reason": "통합된 옛 열람 문서의 지문 보관",
+    "archive": "reports/research_archive/2cd4bfbf656d9227f3cf96d1519962de8ea91e3a0f5ef7535ee1af789b7beda2.gz",
+    "compressed_sha256": "1add9e052dbfdba23bfac9558bed185251326fa36c145f30449d42366ec6547b"
+  },
+  {
+    "path": "src/__pycache__/__init__.cpython-312.pyc",
+    "bytes": 247,
+    "sha256": "13d04dde811b7c86a7b3b560878030aeb107a6120bb44784ca2db248f91e4112",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/13d04dde811b7c86a7b3b560878030aeb107a6120bb44784ca2db248f91e4112.gz",
+    "compressed_sha256": "0633660e181dd5fe3aa0104169a93dae1d68e84dd2d3a046f5565d33d728ee6b"
+  },
+  {
+    "path": "src/__pycache__/analysis.cpython-312.pyc",
+    "bytes": 50282,
+    "sha256": "701e7778df9822852a7b2e3fc16f81767f26086f6bcfc8fecfc97895e5d921f6",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/701e7778df9822852a7b2e3fc16f81767f26086f6bcfc8fecfc97895e5d921f6.gz",
+    "compressed_sha256": "c8f4c8a6958e2ee54a8b4ac13f8b27210fefdddb10bc574f2d6fdd69375966b9"
+  },
+  {
+    "path": "src/__pycache__/data.cpython-312.pyc",
+    "bytes": 7906,
+    "sha256": "69ecde5d003d435234664ccf7e339b985a3d862a0a8d35be21a55654dacacf70",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/69ecde5d003d435234664ccf7e339b985a3d862a0a8d35be21a55654dacacf70.gz",
+    "compressed_sha256": "c96c7b25e94297bee7ac8a2e8fc3ddc43b02675af3f7dc02d54fc51513642bff"
+  },
+  {
+    "path": "src/__pycache__/model_report.cpython-312.pyc",
+    "bytes": 28609,
+    "sha256": "394dcc0a509acfd703dcc84d04c1e9d3a9c320f2092e52025c306b7e112f3b19",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/394dcc0a509acfd703dcc84d04c1e9d3a9c320f2092e52025c306b7e112f3b19.gz",
+    "compressed_sha256": "a77cf37b4564a9ba1e568cc1c33540612b99292fd1b91f1ba4a639dfc7554112"
+  },
+  {
+    "path": "src/__pycache__/train_models.cpython-312.pyc",
+    "bytes": 23474,
+    "sha256": "181e9d4acf1338509a765353b38a19b837fafdb0eb639c2d00aa5047affc5805",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/181e9d4acf1338509a765353b38a19b837fafdb0eb639c2d00aa5047affc5805.gz",
+    "compressed_sha256": "acc6c811140299e7a485072af24372d594526b4e9c3eb0130ed6c0ebc8acee2a"
+  },
+  {
+    "path": "src/drift_detection/__pycache__/__init__.cpython-312.pyc",
+    "bytes": 274,
+    "sha256": "5313201d130705a8da1ed3d30a87da42f7e36d583ac97fd5db092740d0066dd8",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/5313201d130705a8da1ed3d30a87da42f7e36d583ac97fd5db092740d0066dd8.gz",
+    "compressed_sha256": "fc62c4cce7f6d0b2ceadf872ae462ba3e5b4b2b031c254e4a7d28e4d73754240"
+  },
+  {
+    "path": "src/drift_detection/__pycache__/detector.cpython-312.pyc",
+    "bytes": 13719,
+    "sha256": "9a2da36d51e6801fe0bd5e493d612982403aa361cd73adc98f2dc19bd1f33304",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/9a2da36d51e6801fe0bd5e493d612982403aa361cd73adc98f2dc19bd1f33304.gz",
+    "compressed_sha256": "73bbaa7474b0498e46019a750cd0c84620d43e80f82a111a0539bcbaef1d1474"
+  },
+  {
+    "path": "src/webapp/__pycache__/__init__.cpython-312.pyc",
+    "bytes": 154,
+    "sha256": "033dc9f99e0d90c0ffd0fc3238fe3a566ed6908a77f8b307be9d7ea72206b9f5",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/033dc9f99e0d90c0ffd0fc3238fe3a566ed6908a77f8b307be9d7ea72206b9f5.gz",
+    "compressed_sha256": "9fc16a42168cb2d9f98893a2d13ac12f8771dc43ef8fd72bf0247f1fbf4f038f"
+  },
+  {
+    "path": "src/webapp/__pycache__/data_preparation.cpython-312.pyc",
+    "bytes": 22893,
+    "sha256": "f5e091ae84af940711daf402fa10796d4645bcecfc7de87c54cb1039cb49a0b3",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/f5e091ae84af940711daf402fa10796d4645bcecfc7de87c54cb1039cb49a0b3.gz",
+    "compressed_sha256": "82744ec2e7813bf93433bbec2167dc36a4e8ed7360e87b9ee6842b220dad9109"
+  },
+  {
+    "path": "src/webapp/__pycache__/dataset_registry.cpython-312.pyc",
+    "bytes": 10691,
+    "sha256": "609fe065059093834ae26024fa0499f4751adc94123bcd9becd69afe4330a5b3",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/609fe065059093834ae26024fa0499f4751adc94123bcd9becd69afe4330a5b3.gz",
+    "compressed_sha256": "4fd5c11c3db705a016fd0467e568a7ec67eafc7fb2e9b37610fb238dc51159b8"
+  },
+  {
+    "path": "src/webapp/__pycache__/management_ui.cpython-312.pyc",
+    "bytes": 13424,
+    "sha256": "00975bf03c9efd14d4c0d951c32d36ba740f39f116e72acd2b51d9a78fe4a9c5",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/00975bf03c9efd14d4c0d951c32d36ba740f39f116e72acd2b51d9a78fe4a9c5.gz",
+    "compressed_sha256": "7a99e57bbe7967d8ab254055758f7a262e20b602047f9301375fd6decb54a081"
+  },
+  {
+    "path": "src/webapp/__pycache__/service.cpython-312.pyc",
+    "bytes": 15252,
+    "sha256": "83f07e25ec27e433b0544965d196c96ab8107154a75ef689b95fe610603f413b",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/83f07e25ec27e433b0544965d196c96ab8107154a75ef689b95fe610603f413b.gz",
+    "compressed_sha256": "769874e768cec85232faa871c6d295ada13956fb2c261b0878de8500cb1ddb15"
+  },
+  {
+    "path": "src/webapp/__pycache__/ui.cpython-312.pyc",
+    "bytes": 33362,
+    "sha256": "4035d7827538fa8f3bbb455be10945ed25c8224e4b96cfa6632388878185d0ef",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/4035d7827538fa8f3bbb455be10945ed25c8224e4b96cfa6632388878185d0ef.gz",
+    "compressed_sha256": "138f142d2224a0a48aababc52f7075975d3e8fa81a3673ec05afb0ff7c7cfd83"
+  },
+  {
+    "path": "tests/__pycache__/test_models.cpython-312-pytest-9.1.1.pyc",
+    "bytes": 60881,
+    "sha256": "67078ebd0baf75a387faa34fab94a634ecbbee860bbf3ecde56555a55c27ddff",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/67078ebd0baf75a387faa34fab94a634ecbbee860bbf3ecde56555a55c27ddff.gz",
+    "compressed_sha256": "105851c5e6f8205964860ba8836ae2415b7c9e65021bedb2bf5959248b5e62da"
+  },
+  {
+    "path": "tests/__pycache__/test_validation.cpython-312-pytest-9.1.1.pyc",
+    "bytes": 31070,
+    "sha256": "e891f12afeca1653db2ec3d3bbfeb7fe571ad3a88ed65394b0f8b921fbec7f3d",
+    "reason": "재생성 가능한 캐시; 검증 보관본 유지",
+    "archive": "reports/research_archive/e891f12afeca1653db2ec3d3bbfeb7fe571ad3a88ed65394b0f8b921fbec7f3d.gz",
+    "compressed_sha256": "cf1e3577b5238c803f20ca76da3e022381fb77c720ca3a87b996b766d2531472"
+  }
+]

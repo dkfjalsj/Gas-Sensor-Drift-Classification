@@ -1,0 +1,4 @@
+scheme,mid_n,max_n,executed,macro_delta,positive_fold_n,positive_seed_n,toluene_recall_delta,acetaldehyde_recall_delta
+spread,843,1689,True,0.09021963053990589,3.0,5.0,-0.04741784037558685,0.07601824698598891
+mixed,843,1689,False,,,,,
+coverage,843,1689,False,,,,,

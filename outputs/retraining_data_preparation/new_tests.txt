@@ -1,0 +1,21 @@
+...........F.........F........                                           [100%]
+================================== FAILURES ===================================
+______________ test_duplicate_conflicts_and_cross_session_groups ______________
+tests\test_retraining_preparation.py:96: in test_duplicate_conflicts_and_cross_session_groups
+    assert not inspect(frame, sessions, reference).ready
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_retraining_preparation.py:41: in inspect
+    return inspect_candidate(csv_bytes(frame), csv_bytes(sessions) if sessions is not None else None,
+src\webapp\data_preparation.py:236: in inspect_candidate
+    assert set(train.near_feature_sha256).isdisjoint(valid.near_feature_sha256)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   AssertionError
+____________ test_known_old_training_matches_and_unknown_reference ____________
+tests\test_retraining_preparation.py:155: in test_known_old_training_matches_and_unknown_reference
+    assert not result.ready and result.summary['old_feature_matches'] == 1
+E   assert (not False and 0 == 1)
+E    +  where False = PreparationCheck(data=InputData(features=        f001      f002      f003  ...      f126      f127      f128\n0   0.304...    -1.02349749,  0.17927563,  0.21999668,  1.35918758,  0.83511125,\n         0.35687106,  1.46330289, -1.18876305]]))).ready
+=========================== short test summary info ===========================
+FAILED tests/test_retraining_preparation.py::test_duplicate_conflicts_and_cross_session_groups
+FAILED tests/test_retraining_preparation.py::test_known_old_training_matches_and_unknown_reference
+2 failed, 28 passed in 19.86s

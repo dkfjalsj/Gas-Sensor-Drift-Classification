@@ -1,0 +1,17 @@
+# 새 자료집과 보존 기록의 원문 바이트 유지
+/reports/Gas_Sensor_Drift_Final_Report.html -text
+/reports/report_materials/** -text
+/reports/research_archive/** -text
+/outputs/project_cleanup/** -text
+/outputs/report_publication/** -text
+/outputs/retraining_data_preparation/** -text
+/src/common/** -text
+/src/research_maintenance/** -text
+/src/webapp/data_preparation.py -text
+/src/webapp/dataset_registry.py -text
+/src/webapp/management_ui.py -text
+/src/webapp/preparation_audit.py -text
+/src/webapp/preparation_testing_guard.py -text
+/tests/test_project_cleanup.py -text
+/tests/test_report_publication.py -text
+/tests/test_retraining_preparation.py -text

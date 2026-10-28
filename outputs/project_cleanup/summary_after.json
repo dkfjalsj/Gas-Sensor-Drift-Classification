@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-10-28T06:34:19.437078+00:00",
+  "project_files": 20669,
+  "project_bytes": 1114504637,
+  "research_files": 1603,
+  "research_bytes": 440344289,
+  "before": {
+    "project_files": 20640,
+    "project_bytes": 1081847416,
+    "research_files": 1574,
+    "research_bytes": 407687068,
+    "models": 325,
+    "figures": 201
+  },
+  "deletion_count": 0,
+  "moved_count": 0,
+  "git_stage_commit_push": "보류"
+}

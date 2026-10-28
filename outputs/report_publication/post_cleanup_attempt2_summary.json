@@ -1,0 +1,23 @@
+{
+  "total": 340,
+  "passed": 247,
+  "failed": 3,
+  "skipped": 90,
+  "errors": 0,
+  "historical_failures": [
+    {
+      "name": "tests.test_diagnostics::test_existing_results_and_models_unchanged",
+      "message": "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\Gas-Sensor-Drift-Classification\\\\outputs\\\\model_comparison\\\\zNex~$haremetrics.csv'"
+    },
+    {
+      "name": "tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files",
+      "message": "AssertionError: assert {'models\\\\A_r....joblib', ...} == {'models\\\\A_r....joblib', ...}\n  \n  Extra items in the right set:\n  'models\\\\temporal_robustness\\\\A\\\\LR_correlation.joblib'\n  'models\\\\temporal_weighting\\\\B\\\\gas_batch.joblib'\n  'models\\\\temporal_robustness\\\\B\\\\LR_kbest64.joblib'\n  'models\\\\temporal_weighting\\\\A\\\\time_gas_batch.joblib'\n  'models\\\\temporal_robustness\\\\B\\\\SVM_all.joblib'...\n  \n  ...Full output truncated (278 lines hidden), use '-vv' to show"
+    }
+  ],
+  "new_failures": [
+    {
+      "name": "tests.test_project_cleanup::test_prior_research_preserved",
+      "message": "AssertionError: src/__pycache__/__init__.cpython-312.pyc\nassert False\n +  where False = is_file()\n +    where is_file = WindowsPath('D:/Gas-Sensor-Drift-Classification/src/__pycache__/__init__.cpython-312.pyc').is_file"
+    }
+  ]
+}

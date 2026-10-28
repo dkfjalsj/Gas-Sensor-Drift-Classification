@@ -1,0 +1,720 @@
+[
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/generalization_report.py",
+      "name": "table",
+      "line": 16,
+      "end": 17
+    },
+    {
+      "path": "src/generalization_report.py",
+      "name": "table",
+      "line": 16,
+      "end": 17
+    },
+    {
+      "path": "src/temporal_expansion_report.py",
+      "name": "table",
+      "line": 21,
+      "end": 22
+    },
+    {
+      "path": "src/temporal_failure_report.py",
+      "name": "table",
+      "line": 21,
+      "end": 22
+    },
+    {
+      "path": "src/temporal_robustness_report.py",
+      "name": "table",
+      "line": 21,
+      "end": 22
+    },
+    {
+      "path": "src/temporal_weighting_report.py",
+      "name": "table",
+      "line": 21,
+      "end": 22
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/generalization_report.py",
+      "name": "graph",
+      "line": 20,
+      "end": 22
+    },
+    {
+      "path": "src/generalization_report.py",
+      "name": "graph",
+      "line": 20,
+      "end": 22
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/generalization_report.py",
+      "name": "history_table",
+      "line": 26,
+      "end": 44
+    },
+    {
+      "path": "src/generalization_report.py",
+      "name": "history_table",
+      "line": 26,
+      "end": 44
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "save",
+      "line": 26,
+      "end": 29
+    },
+    {
+      "path": "src/temporal_failure_diagnostics.py",
+      "name": "save",
+      "line": 25,
+      "end": 28
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "save",
+      "line": 26,
+      "end": 29
+    },
+    {
+      "path": "src/temporal_robustness.py",
+      "name": "save",
+      "line": 110,
+      "end": 113
+    },
+    {
+      "path": "src/temporal_weighting.py",
+      "name": "save",
+      "line": 29,
+      "end": 32
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "inventory_data",
+      "line": 32,
+      "end": 49
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "inventory_data",
+      "line": 32,
+      "end": 49
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "exposure_audit",
+      "line": 53,
+      "end": 71
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "exposure_audit",
+      "line": 53,
+      "end": 71
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "freeze_config",
+      "line": 75,
+      "end": 113
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "freeze_config",
+      "line": 75,
+      "end": 113
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "evaluate_models",
+      "line": 117,
+      "end": 177
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "evaluate_models",
+      "line": 117,
+      "end": 177
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "paired_changes",
+      "line": 181,
+      "end": 195
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "paired_changes",
+      "line": 181,
+      "end": 195
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "matrix_statistics",
+      "line": 199,
+      "end": 208
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "matrix_statistics",
+      "line": 199,
+      "end": 208
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "wilson_interval",
+      "line": 211,
+      "end": 216
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "wilson_interval",
+      "line": 211,
+      "end": 216
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "bootstrap_uncertainty",
+      "line": 220,
+      "end": 271
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "bootstrap_uncertainty",
+      "line": 220,
+      "end": 271
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "run",
+      "line": 274,
+      "end": 319
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "run",
+      "line": 274,
+      "end": 319
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/src/temporal_generalization_validation.py",
+      "name": "finalize",
+      "line": 323,
+      "end": 352
+    },
+    {
+      "path": "src/temporal_generalization_validation.py",
+      "name": "finalize",
+      "line": 323,
+      "end": 352
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "read_json",
+      "line": 21,
+      "end": 22
+    },
+    {
+      "path": "tests/test_gas_specific_temporal_balancing.py",
+      "name": "read_json",
+      "line": 33,
+      "end": 34
+    },
+    {
+      "path": "tests/test_hgb_algorithm_comparison.py",
+      "name": "read_json",
+      "line": 27,
+      "end": 28
+    },
+    {
+      "path": "tests/test_nonlinear_feature_transformation.py",
+      "name": "read_json",
+      "line": 31,
+      "end": 32
+    },
+    {
+      "path": "tests/test_temporal_calibration.py",
+      "name": "read_json",
+      "line": 24,
+      "end": 25
+    },
+    {
+      "path": "tests/test_temporal_expansion.py",
+      "name": "read_json",
+      "line": 20,
+      "end": 21
+    },
+    {
+      "path": "tests/test_temporal_failure_diagnostics.py",
+      "name": "read_json",
+      "line": 28,
+      "end": 29
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "read_json",
+      "line": 21,
+      "end": 22
+    },
+    {
+      "path": "tests/test_temporal_representativeness_control.py",
+      "name": "read_json",
+      "line": 32,
+      "end": 33
+    },
+    {
+      "path": "tests/test_temporal_robustness.py",
+      "name": "read_json",
+      "line": 25,
+      "end": 26
+    },
+    {
+      "path": "tests/test_temporal_svm_ensemble.py",
+      "name": "read_json",
+      "line": 24,
+      "end": 25
+    },
+    {
+      "path": "tests/test_temporal_weighting.py",
+      "name": "read_json",
+      "line": 30,
+      "end": 31
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "dataset",
+      "line": 26,
+      "end": 27
+    },
+    {
+      "path": "tests/test_temporal_expansion.py",
+      "name": "dataset",
+      "line": 25,
+      "end": 26
+    },
+    {
+      "path": "tests/test_temporal_failure_diagnostics.py",
+      "name": "dataset",
+      "line": 24,
+      "end": 25
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "dataset",
+      "line": 26,
+      "end": 27
+    },
+    {
+      "path": "tests/test_temporal_robustness.py",
+      "name": "dataset",
+      "line": 21,
+      "end": 22
+    },
+    {
+      "path": "tests/test_temporal_weighting.py",
+      "name": "dataset",
+      "line": 21,
+      "end": 22
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "predictions",
+      "line": 31,
+      "end": 32
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "predictions",
+      "line": 31,
+      "end": 32
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_independence_inventory_and_exposure",
+      "line": 35,
+      "end": 46
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_independence_inventory_and_exposure",
+      "line": 35,
+      "end": 46
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_fixed_models_and_train_only_preprocessing",
+      "line": 49,
+      "end": 72
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_fixed_models_and_train_only_preprocessing",
+      "line": 49,
+      "end": 72
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_metrics_and_confusion_counts",
+      "line": 75,
+      "end": 93
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_metrics_and_confusion_counts",
+      "line": 75,
+      "end": 93
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_paired_changes_and_focus_failure",
+      "line": 107,
+      "end": 119
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_paired_changes_and_focus_failure",
+      "line": 107,
+      "end": 119
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_conditional_bootstrap_reproducible",
+      "line": 122,
+      "end": 132
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_conditional_bootstrap_reproducible",
+      "line": 122,
+      "end": 132
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_bootstrap_preserves_identical_prediction_pair",
+      "line": 135,
+      "end": 142
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_bootstrap_preserves_identical_prediction_pair",
+      "line": 135,
+      "end": 142
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_wilson_intervals_and_support",
+      "line": 145,
+      "end": 151
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_wilson_intervals_and_support",
+      "line": 145,
+      "end": 151
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_existing_files_raw_and_model_inventory_preserved",
+      "line": 200,
+      "end": 212
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_existing_files_raw_and_model_inventory_preserved",
+      "line": 205,
+      "end": 217
+    }
+  ],
+  [
+    {
+      "path": "outputs/temporal_generalization_validation_attempt_1/source_snapshots/tests/test_temporal_generalization_validation.py",
+      "name": "test_no_new_fit_calls_and_report_structure",
+      "line": 215,
+      "end": 225
+    },
+    {
+      "path": "tests/test_temporal_generalization_validation.py",
+      "name": "test_no_new_fit_calls_and_report_structure",
+      "line": 220,
+      "end": 230
+    }
+  ],
+  [
+    {
+      "path": "src/analyze_toluene.py",
+      "name": "sha",
+      "line": 29,
+      "end": 30
+    },
+    {
+      "path": "src/diagnose_models.py",
+      "name": "sha",
+      "line": 27,
+      "end": 28
+    },
+    {
+      "path": "src/improve_models.py",
+      "name": "sha",
+      "line": 38,
+      "end": 39
+    },
+    {
+      "path": "src/temporal_expansion.py",
+      "name": "sha",
+      "line": 33,
+      "end": 34
+    },
+    {
+      "path": "src/webapp/audit.py",
+      "name": "sha",
+      "line": 20,
+      "end": 21
+    }
+  ],
+  [
+    {
+      "path": "src/drift_detection/experiment.py",
+      "name": "write",
+      "line": 32,
+      "end": 40
+    },
+    {
+      "path": "src/drift_detection_sensitivity/experiment.py",
+      "name": "write",
+      "line": 32,
+      "end": 40
+    }
+  ],
+  [
+    {
+      "path": "src/drift_detection/experiment.py",
+      "name": "save",
+      "line": 43,
+      "end": 46
+    },
+    {
+      "path": "src/drift_detection_sensitivity/experiment.py",
+      "name": "save",
+      "line": 43,
+      "end": 46
+    },
+    {
+      "path": "src/gas_specific_temporal_balancing.py",
+      "name": "save",
+      "line": 37,
+      "end": 40
+    },
+    {
+      "path": "src/hgb_algorithm_comparison.py",
+      "name": "save",
+      "line": 57,
+      "end": 60
+    },
+    {
+      "path": "src/nonlinear_feature_transformation.py",
+      "name": "save",
+      "line": 168,
+      "end": 171
+    },
+    {
+      "path": "src/temporal_calibration.py",
+      "name": "save",
+      "line": 43,
+      "end": 46
+    },
+    {
+      "path": "src/temporal_representativeness_control.py",
+      "name": "save",
+      "line": 46,
+      "end": 49
+    },
+    {
+      "path": "src/temporal_svm_ensemble.py",
+      "name": "save",
+      "line": 39,
+      "end": 42
+    },
+    {
+      "path": "src/toluene_deep_diagnostic.py",
+      "name": "save",
+      "line": 37,
+      "end": 40
+    }
+  ],
+  [
+    {
+      "path": "src/improve_models.py",
+      "name": "now",
+      "line": 42,
+      "end": 43
+    },
+    {
+      "path": "src/temporal_expansion.py",
+      "name": "now",
+      "line": 37,
+      "end": 38
+    }
+  ],
+  [
+    {
+      "path": "src/temporal_expansion.py",
+      "name": "write_json",
+      "line": 41,
+      "end": 44
+    },
+    {
+      "path": "src/train_models.py",
+      "name": "write_json",
+      "line": 46,
+      "end": 49
+    }
+  ],
+  [
+    {
+      "path": "src/temporal_failure_report.py",
+      "name": "figure",
+      "line": 26,
+      "end": 33
+    },
+    {
+      "path": "src/temporal_weighting_report.py",
+      "name": "figure",
+      "line": 25,
+      "end": 32
+    }
+  ],
+  [
+    {
+      "path": "src/webapp/preparation_testing_guard.py",
+      "name": "pytest_runtest_setup",
+      "line": 37,
+      "end": 39
+    },
+    {
+      "path": "src/webapp/readability_testing_guard.py",
+      "name": "pytest_runtest_setup",
+      "line": 37,
+      "end": 39
+    },
+    {
+      "path": "src/webapp/testing_guard.py",
+      "name": "pytest_runtest_setup",
+      "line": 37,
+      "end": 39
+    },
+    {
+      "path": "src/webapp/ux_testing_guard.py",
+      "name": "pytest_runtest_setup",
+      "line": 37,
+      "end": 39
+    }
+  ],
+  [
+    {
+      "path": "tests/test_gas_specific_temporal_balancing.py",
+      "name": "read",
+      "line": 29,
+      "end": 30
+    },
+    {
+      "path": "tests/test_hgb_algorithm_comparison.py",
+      "name": "read",
+      "line": 23,
+      "end": 24
+    },
+    {
+      "path": "tests/test_nonlinear_feature_transformation.py",
+      "name": "read",
+      "line": 27,
+      "end": 28
+    },
+    {
+      "path": "tests/test_temporal_calibration.py",
+      "name": "read",
+      "line": 20,
+      "end": 21
+    },
+    {
+      "path": "tests/test_temporal_representativeness_control.py",
+      "name": "read",
+      "line": 28,
+      "end": 29
+    },
+    {
+      "path": "tests/test_temporal_svm_ensemble.py",
+      "name": "read",
+      "line": 20,
+      "end": 21
+    },
+    {
+      "path": "tests/test_toluene_deep_diagnostic.py",
+      "name": "read",
+      "line": 28,
+      "end": 29
+    }
+  ],
+  [
+    {
+      "path": "tests/test_hgb_algorithm_comparison.py",
+      "name": "state",
+      "line": 32,
+      "end": 34
+    },
+    {
+      "path": "tests/test_temporal_calibration.py",
+      "name": "state",
+      "line": 29,
+      "end": 31
+    }
+  ]
+]

@@ -13,7 +13,7 @@ from .service import (
     reset_on_upload_change,
 )
 
-PAGES = ["데이터 분석", "분석 결과", "상세 분석"]
+PAGES = ["데이터 분석", "분석 결과", "상세 분석", "모델 관리"]
 GAS_NAMES = dict(zip(GASES.values(), [
     "에탄올 (Ethanol)", "에틸렌 (Ethylene)", "암모니아 (Ammonia)",
     "아세트알데하이드 (Acetaldehyde)", "아세톤 (Acetone)", "톨루엔 (Toluene)",
@@ -319,7 +319,12 @@ def main():
         st.error(st.session_state["analysis_error"])
     result = st.session_state.get("analysis")
     st.subheader(page)
-    if page == PAGES[0]:
+    if page == PAGES[3]:
+        from .management_ui import render_management
+
+        st.caption("일반 분석용 업로드와 신규 정답 데이터 등록은 서로 분리됩니다.")
+        render_management()
+    elif page == PAGES[0]:
         st.write("CSV를 선택한 뒤 분석 시작을 눌러 주세요. 결과에서 가스 예측, 측정 패턴, 다음 행동을 확인할 수 있습니다.")
         st.caption("가스 예측은 한 행부터 가능합니다. 측정 패턴 비교에는 최소 100행이 필요합니다.")
     elif result is None:

@@ -1,0 +1,3 @@
+model,train_end,train_n,class_mapping_ok,feature_mapping_ok,prediction_replay_n,prediction_replay_exact,decision_ovr_reconstruction_max_error,native_votes_match,preprocessing_train_only,gamma_numeric,model_sha256
+A,6,5933,True,True,1427,True,0.0,True,True,0.0078125,1d6b20c94d1580d799e05ab5a9ce746bdb272d74f70ec2ff964011fffecfde32
+B,7,9546,True,True,1427,True,0.0,True,True,0.0078125,39427ad75b146ed4d9d608ebd7dbbb154f4318649a5a1fd87d3092f9115645cb

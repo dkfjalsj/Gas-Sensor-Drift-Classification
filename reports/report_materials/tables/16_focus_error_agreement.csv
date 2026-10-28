@@ -1,0 +1,7 @@
+fold,y_true,both_correct,svm_only,hgb_only,both_wrong,disagreement
+A,4,29,0,0,0,0
+A,6,0,0,0,467,48
+B,4,132,326,0,286,509
+B,6,276,232,6,54,244
+C,4,31,0,1,1,2
+C,6,12,3,2,1,5

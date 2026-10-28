@@ -1,0 +1,212 @@
+# 저장 모델 추론·CSV 경계·실제 Streamlit 위젯 흐름 검증
+# 합성 입력은 기능 검사 전용이며 연구 성능으로 보고하지 않음
+
+import ast
+import io
+from pathlib import Path
+from unittest.mock import patch
+
+import numpy as np
+import pandas as pd
+import pytest
+from streamlit.testing.v1 import AppTest
+
+from src.data import ROOT, FEATURES, parse_line, read_config
+from src.webapp.service import (
+    THRESHOLD, InputError, load_models, read_upload, analyze, downloads, reset_on_upload_change,
+)
+from src.webapp.ui import PAGES
+from src.webapp.ux_audit import verify
+
+
+# 합성 CSV는 업로드·행 정렬 검사에만 사용
+def synthetic(n=200, labels=False):
+    frame = pd.DataFrame(np.random.default_rng(42).normal(size=(n, 128)), columns=FEATURES)
+    if labels:
+        frame["gas"] = np.arange(n) % 6 + 1
+    return frame
+
+
+def csv_bytes(frame):
+    return frame.to_csv(index=False).encode("utf-8-sig")
+
+
+@pytest.fixture(scope="module")
+def models():
+    return load_models()
+
+
+@pytest.mark.parametrize("n", [99, 100, 101, 200])
+@pytest.mark.parametrize("labels", [False, True])
+def test_boundary_rows_predict_detect_and_labels(models, n, labels):
+    data = read_upload(csv_bytes(synthetic(n, labels)))
+    with patch.object(models.detector, "evaluate", wraps=models.detector.evaluate) as spy:
+        result = analyze(data, models)
+        assert list(spy.call_args.args[0].columns) == FEATURES
+    np.testing.assert_array_equal(result["rows"].predicted_gas_id, models.classifier.predict(data.features))
+    np.testing.assert_allclose(result["rows"][FEATURES], data.features)
+    np.testing.assert_array_equal(result["rows"].input_row, np.arange(1, n + 1))
+    assert result["summary"]["valid_windows"] == n // 100
+    assert result["summary"]["excluded_tail_rows"] == n % 100
+    assert result["summary"]["threshold"] == THRESHOLD
+    assert (result["evaluation"] is not None) == labels
+    assert ("upload_accuracy" in result["summary"]) == labels
+    assert not any("confidence" in c or "probability" in c for c in result["rows"].columns)
+
+
+@pytest.mark.parametrize("kind", ["empty", "header_only", "duplicate", "missing", "extra", "nonnumeric",
+                                  "infinity", "all_nan_feature", "all_nan_row", "bad_gas", "empty_gas", "bad_record"])
+def test_input_errors_are_explicit(kind):
+    frame = synthetic(100)
+    if kind == "empty":
+        payload = b""
+    elif kind == "header_only":
+        payload = csv_bytes(frame.iloc[:0])
+    elif kind == "duplicate":
+        frame.columns = ["f002", *FEATURES[1:]]
+        payload = csv_bytes(frame)
+    elif kind == "missing":
+        payload = csv_bytes(frame.drop(columns=["f001"]))
+    elif kind == "extra":
+        payload = csv_bytes(frame.assign(batch=7))
+    elif kind == "bad_record":
+        payload = csv_bytes(frame) + b"1,2\n"
+    else:
+        if kind == "nonnumeric":
+            frame = frame.astype(object)
+            frame.iloc[0, 0] = "wrong"
+        elif kind == "infinity":
+            frame.iloc[0, 0] = np.inf
+        elif kind == "all_nan_feature":
+            frame.iloc[:, 0] = np.nan
+        elif kind == "all_nan_row":
+            frame.iloc[0, :] = np.nan
+        elif kind == "bad_gas":
+            frame["gas"] = 7
+        elif kind == "empty_gas":
+            frame["gas"] = np.nan
+        payload = csv_bytes(frame)
+    with pytest.raises(InputError):
+        read_upload(payload)
+
+
+def test_column_reordering_and_truth_independence(models):
+    frame = synthetic(200)
+    a = analyze(read_upload(csv_bytes(frame)), models)
+    b_input = read_upload(csv_bytes(frame[FEATURES[::-1]].assign(gas=1)))
+    assert b_input.reordered
+    b = analyze(b_input, models)
+    np.testing.assert_array_equal(a["rows"].predicted_gas_id, b["rows"].predicted_gas_id)
+    np.testing.assert_array_equal(a["windows"].score, b["windows"].score)
+    assert b["evaluation"]["supported_classes"] == 1
+    assert b["evaluation"]["per_class"].recall.isna().sum() == 5
+
+
+def test_partial_missing_and_window_local_unavailable(models):
+    frame = synthetic(200)
+    frame.loc[:99, "f001"] = np.nan
+    result = analyze(read_upload(csv_bytes(frame)), models)
+    assert len(result["rows"]) == 200
+    assert result["summary"]["invalid_windows"] == 1
+    assert result["summary"]["valid_windows"] == 1
+    assert result["windows"].iloc[0].status == "평가 불가"
+    assert pd.isna(result["windows"].iloc[0].score)
+
+
+def test_downloads_preserve_rows_conditions_and_encoding(models):
+    result = analyze(read_upload(csv_bytes(synthetic(101, True))), models)
+    tables = {name: pd.read_csv(io.BytesIO(data)) for name, data in downloads(result).items()}
+    assert len(tables["gas_classification.csv"]) == 101
+    assert len(tables["distribution_windows.csv"]) == 1
+    assert tables["analysis_summary.csv"].excluded_tail_rows.iloc[0] == 1
+    for table in tables.values():
+        assert "input_sha256" in table
+    assert "classification_sha256" in tables["gas_classification.csv"]
+    assert "detector_sha256" in tables["distribution_windows.csv"]
+    np.testing.assert_array_equal(tables["gas_classification.csv"].input_row, np.arange(1, 102))
+
+
+def test_upload_change_clears_old_results():
+    state = {"input_digest": "old", "analysis": object(), "analysis_error": "old"}
+    assert reset_on_upload_change(state, "new")
+    assert "analysis" not in state and "analysis_error" not in state
+    assert not reset_on_upload_change(state, "new")
+    state["analysis"] = object()
+    assert reset_on_upload_change(state, None) and "analysis" not in state
+
+
+def test_matches_saved_batch7_predictions_without_retraining(models):
+    raw = Path(read_config()["data_dir"]) / "batch7.dat"
+    rows = []
+    with raw.open(encoding="utf-8") as handle:
+        for _ in range(200):
+            gas, values = parse_line(next(handle))
+            rows.append([*values, gas])
+    frame = pd.DataFrame(rows, columns=[*FEATURES, "gas"])
+    result = analyze(read_upload(csv_bytes(frame)), models)
+    saved = pd.read_csv(ROOT / "outputs/nonlinear_feature_transformation/predictions.csv")
+    saved = saved[(saved.fold == "B") & (saved.method == "baseline")].set_index("row_id")
+    ids = [f"b07_r{i:05d}" for i in range(1, 201)]
+    np.testing.assert_array_equal(result["rows"].predicted_gas_id, saved.loc[ids, "y_pred"])
+    np.testing.assert_array_equal(frame.gas, saved.loc[ids, "y_true"])
+
+
+def make_app():
+    return AppTest.from_file(ROOT / "app_streamlit.py", default_timeout=60).run()
+
+
+@pytest.mark.parametrize("n", [99, 100, 101, 200])
+def test_streamlit_upload_and_detection_boundaries(n):
+    app = make_app()
+    assert not app.exception
+    app.file_uploader[0].set_value(("ui_test.csv", csv_bytes(synthetic(n)), "text/csv")).run()
+    app.button(key="analyze").click().run()
+    assert not app.exception
+    assert app.session_state["analysis"]["summary"]["input_rows"] == n
+    app.radio(key="page").set_value(PAGES[2]).run()
+    assert not app.exception
+    assert app.session_state["analysis"]["summary"]["valid_windows"] == n // 100
+
+
+@pytest.mark.parametrize("labels", [False, True])
+def test_streamlit_six_screens_charts_and_downloads(labels):
+    app = make_app()
+    app.file_uploader[0].set_value(("ui_test.csv", csv_bytes(synthetic(200, labels)), "text/csv")).run()
+    app.button(key="analyze").click().run()
+    for page in PAGES:
+        app.radio(key="page").set_value(page).run()
+        assert not app.exception
+    assert len(app.download_button) == 3
+    app.download_button[0].click().run()
+    assert not app.exception and len(app.session_state["analysis"]["rows"]) == 200
+    assert (app.session_state["analysis"]["evaluation"] is not None) == labels
+
+
+def test_streamlit_error_and_new_upload_clear_state():
+    app = make_app()
+    app.file_uploader[0].set_value(("old.csv", csv_bytes(synthetic(200, True)), "text/csv")).run()
+    app.button(key="analyze").click().run()
+    assert len(app.session_state["analysis"]["rows"]) == 200
+    app.file_uploader[0].set_value(("new.csv", csv_bytes(synthetic(99)), "text/csv")).run()
+    assert "analysis" not in app.session_state
+    app.button(key="analyze").click().run()
+    assert len(app.session_state["analysis"]["rows"]) == 99
+    assert app.session_state["analysis"]["evaluation"] is None
+    app.file_uploader[0].set_value(("bad.csv", b"f001\nwrong\n", "text/csv")).run()
+    assert app.button(key="analyze").disabled
+    assert not app.exception and len(app.error) > 0
+    assert "analysis" not in app.session_state
+
+
+def test_no_fit_probability_or_file_persistence_calls():
+    for name in ["service.py", "ui.py"]:
+        tree = ast.parse((ROOT / "src/webapp" / name).read_text(encoding="utf-8"))
+        forbidden = {"fit", "fit_transform", "partial_fit", "calibrate", "fit_reference", "predict_proba",
+                     "write_bytes", "write_text", "dump"}
+        assert not [node for node in ast.walk(tree) if isinstance(node, ast.Call) and
+                    isinstance(node.func, ast.Attribute) and node.func.attr in forbidden]
+
+
+def test_existing_model_and_results_preserved():
+    checks = verify(include_raw=False)
+    assert checks["all_preserved"] and checks["models"] == 325 and checks["new_model_fits"] == 0

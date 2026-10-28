@@ -176,6 +176,7 @@ def test_streamlit_six_screens_charts_and_downloads(labels):
     for page in PAGES:
         app.radio(key="page").set_value(page).run()
         assert not app.exception
+    app.radio(key="page").set_value(PAGES[2]).run()
     assert len(app.download_button) == 3
     app.download_button[0].click().run()
     assert not app.exception and len(app.session_state["analysis"]["rows"]) == 200

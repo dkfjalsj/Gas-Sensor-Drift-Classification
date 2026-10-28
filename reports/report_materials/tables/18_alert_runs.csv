@@ -1,0 +1,5 @@
+partition,start_window,end_window,windows
+calibration,7,7,1
+internal,3,3,1
+batch7,1,36,36
+batch8,1,2,2

@@ -1,0 +1,7 @@
+scope,variables,windows,spearman,inference,note
+pooled_7_8,score vs error_rate,38,-0.2918987374993181,False,descriptive only
+pooled_7_8,score vs mixture_total_variation,38,-0.003739601219904375,False,descriptive only
+batch7,score vs error_rate,36,-0.27395617887897833,False,descriptive only
+batch7,score vs mixture_total_variation,36,-0.06331853626111442,False,descriptive only
+batch8,score vs error_rate,2,,False,too few/constant windows
+batch8,score vs mixture_total_variation,2,,False,too few/constant windows

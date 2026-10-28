@@ -1,0 +1,9 @@
+name,title,path
+calibration_distribution,"임계값 산정 자료의 점수 분포 (n=1,400 사용·83행 제외)",outputs\drift_detection\calibration_distribution.png
+batch7_windows,Batch7: 입력3613행·36창·잔여13행 제외,outputs\drift_detection\batch7_windows.png
+batch8_windows,Batch8: 입력294행·2창·잔여94행 제외,outputs\drift_detection\batch8_windows.png
+warning_rates,기준 분포 내부 경고율과 개발 Batch 경고율,outputs\drift_detection\warning_rates.png
+score_comparison,자료별 점수 분포 (Batch8은2개 창),outputs\drift_detection\score_comparison.png
+gas_composition,사후 확인한 가스 구성: Reference2966·Cal1483·내부1484·B7 3613·B8 294행,outputs\drift_detection\gas_composition.png
+warning_classifier_error,고정 감지 점수와 저장된 공식 SVM 오류의 사후 관계,outputs\drift_detection\warning_classifier_error.png
+unsupported_windows,입력 부족·클래스 support 한계 (유효하지 않은 창은 별도 표),outputs\drift_detection\unsupported_windows.png

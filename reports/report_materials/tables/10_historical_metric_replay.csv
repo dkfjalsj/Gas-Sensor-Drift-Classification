@@ -1,0 +1,989 @@
+source,group,scope,scalars_checked,max_absolute_error,match
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",pooled,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,2.220446049250313e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,7,2.220446049250313e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",pooled,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,7,2.220446049250313e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",pooled,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",pooled,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,7,2.220446049250313e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'train'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,7,6.765421556309548e-17,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,5.551115123125783e-17,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,3.469446951953614e-17,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'train'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'validation'}",pooled,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'validation'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'train'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'train'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'train'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'validation'}",pooled,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'train'}",pooled,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,1.1102230246251565e-16,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'train'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'train'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,4,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/toluene_analysis/toluene_metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,7,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",pooled,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'validation'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",pooled,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_comparison/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'test'}",common_6_10,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'test'}",common_6_10,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'test'}",common_6_10,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'test'}",common_6_10,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'test'}",common_6_10,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'test'}",common_6_10,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'validation'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'validation'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'test'}",common_6_10,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'validation'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",pooled,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,8.326672684688674e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'test'}",common_6_10,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'validation'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'validation'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",batch,9,5.551115123125783e-17,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'test'}",common_6_10,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'A_random', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'train'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'train'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'train'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_early', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'train'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'LogisticRegression', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'train'}",pooled,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'RandomForest', 'partition': 'train'}",batch,9,0.0,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'train'}",pooled,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_diagnostics/metrics.csv,"{'experiment': 'B_history', 'model': 'SVM_RBF', 'partition': 'train'}",batch,9,1.1102230246251565e-16,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",pooled,14,9.367506770274758e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",batch,14,7.719519468096792e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_base', 'partition': 'test'}",common_6_10,14,9.367506770274758e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",pooled,14,6.830473686658678e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",batch,14,2.7755575615628914e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_balanced', 'partition': 'test'}",common_6_10,14,6.591949208711867e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",pooled,14,9.71445146547012e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",batch,14,6.245004513516506e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_robust', 'partition': 'test'}",common_6_10,14,9.71445146547012e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",pooled,14,9.75781955236954e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",batch,14,2.7755575615628914e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_base', 'partition': 'test'}",common_6_10,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",pooled,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_balanced', 'partition': 'test'}",common_6_10,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",pooled,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_base', 'partition': 'test'}",common_6_10,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'validation'}",pooled,14,1.9081958235744878e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'validation'}",batch,14,1.9081958235744878e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",pooled,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_balanced', 'partition': 'test'}",common_6_10,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",pooled,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_robust', 'partition': 'test'}",common_6_10,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",pooled,14,6.245004513516506e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",batch,14,6.938893903907228e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C0p1', 'partition': 'test'}",common_6_10,14,6.245004513516506e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",pooled,14,9.71445146547012e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",batch,14,7.719519468096792e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'LR_tune_C10', 'partition': 'test'}",common_6_10,14,9.71445146547012e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",pooled,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_trees200', 'partition': 'test'}",common_6_10,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",pooled,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",batch,12,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'RF_tune_depth12_leaf3', 'partition': 'test'}",common_6_10,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'validation'}",pooled,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'validation'}",batch,14,0.0,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",pooled,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_C10', 'partition': 'test'}",common_6_10,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'validation'}",pooled,14,6.938893903907228e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'validation'}",batch,14,6.938893903907228e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",pooled,14,6.245004513516506e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",batch,12,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",batch,12,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",batch,14,8.326672684688674e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",batch,14,5.551115123125783e-17,True
+outputs/model_improvement/metrics.csv,"{'trial_id': 'SVM_tune_gamma0p001', 'partition': 'test'}",common_6_10,14,6.245004513516506e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_LR_base', 'partition': 'validation'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_LR_base', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_LR_base', 'partition': 'validation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_LR_base', 'partition': 'evaluation'}",pooled,17,8.847089727481716e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_LR_base', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_LR_base', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_RF_base', 'partition': 'validation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_RF_base', 'partition': 'validation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_RF_base', 'partition': 'validation'}",batch,17,9.71445146547012e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_RF_base', 'partition': 'evaluation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_RF_base', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_RF_base', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_SVM_base', 'partition': 'validation'}",pooled,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_SVM_base', 'partition': 'validation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_SVM_base', 'partition': 'validation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_SVM_base', 'partition': 'evaluation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_SVM_base', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'A_SVM_base', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_base', 'partition': 'validation'}",pooled,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_base', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_base', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_base', 'partition': 'evaluation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_base', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_base', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_base', 'partition': 'validation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_base', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_base', 'partition': 'validation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_base', 'partition': 'evaluation'}",pooled,17,9.71445146547012e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_base', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_base', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_base', 'partition': 'validation'}",pooled,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_base', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_base', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_base', 'partition': 'evaluation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_base', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_base', 'partition': 'evaluation'}",batch,17,6.938893903907228e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_balanced', 'partition': 'validation'}",pooled,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_balanced', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_balanced', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_balanced', 'partition': 'evaluation'}",pooled,17,9.367506770274758e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_balanced', 'partition': 'evaluation'}",batch,17,2.7755575615628914e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_balanced', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_robust', 'partition': 'validation'}",pooled,17,2.7755575615628914e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_robust', 'partition': 'validation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_robust', 'partition': 'validation'}",batch,17,6.938893903907228e-18,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_robust', 'partition': 'evaluation'}",pooled,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_robust', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_robust', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_balanced', 'partition': 'validation'}",pooled,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_balanced', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_balanced', 'partition': 'validation'}",batch,17,4.163336342344337e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_balanced', 'partition': 'evaluation'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_balanced', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_balanced', 'partition': 'evaluation'}",batch,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_balanced', 'partition': 'validation'}",pooled,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_balanced', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_balanced', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_balanced', 'partition': 'evaluation'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_balanced', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_balanced', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_robust', 'partition': 'validation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_robust', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_robust', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_robust', 'partition': 'evaluation'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_robust', 'partition': 'evaluation'}",batch,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_robust', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C0p1', 'partition': 'validation'}",pooled,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C0p1', 'partition': 'validation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C0p1', 'partition': 'validation'}",batch,17,2.7755575615628914e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C0p1', 'partition': 'evaluation'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C0p1', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C0p1', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C10', 'partition': 'validation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C10', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C10', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C10', 'partition': 'evaluation'}",pooled,17,9.367506770274758e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C10', 'partition': 'evaluation'}",batch,17,2.7755575615628914e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_LR_tune_C10', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_trees200', 'partition': 'validation'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_trees200', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_trees200', 'partition': 'validation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_trees200', 'partition': 'evaluation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_trees200', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_trees200', 'partition': 'evaluation'}",batch,17,8.326672684688674e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_depth12_leaf3', 'partition': 'validation'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_depth12_leaf3', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_depth12_leaf3', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_depth12_leaf3', 'partition': 'evaluation'}",pooled,17,9.71445146547012e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_depth12_leaf3', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_RF_tune_depth12_leaf3', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_C10', 'partition': 'validation'}",pooled,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_C10', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_C10', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_C10', 'partition': 'evaluation'}",pooled,17,6.245004513516506e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_C10', 'partition': 'evaluation'}",batch,17,0.0,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_C10', 'partition': 'evaluation'}",batch,17,7.28583859910259e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_gamma0p001', 'partition': 'validation'}",pooled,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_gamma0p001', 'partition': 'validation'}",batch,17,1.1102230246251565e-16,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_gamma0p001', 'partition': 'validation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_gamma0p001', 'partition': 'evaluation'}",pooled,17,2.7755575615628914e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_gamma0p001', 'partition': 'evaluation'}",batch,17,6.418476861114186e-17,True
+outputs/temporal_expansion/metrics.csv,"{'trial_id': 'B_SVM_tune_gamma0p001', 'partition': 'evaluation'}",batch,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_all', 'fold': 'A'}",A,17,8.326672684688674e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_variance', 'fold': 'A'}",A,17,1.3877787807814457e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_correlation', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_stability64', 'fold': 'A'}",A,17,6.938893903907228e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_kbest32', 'fold': 'A'}",A,17,4.163336342344337e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_kbest64', 'fold': 'A'}",A,17,6.938893903907228e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_all', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_variance', 'fold': 'A'}",A,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_correlation', 'fold': 'A'}",A,17,9.71445146547012e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_stability64', 'fold': 'A'}",A,17,7.632783294297951e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_kbest32', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_kbest64', 'fold': 'A'}",A,17,2.7755575615628914e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_all', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_variance', 'fold': 'A'}",A,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_correlation', 'fold': 'A'}",A,17,4.163336342344337e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_stability64', 'fold': 'A'}",A,17,2.7755575615628914e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_kbest32', 'fold': 'A'}",A,17,9.71445146547012e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_kbest64', 'fold': 'A'}",A,17,8.326672684688674e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_all', 'fold': 'B'}",B,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_variance', 'fold': 'B'}",B,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_correlation', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_stability64', 'fold': 'B'}",B,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_kbest32', 'fold': 'B'}",B,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_kbest64', 'fold': 'B'}",B,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_all', 'fold': 'B'}",B,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_variance', 'fold': 'B'}",B,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_correlation', 'fold': 'B'}",B,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_stability64', 'fold': 'B'}",B,17,8.326672684688674e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_kbest32', 'fold': 'B'}",B,17,3.9898639947466563e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_kbest64', 'fold': 'B'}",B,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_all', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_variance', 'fold': 'B'}",B,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_correlation', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_stability64', 'fold': 'B'}",B,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_kbest32', 'fold': 'B'}",B,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_kbest64', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_all', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_variance', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_correlation', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_stability64', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_kbest32', 'fold': 'C'}",C,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'LR_kbest64', 'fold': 'C'}",C,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_all', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_variance', 'fold': 'C'}",C,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_correlation', 'fold': 'C'}",C,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_stability64', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_kbest32', 'fold': 'C'}",C,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'RF_kbest64', 'fold': 'C'}",C,17,3.469446951953614e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_all', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_variance', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_correlation', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_stability64', 'fold': 'C'}",C,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_kbest32', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'SVM_kbest64', 'fold': 'C'}",C,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'hard_full', 'fold': 'A'}",A,17,8.326672684688674e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'hard_full', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'hard_full', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'hard_representatives', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'hard_representatives', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'hard_representatives', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'rank_equal', 'fold': 'A'}",A,17,5.551115123125783e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'rank_equal', 'fold': 'B'}",B,17,0.0,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'rank_equal', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'rank_svm2', 'fold': 'A'}",A,17,6.938893903907228e-17,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'rank_svm2', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/fold_metrics.csv,"{'config_id': 'rank_svm2', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_all', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_all', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_all', 'fold': '10'}",10,17,0.0,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_variance', 'fold': 'pooled'}",pooled,17,8.673617379884035e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_variance', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_variance', 'fold': '10'}",10,17,6.678685382510707e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_correlation', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_correlation', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_correlation', 'fold': '10'}",10,17,6.678685382510707e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_stability64', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_stability64', 'fold': '9'}",9,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_stability64', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_kbest32', 'fold': 'pooled'}",pooled,17,9.71445146547012e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_kbest32', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_kbest32', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_kbest64', 'fold': 'pooled'}",pooled,17,4.85722573273506e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_kbest64', 'fold': '9'}",9,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'LR_kbest64', 'fold': '10'}",10,17,4.85722573273506e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_all', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_all', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_all', 'fold': '10'}",10,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_variance', 'fold': 'pooled'}",pooled,17,6.938893903907228e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_variance', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_variance', 'fold': '10'}",10,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_correlation', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_correlation', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_correlation', 'fold': '10'}",10,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_stability64', 'fold': 'pooled'}",pooled,17,9.020562075079397e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_stability64', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_stability64', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_kbest32', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_kbest32', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_kbest32', 'fold': '10'}",10,17,6.938893903907228e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_kbest64', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_kbest64', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'RF_kbest64', 'fold': '10'}",10,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_all', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_all', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_all', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_variance', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_variance', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_variance', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_correlation', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_correlation', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_correlation', 'fold': '10'}",10,17,6.938893903907228e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_stability64', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_stability64', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_stability64', 'fold': '10'}",10,17,6.938893903907228e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_kbest32', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_kbest32', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_kbest32', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_kbest64', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_kbest64', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'SVM_kbest64', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'hard_full', 'fold': 'pooled'}",pooled,17,6.938893903907228e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'hard_full', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'hard_full', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'hard_representatives', 'fold': 'pooled'}",pooled,17,4.163336342344337e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'hard_representatives', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'hard_representatives', 'fold': '10'}",10,17,2.7755575615628914e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'rank_equal', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'rank_equal', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'rank_equal', 'fold': '10'}",10,17,8.153200337090993e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'rank_svm2', 'fold': 'pooled'}",pooled,17,9.71445146547012e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'rank_svm2', 'fold': '9'}",9,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'rank_svm2', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'stage6_saved_SVM', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'stage6_saved_SVM', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_robustness/evaluation_metrics.csv,"{'config_id': 'stage6_saved_SVM', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'class_balanced', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_linear', 'fold': 'A'}",A,17,4.163336342344337e-17,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_exp', 'fold': 'A'}",A,17,2.7755575615628914e-17,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_recent', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'class_sample', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'gas_batch', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_class_shrink', 'fold': 'A'}",A,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_gas_batch', 'fold': 'A'}",A,17,1.3877787807814457e-17,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'class_balanced', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_linear', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_exp', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_recent', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'class_sample', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'gas_batch', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_class_shrink', 'fold': 'B'}",B,17,0.0,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_gas_batch', 'fold': 'B'}",B,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'class_balanced', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_linear', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_exp', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_recent', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'class_sample', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'gas_batch', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_class_shrink', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/fold_metrics.csv,"{'config_id': 'time_gas_batch', 'fold': 'C'}",C,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'class_balanced', 'fold': '6'}",6,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_linear', 'fold': '6'}",6,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_exp', 'fold': '6'}",6,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_recent', 'fold': '6'}",6,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'class_sample', 'fold': '6'}",6,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'gas_batch', 'fold': '6'}",6,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_class_shrink', 'fold': '6'}",6,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_gas_batch', 'fold': '6'}",6,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'class_balanced', 'fold': '7'}",7,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_linear', 'fold': '7'}",7,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_exp', 'fold': '7'}",7,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_recent', 'fold': '7'}",7,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'class_sample', 'fold': '7'}",7,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'gas_batch', 'fold': '7'}",7,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_class_shrink', 'fold': '7'}",7,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/range_batch8_metrics.csv,"{'config_id': 'time_gas_batch', 'fold': '7'}",7,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_class_balanced', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_class_balanced', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_class_balanced', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_linear', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_linear', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_linear', 'fold': '10'}",10,17,2.7755575615628914e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_exp', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_exp', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_exp', 'fold': '10'}",10,17,8.326672684688674e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_recent', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_recent', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_recent', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_class_sample', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_class_sample', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_class_sample', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_gas_batch', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_gas_batch', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_gas_batch', 'fold': '10'}",10,17,4.163336342344337e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_class_shrink', 'fold': 'pooled'}",pooled,17,2.7755575615628914e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_class_shrink', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_class_shrink', 'fold': '10'}",10,17,8.326672684688674e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_gas_batch', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_gas_batch', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train6_time_gas_batch', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_class_balanced', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_class_balanced', 'fold': '9'}",9,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_class_balanced', 'fold': '10'}",10,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_linear', 'fold': 'pooled'}",pooled,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_linear', 'fold': '9'}",9,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_linear', 'fold': '10'}",10,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_exp', 'fold': 'pooled'}",pooled,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_exp', 'fold': '9'}",9,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_exp', 'fold': '10'}",10,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_recent', 'fold': 'pooled'}",pooled,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_recent', 'fold': '9'}",9,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_recent', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_class_sample', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_class_sample', 'fold': '9'}",9,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_class_sample', 'fold': '10'}",10,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_gas_batch', 'fold': 'pooled'}",pooled,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_gas_batch', 'fold': '9'}",9,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_gas_batch', 'fold': '10'}",10,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_class_shrink', 'fold': 'pooled'}",pooled,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_class_shrink', 'fold': '9'}",9,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_class_shrink', 'fold': '10'}",10,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_gas_batch', 'fold': 'pooled'}",pooled,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_gas_batch', 'fold': '9'}",9,17,1.1102230246251565e-16,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'train7_time_gas_batch', 'fold': '10'}",10,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'stage6_SVM', 'fold': 'pooled'}",pooled,17,8.326672684688674e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'stage6_SVM', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'stage6_SVM', 'fold': '10'}",10,17,5.551115123125783e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'stage8_HardVoting', 'fold': 'pooled'}",pooled,17,4.163336342344337e-17,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'stage8_HardVoting', 'fold': '9'}",9,17,0.0,True
+outputs/temporal_weighting/evaluation_metrics.csv,"{'config_id': 'stage8_HardVoting', 'fold': '10'}",10,17,2.7755575615628914e-17,True

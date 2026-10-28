@@ -1,0 +1,13 @@
+model,fold,true_gas,target_pair,other_wrong
+HGB,A,4,0,0
+HGB,A,6,448,19
+HGB,B,4,2,610
+HGB,B,6,25,261
+HGB,C,4,1,0
+HGB,C,6,4,0
+SVM,A,4,0,0
+SVM,A,6,416,51
+SVM,B,4,67,219
+SVM,B,6,0,60
+SVM,C,4,0,2
+SVM,C,6,2,1

@@ -1,0 +1,6 @@
+setting,baseline,mean_macro_delta,paired_seed_sd,positive_fold_n,neutral_fold_n,positive_seed_n,toluene_delta,acetaldehyde_delta,macro_guard,focus_guard,other_guard,fold_guard,seed_guard,balanced_success,expansion_eligible,conclusion
+coverage_mid,spread_mid,0.03574250473737535,0.022603547276915152,2,0,5,-0.09582214916910456,0.09957640925382862,True,False,True,False,True,False,False,B
+mixed_mid,spread_mid,0.034409314960163896,0.03680549272194319,1,1,4,-0.15429055816379758,0.03975236233300749,True,False,True,False,False,False,False,B
+recent_mid,spread_mid,0.04463156142211931,0.016158669436448194,2,0,5,-0.09158841940532082,0.10127891821440207,True,False,True,False,True,False,False,B
+spread_max,spread_mid,0.09021963053990589,0.016828580669422284,3,0,5,-0.04741784037558685,0.07601824698598891,True,True,True,True,True,True,True,A
+spread_mid,spread_mid,0.0,0.0,0,3,0,0.0,0.0,False,True,True,False,False,False,False,C

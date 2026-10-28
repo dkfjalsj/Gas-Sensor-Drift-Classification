@@ -1,0 +1,9 @@
+{
+  "started_at": "2026-10-28T05:57:15.139829+00:00",
+  "finished": true,
+  "threads": 1,
+  "log": "final_tests.txt",
+  "xml": "final_tests.xml",
+  "returncode": 1,
+  "finished_at": "2026-10-28T05:59:28.157342+00:00"
+}

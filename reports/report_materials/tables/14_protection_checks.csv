@@ -1,0 +1,4 @@
+method,complete,macro_guard,gas_recall_guard,other_four_guard,zero_count_guard,no_new_zero_guard,macro_delta,worst_mean_gas_recall_delta,other_four_f1_delta,balanced_success
+baseline,True,False,True,True,True,True,0.0,0.0,0.0,False
+signed_log,True,False,True,True,True,True,0.0032078235201251637,-0.037593678722711,0.003085933963981499,False
+yeo_johnson,True,False,False,True,True,True,-0.013490081033338153,-0.06540166927490876,-0.01310269731163524,False

@@ -1,0 +1,5 @@
+train_batches,validation_batch,test_batch,train_n,validation_n,test_n,train_toluene_n,validation_toluene_n,test_toluene_n,evaluation_type
+1–5,6,7,3633,2300,3613,79,467,568,exploratory: previously observed batches
+1–6,7,8,5933,3613,294,546,568,18,exploratory: previously observed batches
+1–7,8,9,9546,294,470,1114,18,101,exploratory: previously observed batches
+1–8,9,10,9840,470,3600,1132,101,600,exploratory: previously observed batches
