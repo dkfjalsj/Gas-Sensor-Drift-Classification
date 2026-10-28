@@ -1,0 +1,19 @@
+{
+  "stage": 19,
+  "prepared_at": "2026-10-28T09:56:17.599880+09:00",
+  "new_model_fits": 0,
+  "purpose": "Existing Model A predict + existing RFF-MMD evaluate; no scientific model comparison",
+  "models": [
+    "models/temporal_expansion/B_SVM_balanced.joblib",
+    "models/drift_detection/rff_mmd_v1.joblib"
+  ],
+  "threshold": 0.00825701197565701,
+  "window_size": 100,
+  "inputs": "UTF-8 CSV f001..f128, optional gas integer1..6; reject unknown columns; reorder exact features",
+  "privacy": "No application persistence of uploaded sensor features; model cache only, results per-session memory",
+  "tests": "Service unit tests + Streamlit AppTest real file_uploader + localhost server and browser; 99/100/101/200 rows, labels/no labels, malformed headers/values, changing input, downloads and replay",
+  "data": "Synthetic fixtures are UI tests only, not research performance; Batch7 first200 in-memory prediction equality against saved stage14 baseline only. No new Batch9/10 evaluation; raw9/10 bytes read for preservation SHA only outside restricted legacy tests.",
+  "old_tests": "Audit hook skips attempts to open raw9/10 or overwrite old artifacts; report skips separately",
+  "changes": "Only new app entrypoint, src/webapp, test, requirements-streamlit/constraints/lock, README_streamlit, new outputs/report",
+  "limits": "Research prototype, no authentication/production safety certification, no retraining or automatic swap; MMD not probability, equipment fault or predicted classification accuracy"
+}

@@ -1,0 +1,493 @@
+{
+  "all_preserved": true,
+  "existing_models": 325,
+  "existing_files": 1364,
+  "raw_files_verified": 8,
+  "raw9_10_opened": false,
+  "raw9_10_reverified": false,
+  "detector_unchanged": true,
+  "threshold": 0.00825701197565701,
+  "new_fits": 0,
+  "plan_unchanged": true,
+  "tests": {
+    "total": 234,
+    "passed": 143,
+    "failed": 2,
+    "skipped": 89,
+    "historical_failures": 2,
+    "new_failures": 0,
+    "new_tests": 15,
+    "new_passed": 15,
+    "failures": [
+      {
+        "classname": "tests.test_diagnostics",
+        "name": "test_existing_results_and_models_unchanged",
+        "historical": true,
+        "reason": "FileNotFoundError: [Errno 2] No such file or directory: 'D:\\\\Gas-Sensor-Drift-Classification\\\\outputs\\\\model_comparison\\\\zNex~$haremetrics.csv'"
+      },
+      {
+        "classname": "tests.test_temporal_failure_diagnostics",
+        "name": "test_no_new_fit_calls_or_new_model_files",
+        "historical": true,
+        "reason": "AssertionError: assert {'models\\\\A_r....joblib', ...} == {'models\\\\A_r....joblib', ...}\n  \n  Extra items in the right set:\n  'models\\\\temporal_representativeness_control\\\\B_early_mid_seed11.joblib'\n  'models\\\\temporal_representativeness_control\\\\A_spread_mid_anchor_seed67.joblib'\n  'models\\\\temporal_representativeness_control\\\\A_early_mid_seed67.joblib'\n  'models\\\\temporal_representativeness_control\\\\C_spread_mid_unit_seed67.joblib'\n  'models\\\\temporal_weighting\\\\B\\\\class_balanced.joblib'...\n  \n  ...Full output truncated (278 lines hidden), use '-vv' to show"
+      }
+    ],
+    "skipped_tests": [
+      {
+        "classname": "tests.test_diagnostics",
+        "name": "test_wasserstein_same_gas_train_reference",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_drift_detection",
+        "name": "test_real_files_and_plan_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_gas_specific_temporal_balancing",
+        "name": "test_plan_budget_and_all_seeds_frozen",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_gas_specific_temporal_balancing",
+        "name": "test_sampling_reproducibility_and_exact_gas_budgets",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_gas_specific_temporal_balancing",
+        "name": "test_mixed_rule_uses_only_past_training_counts",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_gas_specific_temporal_balancing",
+        "name": "test_minimum_representation_and_capacity_constraints",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_gas_specific_temporal_balancing",
+        "name": "test_model_reuse_is_exact_and_new_files_are_separate",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_gas_specific_temporal_balancing",
+        "name": "test_preprocessing_and_class_weight_train_only",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_gas_specific_temporal_balancing",
+        "name": "test_saved_prediction_reproducibility",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_gas_specific_temporal_balancing",
+        "name": "test_existing_files_models_raw_and_plan_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_hgb_algorithm_comparison",
+        "name": "test_ordered_rows_feature_hashes_and_temporal_separation",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_hgb_algorithm_comparison",
+        "name": "test_train_only_imputation_and_hgb_input_order",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_hgb_algorithm_comparison",
+        "name": "test_balanced_class_weights_computed_only_from_train",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_hgb_algorithm_comparison",
+        "name": "test_no_internal_or_external_validation_fit",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_hgb_algorithm_comparison",
+        "name": "test_model_reload_matches_saved_predictions",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_hgb_algorithm_comparison",
+        "name": "test_prior_files_raw_models_preserved_and_graphs_complete",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_improvement",
+        "name": "test_historical_test_exclusion_and_class_coverage",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_improvement",
+        "name": "test_duplicate_guard",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_improvement",
+        "name": "test_train_only_transformer_statistics",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_improvement",
+        "name": "test_saved_models_replay_all_predictions",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_improvement",
+        "name": "test_preservation_and_frozen_plan",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_models",
+        "name": "test_real_split_sizes_disjointness_and_chronology",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_models",
+        "name": "test_split_guard_rejects_cross_partition_duplicate",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_models",
+        "name": "test_saved_pipelines_train_statistics_and_reload_predictions",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_models",
+        "name": "test_eda_and_sources_preserved_report_complete",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_nonlinear_feature_transformation",
+        "name": "test_time_order_equal_rows_and_no_exact_overlap",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_nonlinear_feature_transformation",
+        "name": "test_preprocessing_train_only_and_feature_order",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_nonlinear_feature_transformation",
+        "name": "test_saved_models_prediction_reproduction",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_nonlinear_feature_transformation",
+        "name": "test_gamma_records_match_actual_train_variance",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_nonlinear_feature_transformation",
+        "name": "test_original_files_raw_data_and_plan_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_calibration",
+        "name": "test_calibration_evaluation_disjoint_nested_and_exact_counts",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_calibration",
+        "name": "test_original_row_ids_and_split_reproducibility",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_calibration",
+        "name": "test_same_evaluation_for_every_rate_and_exact_past_train",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_calibration",
+        "name": "test_train_only_preprocessing_and_classifier_parameters",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_calibration",
+        "name": "test_balanced_weights_combined_train_only",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_calibration",
+        "name": "test_saved_models_and_reloaded_predictions",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_calibration",
+        "name": "test_regression_set_is_existing_heldout_and_no_train_score_proxy",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_calibration",
+        "name": "test_no_future_evaluation_and_historical_files_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_expansion",
+        "name": "test_temporal_split_counts_and_classes",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_expansion",
+        "name": "test_duplicate_features_rejected",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_expansion",
+        "name": "test_preprocessing_fit_train_only",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_expansion",
+        "name": "test_saved_model_predictions_reproduced",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_expansion",
+        "name": "test_preservation_and_reports",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_failure_diagnostics",
+        "name": "test_replay_without_model_fit",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_failure_diagnostics",
+        "name": "test_feature_stats_and_wasserstein",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_failure_diagnostics",
+        "name": "test_proximity_and_kernel_values",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_failure_diagnostics",
+        "name": "test_prior_files_raw_and_report_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_generalization_validation",
+        "name": "test_fixed_models_and_train_only_preprocessing",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_generalization_validation",
+        "name": "test_korean_font_and_sensor_plot_statistics",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_generalization_validation",
+        "name": "test_existing_files_raw_and_model_inventory_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_representativeness_control",
+        "name": "test_frozen_budget_scope_and_exact_counts",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_representativeness_control",
+        "name": "test_sampling_reproduces_all_120_subsets",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_representativeness_control",
+        "name": "test_allocation_capacity_and_absent_cells",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_representativeness_control",
+        "name": "test_spread_budgets_are_nested_and_controls_share_rows",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_representativeness_control",
+        "name": "test_native_and_anchor_preprocessing_are_train_only",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_representativeness_control",
+        "name": "test_saved_models_parameters_and_predictions_reproduce",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_representativeness_control",
+        "name": "test_existing_model_reference_predictions_unchanged",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_representativeness_control",
+        "name": "test_prior_files_and_raw_hashes_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_robustness",
+        "name": "test_fixed_folds_and_support",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_robustness",
+        "name": "test_train_only_preprocessing_and_feature_inputs",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_robustness",
+        "name": "test_feature_selection_uses_training_statistics",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_robustness",
+        "name": "test_serialized_fold_and_ensemble_predictions_reproduce",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_robustness",
+        "name": "test_evaluation_gate_and_baseline_reproduction",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_robustness",
+        "name": "test_existing_files_and_raw_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_svm_ensemble",
+        "name": "test_expert_rows_reproducible_past_only_and_same_validation",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_svm_ensemble",
+        "name": "test_recent_and_spread_have_equal_gas_budgets_and_no_future_dependence",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_svm_ensemble",
+        "name": "test_train_only_scaler_imputer_mapping_and_support_vectors",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_svm_ensemble",
+        "name": "test_reloaded_expert_predictions_and_rank_mapping",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_svm_ensemble",
+        "name": "test_ensemble_gate_execution_and_predictions",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_svm_ensemble",
+        "name": "test_raw_models_sources_preserved_and_no_future_predictions",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_weighting",
+        "name": "test_fixed_fold_counts_and_support",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_weighting",
+        "name": "test_weight_formulas_limits_and_actual_cells",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_weighting",
+        "name": "test_train_only_scaling_and_effective_class_weight",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_weighting",
+        "name": "test_fold_prediction_reproduction_and_metrics",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_weighting",
+        "name": "test_common_range_comparison_on_future_batch8",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_weighting",
+        "name": "test_evaluation_reproduction_and_per_class_metrics",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_temporal_weighting",
+        "name": "test_existing_files_and_raw_preserved",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene",
+        "name": "test_distance_and_overlap_reference",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene",
+        "name": "test_historical_and_current_preservation",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene_deep_diagnostic",
+        "name": "test_model_hashes_and_original_preprocessing",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene_deep_diagnostic",
+        "name": "test_prediction_replay_and_batch9_support",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene_deep_diagnostic",
+        "name": "test_ovo_ovr_reconstruction_and_native_votes",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene_deep_diagnostic",
+        "name": "test_exact_neighbors_and_training_only_candidates",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene_deep_diagnostic",
+        "name": "test_sensor_statistics_correlations_and_class_weights",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene_deep_diagnostic",
+        "name": "test_pca_fits_only_train_and_coordinates_reproduce",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_toluene_deep_diagnostic",
+        "name": "test_preserved_files_raw_models_and_config",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_validation",
+        "name": "test_real_structure_and_expected_totals",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_validation",
+        "name": "test_report_numbers_and_source_integrity",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      },
+      {
+        "classname": "tests.test_validation",
+        "name": "test_saved_splits_reproducible_and_temporal",
+        "reason": "18.5단계 접근 제한: Batch9~10 원본 열기 금지"
+      }
+    ]
+  },
+  "tests_pending": false,
+  "conclusion": "A",
+  "physical_drift_accuracy_validated": false,
+  "webapp_integration_performed": false,
+  "visual_review": [
+    "window_method_means.png",
+    "composition_control.png",
+    "score_decomposition.png"
+  ],
+  "closed_at": "2026-10-28T09:15:16.045642+09:00"
+}

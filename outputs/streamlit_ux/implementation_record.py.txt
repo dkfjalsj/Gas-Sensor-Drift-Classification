@@ -1,0 +1,32 @@
+from pathlib import Path
+import hashlib
+import json
+import sys
+
+root = Path(r'D:\Gas-Sensor-Drift-Classification')
+sys.path.insert(0, str(root))
+from src.webapp.service import analyze, read_upload, load_models, downloads
+import numpy as np
+import pandas as pd
+
+out = root / 'outputs/streamlit_ux'
+models = load_models()
+baseline = {}
+for n in [99, 100, 101, 200]:
+    for labels in [False, True]:
+        frame = pd.DataFrame(np.random.default_rng(42).normal(size=(n,128)), columns=[f'f{i:03}' for i in range(1,129)])
+        if labels:
+            frame['gas'] = np.arange(n) % 6 + 1
+        result = analyze(read_upload(frame.to_csv(index=False).encode('utf-8-sig')), models)
+        baseline[f'{n}_{labels}'] = {name: hashlib.sha256(data).hexdigest() for name,data in downloads(result).items()}
+(out / 'baseline_download_sha256.json').write_text(json.dumps(baseline, indent=2), encoding='utf-8')
+(root/'src/webapp/ui.py').write_text(Path('stage195/ui.py').read_text(encoding='utf-8'),encoding='utf-8')
+test = (root/'tests/test_streamlit_integration.py').read_text(encoding='utf-8')
+test = test.replace('from src.webapp.audit import verify','from src.webapp.ux_audit import verify')
+test = test.replace('PAGES[3]', 'PAGES[2]')
+# 모든 기존 검증을 유지하고 새로운 세 화면 구조에 맞게 이동만 수정
+(root/'tests/test_streamlit_integration.py').write_text(test,encoding='utf-8')
+guard = (root/'src/webapp/testing_guard.py').read_text(encoding='utf-8').replace('outputs/streamlit_integration','outputs/streamlit_ux').replace('19단계','19.5단계')
+(root/'src/webapp/ux_testing_guard.py').write_text(guard,encoding='utf-8')
+readme = (root/'README_streamlit.md').read_text(encoding='utf-8')
+(root/'README_streamlit.md').write_text(readme+'\n\n## 19.5단계 사용자 화면\n데이터 분석 → 분석 결과 → 상세 분석의 세 영역으로 구성합니다.\nCSV 선택 후 분석 시작을 누르면 결과 화면으로 이동합니다.\n정답 평가와 기술 정보 및 CSV 다운로드는 상세 분석에서 확인합니다.\n',encoding='utf-8')

@@ -1,0 +1,36 @@
+{
+  "synthetic_functional_data_only": true,
+  "files": [
+    {
+      "file": "gas_classification.csv",
+      "http_status": 200,
+      "bytes": 529044,
+      "rows": 200,
+      "exact_payload_match": true,
+      "sha256": "5ffdad0861eef2daef2769e9ba11bb97d803307a529a40f579a13ac55778a127",
+      "content_disposition": "attachment; filename=\"gas_classification.csv\""
+    },
+    {
+      "file": "distribution_windows.csv",
+      "http_status": 200,
+      "bytes": 603,
+      "rows": 2,
+      "exact_payload_match": true,
+      "sha256": "f7ad54326d1f9c491efb19093f48700c74033e89e7fa303ed60b0fe785a27ca1",
+      "content_disposition": "attachment; filename=\"distribution_windows.csv\""
+    },
+    {
+      "file": "analysis_summary.csv",
+      "http_status": 200,
+      "bytes": 723,
+      "rows": 1,
+      "exact_payload_match": true,
+      "sha256": "06ce81980bf1707fa4f7fea9255dcce2177842969a0de4a825ed91fd065c8dcd",
+      "content_disposition": "attachment; filename=\"analysis_summary.csv\""
+    }
+  ],
+  "browser_download_button_clicked": true,
+  "browser_download_completion_event_captured": false,
+  "server_csv_responses_verified": true,
+  "limitation": "Only IAB was connected. General-browser filesystem save completion was not verified in stage 19.5."
+}

@@ -1,0 +1,11 @@
+target,seed,used_row_ids_same,excluded_row_ids_same,global_distance_delta
+7,42,True,True,0.0
+7,43,True,True,0.0
+7,44,True,True,-6.938893903907228e-18
+7,45,True,True,0.0
+7,46,True,True,0.0
+8,42,True,True,0.0
+8,43,True,True,-2.7755575615628914e-17
+8,44,True,True,0.0
+8,45,True,True,0.0
+8,46,True,True,0.0

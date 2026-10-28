@@ -1,0 +1,7 @@
+{
+  "conclusion": "A — 감지기 민감도와 교란 요인 정량 설명",
+  "conditions_complete": true,
+  "drift_accuracy_validated": false,
+  "causal_effect_identified": false,
+  "webapp_modified": false
+}

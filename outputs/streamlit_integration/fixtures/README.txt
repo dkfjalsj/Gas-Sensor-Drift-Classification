@@ -1,0 +1,1 @@
+Synthetic UI test fixtures only. Not research performance or normal-sensor data. No source dataset copied.

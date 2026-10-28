@@ -1,0 +1,32 @@
+{
+  "loaded_detector_state_unchanged": true,
+  "threshold_unchanged": true,
+  "original_replay_exact": true,
+  "model_A_predictions": 0,
+  "new_fits": 0,
+  "labels_passed_to_detector": false,
+  "scored_target_batches": [
+    7,
+    8
+  ],
+  "raw_batches_loaded": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "raw9_10_opened": false,
+  "reference_refitted": false,
+  "calibration_rescored": false,
+  "all_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "99_False": {
+    "gas_classification.csv": "8d03b845ae8a730f45e0d6fad61a89337381e756cde17a887c6492b2c8bc723c",
+    "distribution_windows.csv": "9a2db4764f5129f15bc2bb8fbf2d16d5f9a6076da13e468192fe33472b307cb4",
+    "analysis_summary.csv": "db191af6fa93cc552447a899a4c208bffafc70b9aa933e7017fd32ba049b8400"
+  },
+  "99_True": {
+    "gas_classification.csv": "caf50683af347fc95f8814368e5865c79366b9d0b54de70b24b632cd608e4db2",
+    "distribution_windows.csv": "9a2db4764f5129f15bc2bb8fbf2d16d5f9a6076da13e468192fe33472b307cb4",
+    "analysis_summary.csv": "3d41f2e0a7d65cb6393d9a7991857fea6ca082c205d481c9c391df8a03de7e31"
+  },
+  "100_False": {
+    "gas_classification.csv": "66bb170af4728c6be5b10d5994ccac69ce930d3338126b0952dbb06f9b95ccf5",
+    "distribution_windows.csv": "ce17472734fe7b0524832f6fdb1df77e89ff8b89735df0ae6c4d8b65a4ca5b47",
+    "analysis_summary.csv": "b5573d7abb5ce5db6af02f2ede753560eddf5d9cedd83b3f481684472e508621"
+  },
+  "100_True": {
+    "gas_classification.csv": "697b409f44a040654d683838158b3a3005369b0f6f760191597a9b164f3db5fc",
+    "distribution_windows.csv": "2120760c0c46ddbf27f29aa6c13a418cbaa9bf2009c2c8a46050441f589f0e0a",
+    "analysis_summary.csv": "dbcf55aa3969b400598551111ff4accdad4ec4626e071acb8ca01d4fe4e5e2cf"
+  },
+  "101_False": {
+    "gas_classification.csv": "24cd03aed0709448653d197c6ac92079f94884465937bb135d2d3567543ad249",
+    "distribution_windows.csv": "27e84d95d3009216ce6acf28f9330bf439c743bd01ee2c66be441eb5f3be95e3",
+    "analysis_summary.csv": "77a318217ae87d106bd146970146f3cc22459d8b53e590f13b09227aa455bd3e"
+  },
+  "101_True": {
+    "gas_classification.csv": "1df99c0f2b6758a2d2f1c613f31ae251a3a27c8bbbf8837a4d1abb35a12f7516",
+    "distribution_windows.csv": "f3f8ccf5380a6432724a71e6a464f18dbf6c02c38828607f90f80f5e8f2cac0f",
+    "analysis_summary.csv": "35c260503e9df61aa27c7cc1d381ce02b3af6da8584b77bd87b31667e55ab00e"
+  },
+  "200_False": {
+    "gas_classification.csv": "39c9d0bb6ec1d9d359e1280083984d8db2176b92646cf9fb79d5981a70c187a1",
+    "distribution_windows.csv": "3fe8cfc4b588269d37a4d3aa8ea97533684c41cbc19250eb301acea16a7b01d3",
+    "analysis_summary.csv": "a44fe15c6fd53b7347b9d626ae6218c75eded03f8cbd38f31c62843f393623c3"
+  },
+  "200_True": {
+    "gas_classification.csv": "5ffdad0861eef2daef2769e9ba11bb97d803307a529a40f579a13ac55778a127",
+    "distribution_windows.csv": "f7ad54326d1f9c491efb19093f48700c74033e89e7fa303ed60b0fe785a27ca1",
+    "analysis_summary.csv": "06ce81980bf1707fa4f7fea9255dcce2177842969a0de4a825ed91fd065c8dcd"
+  }
+}
