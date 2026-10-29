@@ -15,3 +15,7 @@
 /tests/test_project_cleanup.py -text
 /tests/test_report_publication.py -text
 /tests/test_retraining_preparation.py -text
+
+# 배포용 공개 UCI 모델 두 개만 바이너리 원문 유지
+/models/temporal_expansion/B_SVM_balanced.joblib -text
+/models/drift_detection/rff_mmd_v1.joblib -text

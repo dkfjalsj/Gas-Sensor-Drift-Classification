@@ -26,7 +26,13 @@ datasets/
 *.joblib
 
 # Local trained pipelines and metadata
-models/
+/models/*
+!/models/temporal_expansion/
+!/models/drift_detection/
+/models/temporal_expansion/*
+/models/drift_detection/*
+!/models/temporal_expansion/B_SVM_balanced.joblib
+!/models/drift_detection/rff_mmd_v1.joblib
 
 # 20-B/20-C local validation, models, logs and approval records
 /outputs/retraining_candidates/

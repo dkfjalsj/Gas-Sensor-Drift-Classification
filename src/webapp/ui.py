@@ -2,6 +2,7 @@
 # 저장 모델의 추론 서비스 및 다운로드 내용 유지
 
 import hashlib
+import logging
 
 import altair as alt
 import pandas as pd
@@ -12,6 +13,10 @@ from .service import (
     THRESHOLD, InputError, load_models, read_upload, analyze, downloads,
     reset_on_upload_change,
 )
+
+from .deployment import analysis_bundle, read_only_deployment, READ_ONLY_NOTICE
+
+LOGGER = logging.getLogger(__name__)
 
 PAGES = ["데이터 분석", "분석 결과", "상세 분석", "모델 관리"]
 GAS_NAMES = dict(zip(GASES.values(), [
@@ -279,6 +284,8 @@ def details(result):
 def main():
     st.set_page_config(page_title="가스 센서 AI 분석", page_icon="◈", layout="wide")
     style()
+    if read_only_deployment():
+        st.caption("공식 Model A 분석 전용 · 운영 이력 및 등록 데이터 영구 저장 안 함")
     if st.session_state.pop("show_results", False):
         st.session_state["page"] = PAGES[1]
     with st.sidebar:
@@ -309,26 +316,29 @@ def main():
     if submitted:
         st.session_state.pop("analysis", None)
         try:
-            from ..model_management.runtime import active_bundle
-
             with st.spinner("가스 종류와 측정 패턴 분석 중…"):
-                st.session_state["analysis"] = analyze(preview, active_bundle())
+                st.session_state["analysis"] = analyze(preview, analysis_bundle())
             st.session_state.pop("analysis_error", None)
             st.session_state["show_results"] = True
             st.rerun()
-        except (OSError, ValueError, RuntimeError, OverflowError, KeyError, TypeError):
+        except (OSError, ValueError, RuntimeError, OverflowError, KeyError, TypeError, ImportError, AttributeError):
+            LOGGER.exception("CSV analysis failed during model loading or inference")
             st.session_state["analysis_error"] = "분석을 완료하지 못했습니다. 저장 모델과 센서 입력값을 확인해 주세요."
     if "analysis_error" in st.session_state:
         st.error(st.session_state["analysis_error"])
+        st.caption("운영자는 Streamlit 서버 로그에서 누락 파일·모델 버전·예외 위치를 확인하세요.")
     result = st.session_state.get("analysis")
     st.subheader(page)
     if page == PAGES[3]:
-        from .management_ui import render_management
-        from ..model_management.ui import render_operations
+        if read_only_deployment():
+            st.warning(READ_ONLY_NOTICE)
+        else:
+            from .management_ui import render_management
+            from ..model_management.ui import render_operations
 
-        st.caption("일반 분석용 업로드와 신규 정답 데이터 등록은 서로 분리됩니다.")
-        render_operations()
-        render_management()
+            st.caption("일반 분석용 업로드와 신규 정답 데이터 등록은 서로 분리됩니다.")
+            render_operations()
+            render_management()
     elif page == PAGES[0]:
         st.write("CSV를 선택한 뒤 분석 시작을 눌러 주세요. 결과에서 가스 예측, 측정 패턴, 다음 행동을 확인할 수 있습니다.")
         st.caption("가스 예측은 한 행부터 가능합니다. 측정 패턴 비교에는 최소 100행이 필요합니다.")

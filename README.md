@@ -31,7 +31,7 @@ src/model_management/      20-C 수동 승인·운영 포인터·버전·롤백
 tests/                     기능·누수·예측·수치·Notebook 회귀 검사
 outputs/                   기존 핵심 실험 CSV·JSON·압축 예측 기록
 research/                  연구 조건·해석 이관 근거와 유지 결과 지문
-models/                    공식·연구 모델과 메타데이터 (Git 제외)
+models/                    공식 배포 모델 2개 추적, 나머지 연구 모델·후보는 Git 제외
 data/                      등록 데이터·운영 매니페스트 (Git 제외)
 sample_data/               입력 형식 확인용 예제
 maintenance/cleanup21/     로컬 정리 목록·삭제 사유·검증 기록 (Git 제외)
@@ -49,7 +49,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-notebook.txt
 ```
 
-원본 경로를 config.json에서 확인하고, 아래 두 검증된 로컬 파일을 준비한다. 모델·원본은 저장소에 포함하지 않으므로 코드만 내려받아 즉시 모델을 재구성할 수 있는 배포본은 아니다.
+원본 경로를 config.json에서 확인하고, 아래 두 검증된 로컬 파일을 준비한다. 공식 분류 모델·감지기 두 개만 저장소에 포함한다. 원본 데이터와 나머지 연구 모델은 로컬에서 별도 준비한다.
 
 - models/temporal_expansion/B_SVM_balanced.joblib
   - SHA-256: 1d6b20c94d1580d799e05ab5a9ce746bdb272d74f70ec2ff964011fffecfde32
@@ -97,4 +97,26 @@ Jupyter를 지원하는 편집기에서 프로젝트 .venv 커널을 선택하�
 
 ## Git와 한계
 
-21단계 변경은 로컬 검토용으로 남기며 Commit·Push하지 않는다. 모델·실측 데이터·로컬 정리 로그·캐시는 제외한다. 연구 핵심 CSV·JSON과 대표 Notebook·소스·테스트는 다음 검토 대상이다. 삭제된 추적 파일도 Git 변경 목록에 남으므로 다음 Git 반영은 별도 검토가 필요하다.
+21단계 변경은 로컬 검토용으로 남기며 Commit·Push하지 않는다. 공식 배포 모델 2개를 제외한 연구 모델·실측 데이터·로컬 정리 로그·캐시는 제외한다. 연구 핵심 CSV·JSON과 대표 Notebook·소스·테스트는 다음 검토 대상이다. 삭제된 추적 파일도 Git 변경 목록에 남으므로 다음 Git 반영은 별도 검토가 필요하다.
+
+
+## Streamlit Community Cloud 배포
+
+GitHub의 `main`에서 `app_streamlit.py`를 실행한다. 루트 `requirements.txt`가 실제 배포 의존성 파일이며 scikit-learn 1.9.1, NumPy 2.5.4, SciPy 1.18.1, joblib 1.6.0 및 UI 버전을 고정한다. Python은 로컬 검증과 같은 **3.12**를 Advanced settings에서 선택하는 것을 권장한다. Python 버전은 requirements.txt나 runtime.txt로 설정되지 않는다. 이미 배포한 앱의 Python 변경은 Streamlit 문서의 재배포 절차를 따르며, 현재 3.14 환경의 실패를 버전 문제로 단정하지 않는다.
+
+- 공식 모델 `models/temporal_expansion/B_SVM_balanced.joblib` (941,983바이트)
+- 고정 감지기 `models/drift_detection/rff_mmd_v1.joblib` (540,504바이트)
+- 감지기 복원에 필요한 `src/drift_detection/detector.py`를 포함한 앱 Python 모듈
+- 별도 운영 매니페스트·원본 데이터·연구 결과 CSV는 일반 추론에 불필요
+
+위 두 모델은 공개 UCI 자료로 학습한 센서 특징·통계·SVM 지원 벡터를 포함한다. 개인정보·현장 데이터·사용자 등록 자료는 포함하지 않는다. 일반 Git 바이너리로 저장하며 LFS는 사용하지 않는다. SHA-256은 위 모델 목록의 값과 일치해야 한다. 모델 파일은 신뢰한 저장소의 고정 지문을 확인한 뒤에만 복원한다.
+
+새 배포처럼 `data/model_registry/registry.json`이 없는 환경은 자동으로 공식 Model A **읽기 전용 분석**을 사용하며 운영 이력을 생성하지 않는다. Community Cloud의 `/mount/src` 경로와 `GAS_SENSOR_DEPLOYMENT=cloud` 설정도 읽기 전용을 강제한다. Cloud 환경에 사설 운영 매니페스트를 업로드하지 않는다. 기존 매니페스트가 있는 일반 로컬 실행은 기존 운영 모델·승인·롤백을 사용하며, 손상된 로컬 매니페스트를 Model A로 자동 대체하지 않는다.
+
+공개 배포에서는 20-A 등록·20-B 재학습·20-C 승인·교체·롤백 화면을 차단한다. Community Cloud 로컬 파일은 재시작·재배포 후 보존이 보장되지 않고 이 앱에는 관리자 인증이 없다. 해당 기능은 영구 저장소를 갖춘 로컬 환경에서만 사용한다. 개인·현장 데이터는 공개 앱에 업로드하지 않는다.
+
+모델 누락, Git LFS 포인터, SHA 불일치 및 복원 실패는 서버 로그에 파일 경로·Python/패키지 버전과 traceback으로 기록한다. 센서 CSV 내용은 로그에 기록하지 않는다. Cloud의 Manage app 로그에서 확인한다. 읽기 전용 분석의 `deployment_model_a` 버전 표시는 로컬 운영 이벤트 UUID와 별개이며, 예측·MMD²·임계값은 같은 공식 파일을 사용한다.
+
+검증 시 가스 예측은 정확히 일치해야 하며 플랫폼별 MMD²의 부동소수점 차이는 작은 수치 오차로 비교한다. 경고 기준은 기존 `0.00825701197565701` 그대로다. 실제 Cloud의 200행 업로드·2개 감지 창·3종 다운로드를 재배포 후 확인한다.
+
+참고: [파일 배치](https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/file-organization), [Python 버전 변경](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app/upgrade-python), [로컬 파일 영속성 제한](https://docs.streamlit.io/develop/concepts/connections/connecting-to-data).
