@@ -36,6 +36,10 @@ class InputError(ValueError):
 class ModelBundle:
     classifier: object
     detector: object
+    model_name: str = "Model A / B_SVM_balanced"
+    model_sha: str = MODEL_SHA
+    version_id: str = "fixed_model_a"
+    applied_at_utc: object = None
 
 
 @dataclass
@@ -140,8 +144,10 @@ def analyze(data, models):
         row_table["gas"] = data.truth
     row_table["predicted_gas_id"] = predicted
     row_table["predicted_gas"] = [GASES[int(g)] for g in predicted]
-    row_table["classification_model"] = "Model A / B_SVM_balanced"
-    row_table["classification_sha256"] = MODEL_SHA
+    row_table["classification_model"] = models.model_name
+    row_table["classification_sha256"] = models.model_sha
+    if models.version_id != "fixed_model_a":
+        row_table["classification_version"] = models.version_id
     row_table["input_sha256"] = data.digest
     counts = pd.DataFrame({"gas_id": list(GASES), "gas": list(GASES.values())})
     counts["n"] = [int((predicted == g).sum()) for g in GASES]
@@ -177,14 +183,18 @@ def analyze(data, models):
         "alert_rate": drift.get("alert_rate"), "excluded_tail_rows": drift.get("excluded_tail_rows", 0),
         "distribution_status": drift["status"], "unavailable_reason": drift.get("reason", ""),
         "window_size": 100, "threshold": THRESHOLD, "missing_feature_cells": data.missing_cells,
-        "feature_order_rearranged": data.reordered, "classification_model": "Model A / B_SVM_balanced",
-        "classification_sha256": MODEL_SHA, "detector_version": "rff_mmd_v1",
+        "feature_order_rearranged": data.reordered, "classification_model": models.model_name,
+        "classification_sha256": models.model_sha, "detector_version": "rff_mmd_v1",
         "detector_sha256": DETECTOR_SHA, "input_sha256": data.digest,
         "truth_evaluation_available": evaluation is not None,
     }
     if evaluation:
         summary.update(upload_accuracy=evaluation["accuracy"], upload_macro_f1=evaluation["macro_f1"],
                        truth_supported_classes=evaluation["supported_classes"])
+    # 기존 고정 모델 CSV는 유지하며 운영 분석에만 적용 버전 추가
+    if models.version_id != "fixed_model_a":
+        summary.update(classification_version=models.version_id,
+                       model_applied_at_utc=models.applied_at_utc)
     return {"rows": row_table, "counts": counts, "windows": window_table,
             "drift": drift, "summary": summary, "evaluation": evaluation}
 

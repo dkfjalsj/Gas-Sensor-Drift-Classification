@@ -1,5 +1,5 @@
 # 로컬 관리자용 정답 데이터 검사·세션 분리·등록 화면
-# 모델 학습·승인·교체 기능은 제공하지 않음
+# 후보 학습 화면을 연결하되20-A 데이터 등록 로직은 유지
 
 import hashlib
 import json
@@ -28,6 +28,10 @@ def reset_preparation(state, token):
 
 # 일반 분석과 별도 업로드·상태로 데이터 준비
 def render_management():
+    from ..retraining.ui import render_candidates
+
+    render_candidates()
+    st.subheader("신규 정답 데이터 준비 (20-A)")
     st.info("로컬 관리자용 데이터 준비 화면입니다. 사용자 인증은 제공하지 않습니다. 이번 단계에서는 재학습하지 않습니다.")
     st.caption("데이터 업로드 → 품질 검사 → 구성 확인 → 세션별 분리 → 불변 버전 저장")
     upload = st.file_uploader("신규 실제 정답 CSV", type=["csv"], key="preparation_csv", max_upload_size=20)

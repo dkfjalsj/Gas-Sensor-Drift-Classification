@@ -27,3 +27,9 @@ datasets/
 
 # Local trained pipelines and metadata
 models/
+
+# 20-B/20-C local validation, models, logs and approval records
+/outputs/retraining_candidates/
+/outputs/model_approval/
+/reports/
+# Existing tracked research evidence stays tracked; no untracking here.

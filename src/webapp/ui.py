@@ -166,9 +166,11 @@ def optional_evaluation(result):
 
 
 # 모델 지문과 해석 범위 제공
-def model_notes():
-    st.write("분류: 공식 Model A · B_SVM_balanced · SVM(RBF), Batch 1–6 학습")
-    st.code(f"분류 모델 SHA-256: {MODEL_SHA}\n감지기 SHA-256: {DETECTOR_SHA}\n"
+def model_notes(result):
+    summary = result['summary']
+    st.write('이 분석에 사용한 모델: ' + summary['classification_model'])
+    st.caption('분석 당시 버전: ' + summary['classification_version'])
+    st.code(f"분류 모델 SHA-256: {summary['classification_sha256']}\n감지기 SHA-256: {DETECTOR_SHA}\n"
             f"감지기 버전: rff_mmd_v1\n고정 임계값: {THRESHOLD}\n감지 창: 100행")
     st.write("가스 구성·구간 구성·측정 조건이 점수에 영향을 줄 수 있습니다. 실제 센서 드리프트나 장비 이상을 확정하지 않습니다.")
     st.caption("Batch 9–10은 반복 사용한 회고적 자료이며 독립 Test가 아닙니다. 자동 재학습이나 모델 교체는 수행하지 않습니다.")
@@ -263,7 +265,7 @@ def details(result):
     with st.expander("정답 기반 성능 평가"):
         optional_evaluation(result)
     with st.expander("모델 정보와 검증 범위"):
-        model_notes()
+        model_notes(result)
         st.dataframe(pd.DataFrame([result["summary"]]), hide_index=True, width="stretch")
     with st.expander("분석 결과 다운로드", expanded=True):
         labels = ["가스 예측 결과 다운로드", "측정 패턴 분석 결과 다운로드", "전체 분석 요약 다운로드"]
@@ -307,13 +309,14 @@ def main():
     if submitted:
         st.session_state.pop("analysis", None)
         try:
-            signature = tuple((p.stat().st_mtime_ns, p.stat().st_size) for p in [MODEL_PATH, DETECTOR_PATH])
+            from ..model_management.runtime import active_bundle
+
             with st.spinner("가스 종류와 측정 패턴 분석 중…"):
-                st.session_state["analysis"] = analyze(preview, cached_models(*signature))
+                st.session_state["analysis"] = analyze(preview, active_bundle())
             st.session_state.pop("analysis_error", None)
             st.session_state["show_results"] = True
             st.rerun()
-        except (OSError, ValueError, RuntimeError, OverflowError):
+        except (OSError, ValueError, RuntimeError, OverflowError, KeyError, TypeError):
             st.session_state["analysis_error"] = "분석을 완료하지 못했습니다. 저장 모델과 센서 입력값을 확인해 주세요."
     if "analysis_error" in st.session_state:
         st.error(st.session_state["analysis_error"])
@@ -321,8 +324,10 @@ def main():
     st.subheader(page)
     if page == PAGES[3]:
         from .management_ui import render_management
+        from ..model_management.ui import render_operations
 
         st.caption("일반 분석용 업로드와 신규 정답 데이터 등록은 서로 분리됩니다.")
+        render_operations()
         render_management()
     elif page == PAGES[0]:
         st.write("CSV를 선택한 뒤 분석 시작을 눌러 주세요. 결과에서 가스 예측, 측정 패턴, 다음 행동을 확인할 수 있습니다.")
@@ -331,6 +336,8 @@ def main():
         st.info("데이터 분석 화면에서 CSV를 업로드하고 분석을 시작해 주세요.")
     elif page == PAGES[1]:
         result_metrics(result)
+        st.caption('분석 모델: ' + result['summary']['classification_model']
+                   + ' · 버전: ' + result['summary']['classification_version'])
         st.subheader("AI 가스 분석 결과")
         counts = result["counts"]
         leaders = counts[counts.n == counts.n.max()]
