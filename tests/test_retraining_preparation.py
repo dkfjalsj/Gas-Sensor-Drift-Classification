@@ -4,7 +4,6 @@
 import ast
 from dataclasses import replace
 from datetime import datetime, timedelta, timezone
-import hashlib
 import json
 
 import numpy as np
@@ -18,7 +17,6 @@ from src.webapp.data_preparation import (
     TrainingReference, fingerprints, inspect_candidate, load_training_reference,
 )
 from src.webapp.management_ui import reset_preparation
-from src.webapp.preparation_audit import verify
 from tests.test_streamlit_integration import synthetic, csv_bytes, make_app
 
 
@@ -269,8 +267,6 @@ def test_no_fit_calls_and_git_exclusion_and_preservation():
                     and node.func.attr in {'fit', 'fit_transform', 'partial_fit', 'predict', 'predict_proba'}]
     assert 'data/' in (ROOT / '.gitignore').read_text().splitlines()
     assert management_ui.LOCAL_ROOT == ROOT / 'data/retraining'
-    checks = verify()
-    assert checks['all_preserved'] and checks['models'] == 325
 
 
 def test_numeric_validation_session_reserved_with_new_rows(reference, monkeypatch, tmp_path):

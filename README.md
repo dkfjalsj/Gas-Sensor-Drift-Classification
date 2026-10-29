@@ -1,112 +1,100 @@
 # Gas Sensor Drift Classification
 
-UCI Gas Sensor Array Drift Dataset의 128개 센서 특징으로 6종 가스 분류를 연구하는 Python/scikit-learn 프로젝트다.
-초기 Batch 학습 이후 일반화 성능과 센서 특징 분포 변화의 관계를 살펴본다.
-센서 드리프트가 성능 저하의 유일한 원인이라고 가정하지 않는다.
+128개 센서 특징으로6종 가스를 분류하고, 시간에 따른 일반화 한계와 입력 분포 변화를 연구하는 Python/scikit-learn 프로젝트다. 연구 과정과 기존 결과는 대표 Notebook, 실행 기능은 Python 모듈, 기능 검증은 tests로 분리한다.
 
-현재 단계는 데이터 검증, EDA, 평가 설계다. **분류 모델 학습·튜닝·최종 모델 선정은 수행하지 않았다.**
+## 문제와 데이터
 
-## 데이터 출처
+UCI Gas Sensor Array Drift Dataset 224의13,910행·10 Batch·6가스·128특징을 사용한다. 클래스는 Ethanol, Ethylene, Ammonia, Acetaldehyde, Acetone, Toluene이다. 원본 출처는 UCI, DOI:10.24432/C5RP6W다.
 
-- [UCI Dataset 224](https://archive.ics.uci.edu/dataset/224/gas+sensor+array+drift+dataset)
-- Vergara, A. (2012). DOI: [10.24432/C5RP6W](https://doi.org/10.24432/C5RP6W).
-- 원본: `D:/dataset/gas+sensor+array+drift+dataset/batch1.dat` … `batch10.dat`.
-- 원본은 외부 위치에서 읽기만 한다. 프로젝트에 복사·이동·수정하지 않는다.
-- 클래스: 1 Ethanol, 2 Ethylene, 3 Ammonia, 4 Acetaldehyde, 5 Acetone, 6 Toluene.
-- 농도 열이 있는 UCI 270 확장판과 구분한다. 실제 표본수와 통계는 보고서에서 확인한다.
-- UCI 설명의 과거 연구 전용 문구와 현재 CC BY 4.0 메타데이터가 병존함을 기록한다.
+원본은 config.json의 data_dir에서 읽으며 복사·이동하지 않는다. 센서16개×특징8개 매핑은 src/data.py의 feature_label 정의를 사용한다. Batch는 순서 정보이며 실제 측정 시각·농도·환경 정보로 확대 해석하지 않는다.
 
-## 폴더 구조
+## 연구와 기준 모델
+
+랜덤 분할과 과거→미래 Batch 평가를 구분한다. 공식 기준 모델은 Train Batch1~6의5,933행으로 학습한 SimpleImputer→StandardScaler→RBF SVM이다. 6단계에서는 Validation7~8의 Batch별 Macro F1 동일 가중 평균으로 후보를 고정했다. 이후 가중치·학습 시기 구성·특징 선택·비선형 변환·앙상블·HGB·소량 라벨 적응을 검토했지만 모든 가스의 일관된 미래 개선을 확보했다고 주장하지 않는다.
+
+Batch9~10과 과거 Validation은 반복 사용한 회고적 자료이며 독립 최종 Test가 아니다. Toluene과 Acetaldehyde의 시기별 실패·성능 상충, 클래스 support 차이가 남아 있다. 분포 변화만으로 센서 노후화·장비 고장·오분류 원인을 확정하지 않는다.
+
+## 폴더와 역할
 
 ```text
-src/                       엄격한 데이터 로더와 EDA 코드
-tests/                     파서·실제 데이터·분할·산출물 검증
-reports/eda_report.html    그림을 내장한 독립형 한국어 보고서
-reports/evaluation_design.md  향후 공정한 모델 비교 설계
-outputs/figures/           제목·축 이름이 있는 PNG 9개
-outputs/*.csv             기술통계·분포 변화·분할 진단·표본 메타데이터
-outputs/*.json            검증 요약·실행 환경·분할 진단
-config.json               원본 경로·시드·기대 차원
-requirements.txt          호환 버전 범위
-requirements-lock.txt     검증한 가상환경의 정확한 설치 버전
-.gitignore                원본·가상환경·캐시·비밀정보 제외
-.venv/                    로컬 가상환경 (Git 제외)
+gas_sensor_drift.ipynb       대표 연구 Notebook,11개 섹션
+app_streamlit.py            웹앱 진입점
+src/data.py                원본 엄격 파싱·검증
+src/analysis.py            분할·중복·클래스 구성 공통 검사
+src/research.py            Notebook 공통 조회·시각화
+src/*.py                   기존 연구 계산·학습 보조 함수와 모델 재로딩 클래스
+src/drift_detection/       고정 RFF-MMD² 감지기·공통 계산
+src/drift_detection_sensitivity/  창 구성·가스 구성 진단 계산
+src/webapp/                CSV 검증·추론·감지·사용자 화면·20-A 등록
+src/retraining/            20-B 후보 재학습·동일 Validation 평가·불변 저장
+src/model_management/      20-C 수동 승인·운영 포인터·버전·롤백
+tests/                     기능·누수·예측·수치·Notebook 회귀 검사
+outputs/                   기존 핵심 실험 CSV·JSON·압축 예측 기록
+research/                  연구 조건·해석 이관 근거와 유지 결과 지문
+models/                    공식·연구 모델과 메타데이터 (Git 제외)
+data/                      등록 데이터·운영 매니페스트 (Git 제외)
+sample_data/               입력 형식 확인용 예제
+maintenance/cleanup21/     로컬 정리 목록·삭제 사유·검증 기록 (Git 제외)
 ```
 
-## 실행 (PowerShell, Python 3.12)
+보고서 생성·포장·검토 전용 코드는 제거했다. 옛 실험의 보고서 생성·지문 동결·덮어쓰기를 함께 수행하던 일괄 CLI도 제거했다. 같은 경로의 공통 계산·모델 클래스는 보존하므로 기존 모델 재로딩과 조건별 계산에 재사용할 수 있다. 파일명 변경을 위한 일괄 이동은 하지 않았다. HTML 보고서 생성 기능은 제공하지 않는다. Streamlit 화면의 HTML/CSS와 Notebook 자체 표 출력은 유지한다.
+
+## 설치와 로컬 준비
+
+Python3.12 환경에서 검증했다.
 
 ```powershell
-Set-Location D:\Gas-Sensor-Drift-Classification
 python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
-.\.venv\Scripts\python.exe -m src.analysis
-.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -m pip install -r requirements-streamlit.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements-notebook.txt
 ```
 
-다른 원본 경로는 `config.json`의 `data_dir`을 변경하거나 `--config 경로`로 지정한다.
-상대 경로는 설정 파일 기준으로 해석된다. 코드는 UTF-8로 읽고 쓴다.
-보고서는 브라우저에서 `reports/eda_report.html`을 열면 외부 네트워크 없이 볼 수 있다.
-그래프의 가스명·축은 영문으로 표시하여 OS별 한글 폰트 의존성을 줄였다.
-재실행은 기존 분석 산출물을 덮어쓰지만 원본은 읽기 전용으로 처리한다.
+원본 경로를 config.json에서 확인하고, 아래 두 검증된 로컬 파일을 준비한다. 모델·원본은 저장소에 포함하지 않으므로 코드만 내려받아 즉시 모델을 재구성할 수 있는 배포본은 아니다.
 
-## 검증 및 분석 원칙
+- models/temporal_expansion/B_SVM_balanced.joblib
+  - SHA-256: 1d6b20c94d1580d799e05ab5a9ce746bdb272d74f70ec2ff964011fffecfde32
+- models/drift_detection/rff_mmd_v1.joblib
+  - SHA-256: de47661f66c69cdc7553f73acf1df9b721f65771d0301fe69a7a326f814fa4c5
 
-각 행에 정확히 128개 특징 토큰이 존재하는지 확인한다. 생략된 특징을 0으로 채우지 않는다.
-오류는 파일명·행 번호와 함께 종료한다. 파일 누락은 inventory에 남기고 중단한다.
-NaN/Inf는 검증 결과에 기록한 후 EDA를 중단한다. 가스·Batch 메타데이터와 행 순서를 보존한다.
-IQR 표시는 이상치 가능성 진단이며 자동 삭제 기준이 아니다. 모든 특징의 min/max/분위수는 CSV에 저장한다.
-정확 중복과 상충 레이블, Batch 간 중복을 검사하고 모든 설계 분할의 누수 위험을 기록한다.
-행 번호를 timestamp로 간주하지 않으며 정확한 날짜·경과 시간은 만들지 않는다.
+기존 연구 모델325개는 재현·재로딩 검증을 위해 로컬에 보존했다. 서비스 실행에는 위 두 모델이 필요하며, 연구 전체 모델 재검사에는 나머지 로컬 모델도 필요하다.
 
-PCA와 StandardScaler는 탐색에만 전체 자료로 Fit한다. 해당 객체를 저장하거나 모델 평가에 재사용하지 않는다.
-모델 평가 시 전처리는 Pipeline 안에서 각 Train/Fold에만 Fit해야 한다.
-모델 설계는 `reports/evaluation_design.md`와 보고서 9장을 참조한다.
-분할 manifest의 row_id와 feature_group은 재현을 위한 메타데이터이며 원본 특징값을 포함하지 않는다.
-`distribution_checks.csv`의 KS/BH는 탐색용이며 원인 판정이나 모델 성능 검증이 아니다.
-실행 전후 SHA-256 일치를 확인하지만 로컬 배포본과 UCI 최신 배포본의 동일성은 인증하지 않는다.
+## Notebook
 
-## Git / SourceTree
+Jupyter를 지원하는 편집기에서 프로젝트 .venv 커널을 선택하고 루트의 gas_sensor_drift.ipynb를 순서대로 실행한다. 경로 기준은 프로젝트 루트다. 코드 셀은 외부 자료 확인, EDA·PCA, 저장 결과 표시·그래프, 기존 예측 소량 재현, 운영 정보 조회를 수행한다. 기본 실행 경로에서는 분류 모델의 신규 학습·튜닝·승인·운영 교체를 호출하지 않는다. 선택 재학습 예시는 RUN_BASELINE_REPLAY=False로 제공하며 이번 정리에서는 실행하지 않았다.
 
-로컬 기본 브랜치는 `main`이다. Commit·Push·remote 연결은 하지 않았다.
-SourceTree에서 기존 로컬 저장소로 이 폴더를 추가한 후 사용자가 GitHub 원격을 연결한다.
+기존 실험 지표는 outputs의 원본 CSV를 그대로 읽는다. 삭제한 보고서에만 있던 조건·해석은 research/experiment_conditions.json에 원문 SHA와 함께 이관했다. 과거 전체 학습 실험을 이번 정리에서 재실행한 것으로 표현하지 않는다. 필요한 환경·자료가 없으면 명시적으로 오류를 내며 결과를 만들어내지 않는다.
 
-Git에 올릴 파일: 코드, 테스트, README, config(공개 가능한 데이터 경로), 의존성 목록,
-집계 CSV/JSON, PNG 그래프, HTML 보고서, 평가 설계. 산출물은 재생성 가능하지만 현재 분석의 검토를 위해 포함한다.
-공유 전 config 및 run_manifest에 포함된 로컬 데이터 경로의 공개 범위를 검토할 수 있다.
-
-Git에서 제외할 파일: `.venv/`, `__pycache__/`, `.pytest_cache/`, `.env*`, 원본 `.dat`,
-데이터 디렉터리, 압축 파일, 임시 캐시, 모델 바이너리.
-Git 점검 내역은 `reports/git_audit.txt`에 저장한다. 파일을 stage하지 않고 dry-run으로 포함 후보를 검토했다.
-
-## 모델 학습 및 성능 비교
-
-이제 고정 기준선 모델 학습 실험도 추가되었다. 위의 EDA 단계 설명은 당시 작업 기록이다.
-Logistic Regression, Random Forest, RBF SVM을 같은 분할로 비교하며 튜닝·최종 모델 선정은 수행하지 않는다.
+## Streamlit 실행
 
 ```powershell
-.\.venv\Scripts\python.exe -m src.train_models
-.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -B -m src.model_management.initialize
+.\.venv\Scripts\python.exe -B -m streamlit run app_streamlit.py --server.address 127.0.0.1
 ```
 
-- 설정: `training_config.json` (시드·고정 파라미터·Batch 구성)
-- 설계 변경 및 실행 원칙: `reports/training_protocol.md`
-- 보고서: `reports/model_comparison_report.html` (이미지 내장, 오프라인 열람 가능)
-- 모델: `models/{experiment}__{model}.joblib` 9개 (전처리 포함 Pipeline, Git 제외)
-- 새 산출물: `outputs/model_comparison/`의 분할·지표·클래스별 성능·개별 예측·혼동행렬·경고·실행 환경
-- A=Train/Validation/Test 60/20/20. Test 20%는 기존 EDA 분할과 동일하다.
-- B_early=Train Batch 1, Validation 2, Test 3–10.
-- B_history=Train Batch 1–3, Validation 4, Test 5–10.
-- Validation은 진단용이며 설정 변경 또는 재학습에 사용하지 않는다. 예측 시 입력은 f001–f128만 사용한다.
-- LR/SVM은 Train에만 Fit한 median imputer+StandardScaler, RF는 Train median imputer만 사용한다.
-- 기존 EDA 및 원본은 보존하며 재실행은 새 모델 비교 산출물을 덮어쓴다.
-- Commit·Push는 실행하지 않는다. 새 코드·설정·프로토콜·보고서·비교 CSV/JSON/PNG는 Git 포함 후보이며 `models/` 전체와 `*.joblib`은 제외한다.
+초기화는 처음에 Model A를 지정하며 기존 운영 매니페스트가 있으면 그대로 유지한다. 운영 매니페스트는 data/model_registry/registry.json이다. CSV 업로드의 필수 입력은 f001~f128이며 gas 정답은 선택적이다. 가스 분류,100행 단위 분포 변화 감지, 상세 결과,3종 CSV 다운로드와 모델 관리를 제공한다.
 
-저장 모델의 재사용 예:
+고정 감지기의 임계값은0.00825701197565701이다. 가스 구성과 창 구성도 점수에 영향을 준다. 높은 MMD²를 높은 오류율이나 실제 센서 고장으로 해석하지 않는다.
 
-```python
-import joblib
-from src.data import FEATURES
-pipeline = joblib.load('models/A_random__SVM_RBF.joblib')
-# frame은 동일한 f001–f128 스키마의 특징 DataFrame이다.
-y_pred = pipeline.predict(frame[FEATURES])
+## 20-A~20-C 모델 관리
+
+20-A에서 실제 정답·출처·수집 세션·측정 시각을 확인하고 최신 세션 Validation과 이전 세션 Train을 불변 등록한다. 기존 Train 및 과거 Validation과의 중복·누수를 검사한다.
+
+20-B는 기존5,933행+신규 Train에서만 전처리와 같은 SVM을 학습하고 동일 신규 Validation에서 비교한다. 후보 파일은 별도로 저장하며 자동 적용하지 않는다.
+
+20-C는 실제 출처·정답·검증 독립성의 수동 확인 근거, 무결성·분리 검사, 동일 Validation의 Macro F1 비하락과 명시적 확인이 있어야 적용한다. 파일을 덮어쓰지 않고 운영 포인터와 누적 이력을 원자적으로 갱신하며 이전 모델로 복구할 수 있다. 새 분석은 새 버전 캐시를 사용하고 기존 분석은 당시 모델 버전을 유지한다.
+
+로그인·인증이 없는 로컬 프로토타입이다. 확인 근거는 외부 검증이 아닌 사용자 선언이며 확인 불가능하면 적용하지 않아야 한다. 합성 후보는 실제 운영 적용을 차단한다. 합성 Train60/Validation60의 Macro F1100%는 기능 검사 결과로, 실제 신규 센서 성능 개선은 아직 검증하지 않았다.
+
+## 테스트
+
+```powershell
+.\.venv\Scripts\python.exe -B -m pytest tests -q -p no:cacheprovider
 ```
+
+공식 모델·감지기·로컬 원본과 유지된 outputs를 준비해야 한다. 후보 학습·승인·롤백 검사는 임시 디렉터리에서 합성 자료를 생성해 수행하며 실제 운영 상태를 변경하지 않는다. Notebook 구조·기존 지표·유지 결과 지문·예측 재현도 검사한다.
+
+21단계에서 폐기된 보고서·그림·옛 전체 파일 목록 검사는 제거하고 핵심 기능·수치·누수 검증으로 범위를 재편했다. 과거303개 통과/기존2실패/84미실행/11해시충돌과 새 검사 개수를 직접 비교해 품질 향상으로 해석하지 않는다. 과거 실패 기준을 새 해시로 갱신한 것이 아니며, 폐기한 검사는 maintenance/cleanup21/retired_tests.json에 기록했다.
+
+## Git와 한계
+
+21단계 변경은 로컬 검토용으로 남기며 Commit·Push하지 않는다. 모델·실측 데이터·로컬 정리 로그·캐시는 제외한다. 연구 핵심 CSV·JSON과 대표 Notebook·소스·테스트는 다음 검토 대상이다. 삭제된 추적 파일도 Git 변경 목록에 남으므로 다음 Git 반영은 별도 검토가 필요하다.

@@ -1,8 +1,0 @@
-{
-  "n": 101,
-  "pairs": 5050,
-  "min": 0.19731487837129394,
-  "median": 0.4754411068590959,
-  "max": 6.755568590491197,
-  "order_interpretation": "file line order, not measurement timestamps"
-}

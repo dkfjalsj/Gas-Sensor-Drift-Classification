@@ -1,6 +1,0 @@
-INFO:root:A SVM fit=0.0 predict=0.2675400000298396 new_fit=False
-INFO:root:A HGB fit=15.99616680003237 predict=0.13086070003919303 new_fit=True
-INFO:root:B SVM fit=0.0 predict=0.47571189992595464 new_fit=False
-INFO:root:B HGB fit=18.277240499970503 predict=0.09931139997206628 new_fit=True
-INFO:root:C SVM fit=0.0 predict=0.06598469999153167 new_fit=False
-INFO:root:C HGB fit=21.84954419999849 predict=0.015768999932333827 new_fit=True

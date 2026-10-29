@@ -33,3 +33,7 @@ models/
 /outputs/model_approval/
 /reports/
 # Existing tracked research evidence stays tracked; no untracking here.
+
+# Local maintenance audit and Jupyter checkpoints
+/maintenance/cleanup21/
+.ipynb_checkpoints/

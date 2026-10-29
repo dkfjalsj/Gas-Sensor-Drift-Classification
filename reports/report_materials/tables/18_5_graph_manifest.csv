@@ -1,8 +1,0 @@
-name,title,path
-existing_relationships,A: 저장된38개 창의 구성·점수·오류 관계 (사후 분석),outputs\drift_detection_sensitivity\existing_relationships.png
-window_method_means,B: 창 구성 방식별 평균 점수 (시드 변동은 독립 환경 반복 아님),outputs\drift_detection_sensitivity\window_method_means.png
-seed_stability,C: 모든 사전 지정 시드의 재배열 결과,outputs\drift_detection_sensitivity\seed_stability.png
-warning_rates,조건별 경고율: 시드 평균 (원본은 단일 구성),outputs\drift_detection_sensitivity\warning_rates.png
-composition_control,B3: 라벨 기반 가스 비율 통제 (운영 평가 아님),outputs\drift_detection_sensitivity\composition_control.png
-score_decomposition,같은 평가 행에서도 창 구성에 따라 달라지는 점수 항,outputs\drift_detection_sensitivity\score_decomposition.png
-composition_score_comparison,통제 전후 가스 비율 차이와 점수 (반복 자료·비인과 비교),outputs\drift_detection_sensitivity\composition_score_comparison.png

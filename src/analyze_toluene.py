@@ -4,10 +4,7 @@
 import ast
 import hashlib
 import json
-import logging
-from datetime import datetime
 from pathlib import Path
-from zoneinfo import ZoneInfo
 
 import joblib
 import numpy as np
@@ -16,8 +13,7 @@ from scipy.spatial.distance import cdist
 from scipy.stats import wasserstein_distance
 from threadpoolctl import threadpool_limits
 
-from .data import ROOT, FEATURES, GASES, load_dataset, read_config
-from .train_models import evaluate
+from .data import ROOT, FEATURES, GASES
 
 OUT = ROOT / 'outputs' / 'toluene_analysis'
 OLD = ROOT / 'outputs' / 'model_comparison'
@@ -37,48 +33,6 @@ def ast_sha(path):
 
 
 # 기존 해시 기록과 현재 원본·결과·코드 구조 대조
-def audit_history():
-    rows = []
-    sources = []
-    registries = [
-        ('stage2', OLD / 'preservation_checks.json', 'before'),
-        ('stage3', ROOT / 'outputs/model_diagnostics/preservation.json', 'before'),
-        ('readability', ROOT / 'reports/python_readability_audit.json', 'preserved_hashes'),
-    ]
-    for label, path, key in registries:
-        content = json.loads(path.read_text(encoding='utf-8'))
-        for name, expected in content[key].items():
-            exists = (ROOT / name).is_file()
-            current = sha(ROOT / name) if exists else None
-            rows.append(dict(registry=label, file=name, expected=expected, current=current,
-                             exact_match=current == expected, is_python=name.endswith('.py'),
-                             exists=exists, transient_name_candidate='~$' in Path(name).name))
-    manifest = json.loads((OLD / 'run_manifest.json').read_text(encoding='utf-8'))
-    for name, expected in manifest['source_sha256'].items():
-        current = sha(Path(read_config()['data_dir']) / name)
-        rows.append(dict(registry='raw', file=name, expected=expected, current=current,
-                         exact_match=current == expected, is_python=False, exists=True,
-                         transient_name_candidate=False))
-    records = json.loads((OLD / 'fit_records.json').read_text(encoding='utf-8'))
-    for record in records:
-        name = record['model_file']
-        current = sha(ROOT / name)
-        rows.append(dict(registry='models', file=name, expected=record['sha256'],
-                         current=current, exact_match=current == record['sha256'], is_python=False,
-                         exists=True, transient_name_candidate=False))
-    comments = json.loads((ROOT / 'reports/python_comment_audit.json').read_text(encoding='utf-8'))
-    for record in comments:
-        current = ast_sha(ROOT / record['file'])
-        sources.append(dict(registry='comment', file=record['file'],
-                            expected_ast=record['before_ast_sha256'], current_ast=current,
-                            ast_unchanged=current == record['before_ast_sha256']))
-    readable = json.loads((ROOT / 'reports/python_readability_audit.json').read_text(encoding='utf-8'))
-    for record in readable['source_files']:
-        current = ast_sha(ROOT / record['file'])
-        sources.append(dict(registry='readability', file=record['file'],
-                            expected_ast=record['ast_sha256'], current_ast=current,
-                            ast_unchanged=current == record['ast_sha256']))
-    return pd.DataFrame(rows), pd.DataFrame(sources)
 
 
 # 훈련 자료의 고정 구간을 사용한 분포 겹침 계산
@@ -254,64 +208,5 @@ def experimental_plan(frame):
 
 
 # 기존 산출물 보존 및 새 분석만 별도 저장
-def run():
-    report = ROOT / 'reports' / 'toluene_failure_analysis.html'
-    if (OUT.exists() and any(OUT.iterdir())) or report.exists():
-        raise FileExistsError('Stage 4 output exists; refuse to overwrite')
-    baseline = [p for directory in ['src', 'tests', 'outputs', 'reports', 'models']
-                for p in (ROOT / directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts]
-    before = {str(p.relative_to(ROOT)): sha(p) for p in baseline}
-    OUT.mkdir(parents=True, exist_ok=True)
-    history, source_ast = audit_history()
-    history.to_csv(OUT / 'historical_hash_audit.csv', index=False, encoding='utf-8')
-    source_ast.to_csv(OUT / 'source_ast_audit.csv', index=False, encoding='utf-8')
-    material = ~history.is_python & ~history.transient_name_candidate
-    if not source_ast.ast_unchanged.all() or (~history.exact_match & material).any():
-        raise ValueError('Unexpected historical artifact or AST change; audit before continuing')
-    frame, source = load_dataset(read_config())
-    assignments = pd.read_csv(OLD / 'split_assignments.csv')
-    counts = pd.crosstab(frame.batch, frame.gas).reindex(columns=GASES, fill_value=0)
-    counts.columns = list(GASES.values())
-    partitions = assignments.groupby(['experiment', 'partition'], sort=False).agg(total_n=('row_id', 'size'),
-        toluene_n=('gas', lambda s: int((s == 6).sum())), class_n=('gas', 'nunique')).reset_index()
-    partitions['toluene_ratio'] = partitions.toluene_n / partitions.total_n
-    predictions, models, scores = model_inspection(frame, assignments)
-    summary, errors = summarize_predictions(predictions)
-    distances, centroids, stats = feature_comparison(frame, assignments)
-    profiles = distances.groupby(['experiment', 'batch', 'reference_gas'], as_index=False).agg(
-        mean_scaled_wasserstein=('wasserstein_scaled', 'mean'),
-        mean_marginal_overlap=('histogram_overlap', 'mean'), reference_n=('reference_n', 'first'),
-        target_toluene_n=('target_toluene_n', 'first'))
-    consensus = consensus_errors(predictions)
-    plan = experimental_plan(frame)
-    tables = dict(batch_class_counts=counts.reset_index(), partition_counts=partitions,
-                  model_audit=models, predictions=predictions, toluene_metrics=summary,
-                  toluene_confusion=errors, model_scores=scores, consensus=consensus,
-                  feature_distances=distances, gas_profiles=profiles, centroid_distances=centroids,
-                  feature_stats=stats, exploratory_protocol=plan, historical_hash_audit=history,
-                  source_ast_audit=source_ast)
-    for name, table in tables.items():
-        table.to_csv(OUT / f'{name}.csv', index=False, encoding='utf-8')
-    from .toluene_report import make_report
-    make_report(tables)
-    after = {name: sha(ROOT / name) for name in before}
-    raw_match = all(sha(Path(read_config()['data_dir']) / row['file']) == row['sha256'] for row in source.to_dict('records'))
-    if before != after or not raw_match:
-        raise RuntimeError('Existing source, model, result, or raw data changed')
-    state = dict(generated_at_seoul=datetime.now(ZoneInfo('Asia/Seoul')).isoformat(),
-                 classifier_fits=0, tuning_runs=0, model_overwrites=0, final_model_selected=False,
-                 existing_files_unchanged=True, raw_files_unchanged=True, before=before, after=after,
-                 raw_hashes=dict(zip(source.file, source.sha256)),
-                 test_note='Full existing suite includes its pre-existing four-row synthetic fit test; no research model training',
-                 code_sha256={name: sha(ROOT / 'src' / name) for name in ['analyze_toluene.py', 'toluene_report.py']})
-    (OUT / 'run_manifest.json').write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding='utf-8')
-    print(partitions.to_string(index=False), flush=True)
-    print(summary[(summary.scope == 'pooled') & (summary.partition == 'test')].to_string(index=False), flush=True)
 
 
-if __name__ == '__main__':
-    try:
-        run()
-    except Exception:
-        logging.exception('Toluene analysis failed')
-        raise

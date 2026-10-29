@@ -2,19 +2,16 @@
 # 새 분류기 학습 및 기존 분석 결과 덮어쓰기 금지
 import hashlib
 import json
-import logging
 import time
-from datetime import datetime
 from pathlib import Path
-from zoneinfo import ZoneInfo
 import joblib
 import numpy as np
 import pandas as pd
 from scipy.stats import wasserstein_distance, spearmanr
 from sklearn.decomposition import PCA
-from sklearn.metrics import confusion_matrix, pairwise_distances_argmin_min
+from sklearn.metrics import pairwise_distances_argmin_min
 from threadpoolctl import threadpool_limits
-from .data import ROOT, FEATURES, GASES, feature_label, load_dataset, read_config
+from .data import ROOT, FEATURES, GASES
 from .train_models import evaluate
 
 OUT = ROOT / 'outputs' / 'model_diagnostics'
@@ -438,144 +435,5 @@ def diagnostic_pca(frame, assignments):
 
 
 # 기존 파일 해시 기록 및 새 폴더에 진단 결과 저장
-def run():
-    if OUT.exists() or (ROOT / 'reports' / 'model_diagnostic_report.html').exists():
-        raise FileExistsError(
-            'Diagnostic output already exists; archive it explicitly before rerunning'
-        )
-    baseline = [
-        p
-        for folder in ['outputs', 'reports', 'models']
-        for p in (ROOT / folder).rglob('*')
-        if p.is_file()
-    ]
-    before = {str(p.relative_to(ROOT)): sha(p) for p in baseline}
-    OUT.mkdir(parents=True)
-    frame, source = load_dataset(read_config())
-    records = json.loads((OLD / 'fit_records.json').read_text(encoding='utf-8'))
-    assignments = pd.read_csv(OLD / 'split_assignments.csv')
-    pred_path = OLD / 'predictions.csv'
-    saved = (
-        pd.read_csv(pred_path)
-        if pred_path.exists()
-        else pd.DataFrame(
-            columns=['row_id', 'batch', 'y_true', 'y_pred', 'experiment', 'model', 'partition']
-        )
-    )
-    predictions, train, costs, coef, importance, sensitivity, replay = inspect_models(
-        frame, assignments, saved, records
-    )
-    metrics, gas, pairs, matrices = error_tables(predictions)
-    old = pd.read_csv(OLD / 'metrics.csv')
-    # 기존 평가 표본과 점수 재확인
-    for row in old.itertuples(index=False):
-        current = metrics[
-            (metrics.experiment == row.experiment)
-            & (metrics.model == row.model)
-            & (metrics.partition == row.partition)
-            & (metrics.scope == row.scope)
-            & (metrics.batch == row.batch)
-        ]
-        if len(current) != 1 or any(
-            not np.isclose(current.iloc[0][key], getattr(row, key))
-            for key in ['accuracy', 'macro_f1', 'macro_precision', 'macro_recall', 'weighted_f1']
-        ):
-            raise ValueError('Existing metric reproduction failed')
-    stats = (
-        frame.groupby(['batch', 'gas'])[FEATURES]
-        .agg(['mean', 'median', 'std'])
-        .stack(level=0, future_stack=True)
-        .reset_index()
-        .rename(columns={'level_2': 'feature'})
-    )
-    distances = distribution_changes(frame, assignments)
-    pergas, perbatch, assoc, feature_assoc, gas_assoc = associations(distances, metrics, gas)
-    selection = selection_table(metrics, gas, costs)
-    pcs, variance = diagnostic_pca(frame, assignments)
-    correlation_rows = []
-    for exp in ['B_early', 'B_history']:
-        ids = assignments[
-            (assignments.experiment == exp) & (assignments.partition == 'train')
-        ].row_id
-        corr = frame.loc[frame.row_id.isin(ids), FEATURES].corr(method='spearman').abs()
-        for i in range(128):
-            for j in range(i + 1, 128):
-                if corr.iloc[i, j] >= 0.9:
-                    correlation_rows.append(
-                        dict(
-                            experiment=exp,
-                            feature1=FEATURES[i],
-                            feature2=FEATURES[j],
-                            abs_train_spearman=float(corr.iloc[i, j]),
-                        )
-                    )
-    tables = {
-        'predictions': predictions,
-        'metrics': metrics,
-        'gas_errors': gas,
-        'error_pairs': pairs,
-        'confusion_matrices': matrices,
-        'train_scores': train,
-        'costs': costs,
-        'lr_coefficients': coef,
-        'rf_importance': importance,
-        'svm_sensitivity': sensitivity,
-        'prediction_replay': replay,
-        'feature_stats': stats,
-        'wasserstein': distances,
-        'gas_shift': pergas,
-        'batch_shift': perbatch,
-        'batch_associations': assoc,
-        'feature_associations': feature_assoc,
-        'gas_associations': gas_assoc,
-        'selection_evidence': selection,
-        'pca_coordinates': pcs,
-        'pca_variance': variance,
-        'correlated_feature_pairs': pd.DataFrame(correlation_rows),
-    }
-    for name, table in tables.items():
-        table.to_csv(OUT / f'{name}.csv', index=False, encoding='utf-8')
-    after = {name: sha(ROOT / name) for name in before}
-    if before != after:
-        raise RuntimeError('Existing artifact changed')
-    source_unchanged = all(
-        sha(Path(read_config()['data_dir']) / row['file']) == row['sha256']
-        for row in source.to_dict('records')
-    )
-    if not source_unchanged:
-        raise RuntimeError('Raw dataset changed')
-    write_json(
-        'preservation.json',
-        dict(
-            existing_artifacts_unchanged=True,
-            raw_files_unchanged=True,
-            before=before,
-            after=after,
-            raw_hashes=dict(zip(source.file, source.sha256)),
-        ),
-    )
-    manifest = dict(
-        generated_at_seoul=datetime.now(ZoneInfo('Asia/Seoul')).isoformat(),
-        new_classifier_fits=0,
-        diagnostic_pca_fit='2 exploratory PCA fits, Train only; no classifier changes',
-        prediction_source='existing predictions verified by replay; Train predictions added as resubstitution diagnostics',
-        prediction_replay_rows=int(replay.rows.sum()),
-        benchmark_repetitions=3,
-        common_batches=COMMON,
-        code_sha256=sha(Path(__file__)),
-        post_test_exploratory=True,
-        final_model_selected=False,
-    )
-    write_json('run_manifest.json', manifest)
-    from .diagnostic_report import build_report
-
-    build_report(tables, manifest)
-    print(selection.to_string(index=False), flush=True)
 
 
-if __name__ == '__main__':
-    try:
-        run()
-    except Exception:
-        logging.exception('Diagnostic analysis failed')
-        raise

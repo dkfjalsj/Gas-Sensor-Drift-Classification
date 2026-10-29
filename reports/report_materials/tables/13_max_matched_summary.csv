@@ -1,2 +1,0 @@
-setting,mean_macro_f1,seed_sd_macro_f1,mean_accuracy,mean_weighted_f1,toluene_recall,acetaldehyde_recall,other_four_f1,worst_recall,zero_pairs_mean
-spread_max,0.6992103051348375,0.01288230588901507,0.6833221486848229,0.7101667791348121,0.5529603547209181,0.7633838383838384,0.8406289871209713,0.0,1.0

@@ -1,17 +1,14 @@
 # 합성 정답 자료로 후보 학습·누수 차단·저장 복구 검증
 # 실제 신규 센서 성능 검증이 아님
 
-import hashlib
 import json
-from pathlib import Path
-import shutil
 
 import numpy as np
 import pandas as pd
 import pytest
 from sklearn.pipeline import Pipeline
 
-from src.data import FEATURES, ROOT
+from src.data import FEATURES
 from src.retraining import candidates as c, datasets as d
 from src.retraining.evaluation import evaluate_model
 from src.webapp import dataset_registry as registry

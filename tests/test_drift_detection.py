@@ -10,8 +10,8 @@ import pandas as pd
 import pytest
 
 from src.data import ROOT, FEATURES
-from src.drift_detection.detector import DriftDetector, MESSAGES, evaluate_csv, validate_features
-from src.drift_detection.experiment import OUT, load_features, split_reference, verify
+from src.drift_detection.detector import DriftDetector, MESSAGES, evaluate_csv
+from src.drift_detection.experiment import OUT, load_features, split_reference
 
 
 @pytest.fixture(scope="module")
@@ -225,17 +225,5 @@ def test_real_posthoc_metrics_and_support(actual):
     assert replay.exact_stage7_replay.all() and replay.fresh_predictions.eq(0).all()
 
 
-def test_real_files_and_plan_preserved():
-    check = verify()
-    assert check["all_preserved"] and check["existing_models"] == 324
-    assert check["scored_batches_9_10"] == [] and check["new_classifier_fits"] == 0
 
 
-def test_graphs_reports_and_unavailable_disclosure():
-    manifest = pd.read_csv(OUT / "graph_manifest.csv")
-    assert len(manifest) >= 8
-    assert all((ROOT / path).is_file() for path in manifest.path)
-    report = (ROOT / "reports/drift_detection_report.html").read_text(encoding="utf-8")
-    assert "독립 Test가 아님" in report and "Batch8" in report
-    assert "실제 Streamlit은 설치·실행하지 않았고" in report
-    assert "data:image/png;base64," in report

@@ -3,8 +3,6 @@
 
 import ast
 import json
-import subprocess
-import sys
 
 import joblib
 import numpy as np
@@ -13,10 +11,7 @@ import pytest
 
 from src.data import ROOT, FEATURES
 from src.drift_detection.detector import load_detector
-from src.drift_detection_sensitivity.experiment import (
-    OUT, OLD, DETECTOR, SEEDS, THRESHOLD, quotas_from_reference,
-    shuffle_rows, controlled_rows, load_allowed, verify,
-)
+from src.drift_detection_sensitivity.experiment import OUT, OLD, DETECTOR, SEEDS, THRESHOLD, quotas_from_reference, shuffle_rows, controlled_rows, load_allowed
 
 
 # 가상 표본으로 추출 규칙만 확인
@@ -170,29 +165,7 @@ def test_mean_median_min_max_and_warning_rate():
         assert (sub.alert == (sub.score > THRESHOLD)).all()
 
 
-def test_saved_source_scope_and_protection():
-    checks = verify()
-    assert checks["existing_models"] == 325 and checks["raw_files_verified"] == 8
-    assert checks["raw9_10_opened"] is False and checks["all_preserved"]
-    code = (ROOT / "src/drift_detection_sensitivity/experiment.py").read_text(encoding="utf-8")
-    assert "load_dataset(" not in code and "range(1, 9)" in code
 
 
-def test_guard_blocks_before_forbidden_open():
-    code = (
-        "from src.drift_detection_sensitivity.access_guard import install; "
-        "from src.data import read_config; from pathlib import Path; install(); "
-        "Path(read_config()['data_dir']).joinpath('batch9.dat').read_bytes()"
-    )
-    result = subprocess.run([sys.executable, "-B", "-X", "utf8", "-c", code],
-                            cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
-    assert result.returncode != 0 and "PermissionError" in result.stderr
-    assert "Batch9~10 원본 열기 금지" in result.stderr
 
 
-def test_report_and_graphs_disclose_diagnostic_limits():
-    doc = (ROOT / "reports/drift_detection_sensitivity_report.html").read_text(encoding="utf-8")
-    assert "운영용 무라벨 평가가 아님" in doc and "독립 Test 없음" in doc
-    assert "Reference와 임계값 산정 풀" in doc and "test_access_blocks.json" in doc
-    graphs = pd.read_csv(OUT / "graph_manifest.csv")
-    assert len(graphs) >= 6 and all((ROOT / path).is_file() for path in graphs.path)

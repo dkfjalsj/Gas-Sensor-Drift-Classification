@@ -1,11 +1,8 @@
 # 시간순 학습 범위 비교와 소규모 개선 실험 실행
 # Validation 후보 고정 후 기존 자료의 탐색적 평가 수행
 
-import copy
 import hashlib
-import importlib.metadata
 import json
-import logging
 import shutil
 import time
 import warnings
@@ -18,7 +15,7 @@ import numpy as np
 import pandas as pd
 from threadpoolctl import threadpool_limits
 
-from .data import ROOT, FEATURES, GASES, load_dataset, read_config
+from .data import ROOT, FEATURES, GASES
 from .train_models import evaluate
 from .improve_models import make_pipeline
 
@@ -88,94 +85,6 @@ def prepare_split(frame):
 
 
 # 실제 학습 전에 분할·탐색·선정 규칙 동결
-def freeze_protocol(frame):
-    if OUT.exists() or MODEL_DIR.exists():
-        raise FileExistsError('Temporal expansion output already exists')
-    targets = ['temporal_expansion_protocol.md', 'temporal_expansion_report.html',
-               'temporal_expansion_model_selection.md']
-    if any((ROOT / 'reports' / name).exists() for name in targets):
-        raise FileExistsError('Temporal expansion report already exists')
-    parts, manifest, audit = prepare_split(frame)
-    OUT.mkdir(parents=True)
-    (MODEL_DIR / 'trials').mkdir(parents=True)
-    manifest.to_csv(OUT / 'split_assignments.csv', index=False, encoding='utf-8')
-    write_json(OUT / 'split_audit.json', audit)
-    frame.groupby(['batch', 'gas']).size().rename('n').reset_index().to_csv(
-        OUT / 'batch_class_counts.csv', index=False, encoding='utf-8'
-    )
-    plan = dict(
-        frozen_at_seoul=now(), seed=42, retrospective_reassignment=True,
-        train_A_batches=[1, 2, 3], train_B_batches=list(range(1, 7)),
-        validation_batches=[7, 8], exploratory_evaluation_batches=[9, 10],
-        split_sha256=sha(OUT / 'split_assignments.csv'),
-        new_fits=17, initial_fits=11, followup_fits=6,
-        base_settings_source='training_config.json; original Standard LR/SVM, unscaled RF',
-        base_settings_sha256=sha(ROOT / 'training_config.json'),
-        initial_B='base/ balanced for three families; robust-none for LR/SVM',
-        tuning_B='LR C=.1 or 10; RF trees=200 or depth=12+leaf=3; '
-                 'SVM C=10 or gamma=.001. Initial Validation winner fixes weight/scaler.',
-        primary='Validation per-Batch macro-F1 equal-weight mean over batches 7 and 8',
-        eligibility='Other four gas pooled Validation mean F1 must not fall more than .03 '
-                    'below same-family B baseline; focus gases are IDs 4 and 6.',
-        tie='Within .005 of best primary: larger min(Toluene F1,Acetaldehyde F1), '
-            'larger minimum-class recall, larger pooled macro-F1, smaller Validation Batch SD, '
-            'then fixed trial order. Margins are exploratory rules, not significance tests.',
-        selection_pool='Only condition B. One representative per family; global close joint '
-                       'candidates are representatives within .005 of highest primary.',
-        refit_on_validation=False, feature_selection=False, pca=False,
-        evaluation_gate='Freeze selection and selected model bytes before any 9–10 predictions.',
-        independent_final_test=False,
-    )
-    write_json(OUT / 'experiment_plan.json', plan)
-    text = '''# 6단계 시간순 확장 학습 사전 계획
-
-기존 Test의 일부를 새 개발 자료로 재지정하는 회고적·탐색적 실험이다.
-1–5단계의 실험, 코드, 원본, 모델, 보고서와 과거 해시 기록은 보존한다.
-
-## 고정 분할
-- 조건 A Train=Batch 1–3: 3,275개(Toluene 79, Acetaldehyde 379).
-- 조건 B Train=Batch 1–6: 5,933개(Toluene 546, Acetaldehyde 484).
-- 공통 Validation=Batch 7–8: 3,907개(Toluene 586, Acetaldehyde 777).
-- 공통 탐색적 평가=Batch 9–10: 4,070개(Toluene 701, Acetaldehyde 675).
-각 Train과 이후 Validation/평가의 행·정확 특징 중복, 시간 순서, 6종 존재를 확인한다.
-조건 A와 B의 Train 겹침은 의도한 포함 관계이며 같은 조건 내부 평가 누수와 다르다.
-
-## 실험 수와 설정
-기존 training_config.json의 기본 모델 설정을 동일하게 사용해 A/B 각각 3개를 학습한다.
-조건 B에 class_weight=balanced 3개, LR/SVM RobustScaler+weight=None 2개를 추가한다.
-초기 총 11개를 Validation으로 비교한 뒤 각 계열의 초기 대표를 고정한다.
-해당 부모의 가중치·스케일러를 유지하고 다음 2개씩만 추가한다.
-- LR C=0.1 / 10
-- RF n_estimators=200 / (n_estimators=100,max_depth=12,min_samples_leaf=3)
-- SVM C=10,gamma=scale / C=1,gamma=0.001
-총 17회 Fit. RF depth와 leaf는 함께 바꾸므로 개별 효과를 분리하지 않는다.
-전처리는 median imputer와 LR/SVM StandardScaler 또는 RobustScaler다.
-각 Train에서만 Fit한다. RF 무스케일 기준 유지. PCA·특징 선택·재표본화는 미실행.
-Validation을 합친 재학습은 하지 않는다. seed=42, BLAS thread=2, RF n_jobs=-1 유지.
-
-## 후보 선정과 동점 처리
-주 지표는 Validation Batch 7과 8의 macro-F1 동일 가중 평균이다.
-pooled Validation macro-F1, Batch SD, Toluene/Acetaldehyde F1·Recall,
-최저 클래스 Recall, 나머지 4종 평균 F1과 비용을 함께 기록한다.
-조건 B 설정만 개선 후보 선정에 사용한다. A는 통제 비교다.
-동일 계열 B 기본 모델 대비 나머지 4종 pooled 평균 F1이 3pp 초과 낮아지면 제외한다.
-남은 설정 중 주 지표 최고점의 0.5pp 이내를 근접 점수로 본다.
-min(Toluene F1,Acetaldehyde F1) → 최저 클래스 Recall → pooled macro-F1 →
-작은 Validation Batch SD → 고정 실행 순서로 대표를 고른다.
-3pp/0.5pp는 사전 탐색 규칙이며 운영 기준·통계적 동등성 기준이 아니다.
-계열별 대표 3개를 저장하고, 그 대표들의 최고 주 지표 0.5pp 이내를 근접 공동 후보로 표시한다.
-근접 집합에서 같은 동점 규칙으로 우선 후보를 정한다. 최종 확정 모델은 선정하지 않는다.
-Validation 두 Batch만으로 안정성의 독립 증거를 확정할 수 없고 Batch 8의 Toluene은 18개다.
-
-## 평가 제한과 보존
-모든 후보 결정과 모델 SHA-256을 기록한 후에만 Batch 9–10 예측을 수행한다.
-평가 결과가 나빠도 파라미터·전처리·후보를 바꾸지 않는다.
-평가 결과는 새 독립 Test가 아닌 기존 자료를 재사용한 탐색적 평가다.
-성능 변화는 학습량·클래스 구성·시기가 함께 달라진 결과이며 데이터 양만의 효과가 아니다.
-기존 테스트는 수정하지 않고 기존 실패 2건과 신규 실패를 구분한다. Commit·Push 금지.
-'''
-    (ROOT / 'reports/temporal_expansion_protocol.md').write_text(text, encoding='utf-8')
-    return parts, plan
 
 
 # 전체 지표와 두 집중 가스의 지표를 함께 계산
@@ -354,117 +263,8 @@ def train_and_select(frame, parts):
 
 
 # 후보 확정 뒤에만 Batch 9–10의 탐색적 예측 수행
-def evaluate_frozen(frame, parts, records, validation_predictions, decision):
-    selection_hash = sha(OUT / 'selection_frozen.json')
-    started = now()
-    metrics, classes, matrices, predictions, timings = [], [], [], [validation_predictions], []
-    for record in records:
-        pipeline = joblib.load(ROOT / record['model_file'])
-        trial = record['trial_id']
-        subset = frame.iloc[parts['evaluation']]
-        with threadpool_limits(limits=2):
-            start = time.perf_counter()
-            predicted = pipeline.predict(subset[FEATURES])
-            seconds = time.perf_counter() - start
-        pred = subset[['row_id', 'batch', 'gas']].rename(columns={'gas': 'y_true'}).copy()
-        pred['y_pred'] = predicted
-        pred['trial_id'] = trial
-        pred['partition'] = 'evaluation'
-        predictions.append(pred)
-        timings.append(dict(trial_id=trial, evaluation_n=len(subset),
-                            predict_seconds=seconds, ms_per_1000=seconds * 1e6 / len(subset)))
-        combined = pd.concat([validation_predictions[validation_predictions.trial_id == trial], pred])
-        for partition, group in combined.groupby('partition', sort=False):
-            scopes = [('pooled', 0, group)]
-            scopes.extend(('batch', int(batch), sub) for batch, sub in group.groupby('batch'))
-            for scope, batch, sub in scopes:
-                result, per_class, cm = measured_scores(sub.y_true, sub.y_pred)
-                meta = dict(trial_id=trial, family=record['family'], condition=record['condition'],
-                            group=record['group'], partition=partition, scope=scope, batch=batch)
-                metrics.append(dict(**meta, **result))
-                classes.extend(dict(**meta, **row) for row in per_class)
-                for i, true in enumerate(GASES):
-                    for j, predicted_class in enumerate(GASES):
-                        matrices.append(dict(**meta, true_class=true, predicted_class=predicted_class,
-                                             count=int(cm[i, j])))
-    data = pd.DataFrame(metrics)
-    summaries = []
-    for (trial, partition), group in data[data.scope == 'batch'].groupby(['trial_id', 'partition']):
-        pooled = data[(data.trial_id == trial) & (data.partition == partition) & (data.scope == 'pooled')].iloc[0]
-        summaries.append(dict(
-            trial_id=trial, partition=partition, equal_batch_macro_f1=group.macro_f1.mean(),
-            batch_sd_macro_f1=group.macro_f1.std(ddof=0),
-            min_batch_macro_f1=group.macro_f1.min(), max_batch_macro_f1=group.macro_f1.max(),
-            pooled_macro_f1=pooled.macro_f1, accuracy=pooled.accuracy,
-            weighted_f1=pooled.weighted_f1, toluene_recall=pooled.toluene_recall,
-            toluene_f1=pooled.toluene_f1, acetaldehyde_recall=pooled.acetaldehyde_recall,
-            acetaldehyde_f1=pooled.acetaldehyde_f1,
-            min_class_recall=pooled.min_class_recall, other_four_f1=pooled.other_four_f1,
-        ))
-    pd.concat(predictions, ignore_index=True).to_csv(
-        OUT / 'predictions.csv.gz', index=False, encoding='utf-8', compression='gzip'
-    )
-    for name, table in [('metrics', data), ('per_class_metrics', pd.DataFrame(classes)),
-                        ('confusion_matrices', pd.DataFrame(matrices)),
-                        ('prediction_times', pd.DataFrame(timings)),
-                        ('summary_metrics', pd.DataFrame(summaries))]:
-        table.to_csv(OUT / f'{name}.csv', index=False, encoding='utf-8')
-    if sha(OUT / 'selection_frozen.json') != selection_hash:
-        raise RuntimeError('Selection changed after evaluation')
-    write_json(OUT / 'evaluation_gate.json', dict(
-        evaluation_started_at_seoul=started, selection_sha256=selection_hash,
-        frozen_before_evaluation=decision['frozen_at_seoul'] <= started,
-        selection_unchanged=True, evaluation_used_for_selection=False,
-    ))
-    return data, pd.DataFrame(classes), pd.DataFrame(summaries)
 
 
 # 기존 산출물·모델·원본의 변경 없이 전체 실험 실행
-def run():
-    existing = [p for name in ['src', 'tests', 'models', 'reports', 'outputs']
-                for p in (ROOT / name).rglob('*') if p.is_file() and '__pycache__' not in p.parts]
-    before = {str(p.relative_to(ROOT)): sha(p) for p in existing}
-    config = read_config()
-    frame, source = load_dataset(config)
-    legacy = json.loads((ROOT / 'outputs/model_comparison/run_manifest.json').read_text(encoding='utf-8'))
-    if dict(zip(source.file, source.sha256)) != legacy['source_sha256']:
-        raise RuntimeError('Original raw dataset changed')
-    for registry in ['model_comparison', 'model_improvement']:
-        previous = json.loads((ROOT / 'outputs' / registry / 'fit_records.json').read_text(encoding='utf-8'))
-        for record in previous:
-            expected = record.get('model_sha256', record.get('sha256'))
-            if sha(ROOT / record['model_file']) != expected:
-                raise RuntimeError('Existing model hash mismatch')
-    parts, plan = freeze_protocol(frame)
-    plan_hash = sha(OUT / 'experiment_plan.json')
-    protocol_hash = sha(ROOT / 'reports/temporal_expansion_protocol.md')
-    validation, records, predictions, decision = train_and_select(frame, parts)
-    metrics, classes, summary = evaluate_frozen(frame, parts, records, predictions, decision)
-    from .temporal_expansion_report import build_report
-    build_report(plan, validation, records, decision, metrics, classes, summary)
-    after = {name: sha(ROOT / name) for name in before}
-    raw = dict(zip(source.file, source.sha256))
-    if before != after or any(sha(Path(config['data_dir']) / name) != value for name, value in raw.items()):
-        raise RuntimeError('Existing files or raw data changed')
-    if sha(OUT / 'experiment_plan.json') != plan_hash:
-        raise RuntimeError('Frozen plan changed')
-    write_json(OUT / 'run_manifest.json', dict(
-        completed_at_seoul=now(), fits=len(records), existing_files_unchanged=True,
-        before=before, after=after, raw_files_unchanged=True, raw_hashes=raw,
-        plan_sha256=plan_hash, protocol_sha256=protocol_hash,
-        seed=42, independent_final_test=False, final_model_confirmed=False,
-        code_sha256={name: sha(ROOT / 'src' / name)
-                     for name in ['temporal_expansion.py', 'temporal_expansion_report.py']},
-        package_versions={name: importlib.metadata.version(name)
-                          for name in ['numpy', 'pandas', 'scikit-learn', 'scipy', 'joblib', 'matplotlib']},
-    ))
-    print('SELECTED', decision, flush=True)
-    print(summary[summary.partition == 'evaluation'].to_string(index=False), flush=True)
 
 
-if __name__ == '__main__':
-    try:
-        run()
-    except Exception:
-        logging.exception('Temporal expansion failed')
-        raise

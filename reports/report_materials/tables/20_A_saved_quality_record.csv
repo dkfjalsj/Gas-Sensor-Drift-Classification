@@ -1,9 +1,0 @@
-﻿key,saved_value_json,source
-synthetic_functional_test_only,true,outputs/retraining_data_preparation/synthetic_quality_record.json
-industrial_performance_validation,false,outputs/retraining_data_preparation/synthetic_quality_record.json
-production_dataset_saved,false,outputs/retraining_data_preparation/synthetic_quality_record.json
-ready_under_test_attestation,true,outputs/retraining_data_preparation/synthetic_quality_record.json
-summary,"{""rows"": 72, ""gas_counts"": {""1"": 12, ""2"": 12, ""3"": 12, ""4"": 12, ""5"": 12, ""6"": 12}, ""missing_cells"": 0, ""missing_fraction"": 0.0, ""duplicate_extra"": 0, ""feature_order_rearranged"": false, ""reference_check"": ""특징 완전 일치 및 12자리 유효숫자 근접 검사 완료"", ""class_imbalance_ratio"": 1.0, ""old_feature_matches"": 0, ""old_labeled_matches"": 0, ""old_near_matches"": 0, ""reference_rows"": 5933, ""old_partial_possible_matches"": 0, ""sessions"": [{""session_id"": ""early"", ""min"": ""2026-01-01T00:00:00+00:00"", ""max"": ""2026-01-01T00:00:35+00:00""}, {""session_id"": ""late"", ""min"": ""2026-01-02T00:00:36+00:00"", ""max"": ""2026-01-02T00:01:11+00:00""}], ""train_counts"": {""1"": 6, ""2"": 6, ""3"": 6, ""4"": 6, ""5"": 6, ""6"": 6}, ""validation_counts"": {""1"": 6, ""2"": 6, ""3"": 6, ""4"": 6, ""5"": 6, ""6"": 6}}",outputs/retraining_data_preparation/synthetic_quality_record.json
-errors,[],outputs/retraining_data_preparation/synthetic_quality_record.json
-warnings,[],outputs/retraining_data_preparation/synthetic_quality_record.json
-holds,[],outputs/retraining_data_preparation/synthetic_quality_record.json

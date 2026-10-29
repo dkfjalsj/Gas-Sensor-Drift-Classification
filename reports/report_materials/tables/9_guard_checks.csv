@@ -1,9 +1,0 @@
-config_id,macro_guard,toluene_guard,acetaldehyde_guard,other_four_guard,individual_other_guard,min_recall_guard,fold_min_guard,zero_pair_guard,improvement_evidence,eligible,failed_guards
-class_balanced,True,True,True,True,True,True,True,True,True,True,
-time_linear,True,True,True,True,True,True,True,True,False,False,improvement_evidence
-time_exp,True,True,True,True,True,True,True,True,True,True,
-time_recent,True,True,True,True,True,True,True,True,True,True,
-class_sample,True,True,True,True,True,True,True,True,False,False,improvement_evidence
-gas_batch,False,True,True,False,False,True,True,True,False,False,"macro_guard,other_four_guard,individual_other_guard,improvement_evidence"
-time_class_shrink,True,True,True,True,True,True,True,True,False,False,improvement_evidence
-time_gas_batch,False,True,True,True,True,True,True,True,False,False,"macro_guard,improvement_evidence"

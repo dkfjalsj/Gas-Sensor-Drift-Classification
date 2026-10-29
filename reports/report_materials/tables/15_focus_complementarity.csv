@@ -1,7 +1,0 @@
-fold,y_true,support,full_correct,recent_correct,spread_correct,some_correct,all_wrong,oracle_rescue
-A,4,29,29,29,29,0,0,0
-A,6,467,0,0,0,0,467,0
-B,4,744,458,364,263,215,280,6
-B,6,568,508,208,522,360,0,60
-C,4,33,31,32,26,8,0,2
-C,6,18,15,16,17,2,1,2

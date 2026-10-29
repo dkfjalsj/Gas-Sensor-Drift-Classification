@@ -1,21 +1,16 @@
 # 고정된 두 SVM의 재현성·시기별 성능·조건부 불확실성 검증
 # 독립 평가 자료 유무 확인 및 기존 원본·모델·산출물 보존
 
-import argparse
-import importlib.metadata
 import json
-import logging
-from pathlib import Path
 from statistics import NormalDist
-import xml.etree.ElementTree as ET
 
 import joblib
 import numpy as np
 import pandas as pd
 from threadpoolctl import threadpool_limits
 
-from .data import ROOT, FEATURES, GASES, load_dataset, read_config
-from .temporal_expansion import measured_scores, sha, now, write_json
+from .data import ROOT, FEATURES, GASES
+from .temporal_expansion import measured_scores, sha
 
 OUT = ROOT / 'outputs/temporal_generalization_validation'
 BOOTSTRAP_REPEATS = 2000
@@ -29,88 +24,12 @@ def save(name, rows):
     return data
 
 
-def inventory_data(config):
-    rows = []
-    suffixes = {'.dat', '.csv', '.tsv', '.parquet', '.xlsx', '.xls', '.npy', '.npz', '.arff', '.h5', '.feather'}
-    for path in ROOT.rglob('*'):
-        relative = path.relative_to(ROOT)
-        if any(part in ['.git', '.venv', '__pycache__'] for part in relative.parts):
-            continue
-        if path.is_file() and path.suffix.lower() in suffixes:
-            derived = relative.parts[0] == 'outputs'
-            rows.append(dict(path=str(path), location='project', bytes=path.stat().st_size,
-                             role='historical_derived_output' if derived else 'unverified_candidate',
-                             confirmed_independent=False))
-    for path in sorted(Path(config['data_dir']).rglob('*')):
-        if path.is_file():
-            rows.append(dict(path=str(path), location='configured_original_directory', bytes=path.stat().st_size,
-                             role='known_original_batch' if path.name in [f'batch{i}.dat' for i in range(1, 11)]
-                             else 'unverified_candidate', confirmed_independent=False))
-    return save('data_inventory', rows)
 
 
 # 각 표본의 과거 학습·검증·평가 노출 역할 정리
-def exposure_audit(frame):
-    exposure = frame[['row_id', 'batch', 'gas']].copy()
-    old = pd.read_csv(ROOT / 'outputs/model_comparison/split_assignments.csv')
-    for experiment in ['A_random', 'B_early', 'B_history']:
-        mapping = old[old.experiment == experiment].set_index('row_id').partition
-        exposure['stage2_' + experiment] = exposure.row_id.map(mapping)
-    stage5 = pd.read_csv(ROOT / 'outputs/model_improvement/split_assignments.csv').set_index('row_id')
-    exposure['stage5_role'] = exposure.row_id.map(stage5.partition)
-    exposure['stage1_eda_observed'] = True
-    exposure['stage6_role'] = np.select([frame.batch <= 6, frame.batch <= 8],
-                                       ['train_condition_B', 'validation'], default='exploratory_evaluation')
-    for fold, (end, target) in {'A': (3, 6), 'B': (6, 7), 'C': (7, 8)}.items():
-        exposure['stage8_9_fold_' + fold] = np.select(
-            [frame.batch <= end, frame.batch == target, frame.batch >= 9],
-            ['train', 'validation', 'exploratory_evaluation'], default='not_in_fold')
-    exposure['model_A_role'] = np.where(frame.batch <= 6, 'train', 'outside_fit_previously_observed')
-    exposure['model_B_role'] = np.where(frame.batch <= 7, 'train', 'outside_fit_previously_observed')
-    exposure['confirmed_new_independent'] = False
-    save('historical_row_exposure', exposure)
 
 
 # 평가 전에 모델과 계산 방법 고정
-def freeze_config(frame, config):
-    reports = ['temporal_generalization_validation_report.html',
-               'temporal_generalization_validation_summary.md', 'temporal_generalization_limitations.md']
-    if OUT.exists() or any((ROOT / 'reports' / name).exists() for name in reports):
-        raise FileExistsError('Stage10 outputs already exist')
-    old6 = json.loads((ROOT / 'outputs/temporal_expansion/selection_frozen.json').read_text(encoding='utf-8'))
-    old9 = json.loads((ROOT / 'outputs/temporal_weighting/selection_frozen.json').read_text(encoding='utf-8'))
-    assert old9['selected_scheme'] == 'class_balanced'
-    models = {
-        'A': dict(**old6['selected_models']['B_SVM_balanced'], train_end=6, official_main_candidate=True),
-        'B': dict(**old9['selected_models']['7'], train_end=7, official_main_candidate=False),
-    }
-    for meta in models.values():
-        if sha(ROOT / meta['path']) != meta['sha256']:
-            raise ValueError('Frozen historical model hash mismatch')
-    OUT.mkdir(parents=True)
-    inventory = inventory_data(config)
-    experiment = dict(
-        frozen_at_seoul=now(), models=models, new_model_fits=0, preprocessing_fits=0,
-        evaluation_batches=[8, 9, 10], batch8_role='previously used development data',
-        batch9_10_role='repeated historical exploratory evaluation',
-        confirmed_independent_rows=0, independent_final_performance_measured=False,
-        independence_search_scope=[str(ROOT), config['data_dir']],
-        unknown_data_candidates=int((inventory.role == 'unverified_candidate').sum()),
-        seed=SEED, bootstrap_repeats=BOOTSTRAP_REPEATS, confidence_level=.95,
-        bootstrap='Paired row bootstrap within each Batch x true-gas stratum. Equivalent '
-        'multinomial draws of joint (prediction_A,prediction_B) cell counts preserve pairing. '
-        'No Batch or chronological-block resampling; 2.5/97.5 percentile intervals. '
-        'Conditional descriptive sampling uncertainty, not independent future generalization CI.',
-        wilson='95% Wilson score interval for class recall under binomial independence; '
-        'temporal/session dependence may invalidate nominal coverage.',
-        sensors='Reuse stage7 diagnostic top features for visualization only. All transforms '
-        'use frozen Model A Train scaler; no fit or model feature changes.',
-        selection_policy='Model A remains official main candidate; Model B remains fixed expansion comparison. '
-        'No retuning, reselection, thresholds or model weighting changes.',
-        cm_normalization='CSV retains counts; plots use row fractions: actual gas support denominator.',
-    )
-    write_json(OUT / 'experiment_config.json', experiment)
-    return experiment
 
 
 # 저장 모델의 Train 통계와 입력·클래스 매핑 확인
@@ -271,93 +190,8 @@ def bootstrap_uncertainty(wide, repeats=BOOTSTRAP_REPEATS, seed=SEED):
     return pd.DataFrame(interval_rows), pd.DataFrame(class_rows), pd.DataFrame(replicates)
 
 
-def run():
-    before = {str(p.relative_to(ROOT)): sha(p) for directory in ['src', 'tests', 'models', 'reports', 'outputs']
-              for p in (ROOT / directory).rglob('*') if p.is_file() and '__pycache__' not in p.parts}
-    before.update({name: sha(ROOT / name) for name in ['config.json', 'training_config.json', 'README.md', 'requirements.txt', '.gitignore']})
-    config = read_config()
-    frame, source = load_dataset(config)
-    raw = dict(zip(source.file, source.sha256))
-    old = json.loads((ROOT / 'outputs/temporal_weighting/run_manifest.json').read_text(encoding='utf-8'))
-    assert raw == old['raw_hashes']
-    experiment = freeze_config(frame, config)
-    experiment_hash = sha(OUT / 'experiment_config.json')
-    exposure_audit(frame)
-    started = now()
-    loaded, wide = evaluate_models(frame, experiment)
-    paired_changes(wide)
-    print('Paired conditional bootstrap, 2000 repeats', flush=True)
-    intervals, class_intervals, replicates = bootstrap_uncertainty(wide)
-    save('conditional_bootstrap_intervals', intervals)
-    save('conditional_class_intervals', class_intervals)
-    replicates.to_csv(OUT / 'bootstrap_replicates.csv.gz', index=False, encoding='utf-8', compression='gzip')
-    class_data = pd.read_csv(OUT / 'class_metrics.csv', dtype={'scope': str})
-    wilson = []
-    for row in class_data.to_dict('records'):
-        low, high = wilson_interval(row['correct_n'], row['support'])
-        wilson.append(dict(**row, wilson_lower=low, wilson_upper=high))
-    save('recall_wilson_intervals', wilson)
-    from .generalization_history import audit_history
-    audit_history(frame, OUT)
-    from .generalization_visuals import create_visuals
-    create_visuals(frame, loaded['A'])
-    from .generalization_report import build_report
-    build_report(experiment, test_status=None)
-    after = {name: sha(ROOT / name) for name in before}
-    assert before == after
-    assert all(sha(Path(config['data_dir']) / name) == value for name, value in raw.items())
-    assert sha(OUT / 'experiment_config.json') == experiment_hash
-    write_json(OUT / 'run_manifest.json', dict(
-        completed_at_seoul=now(), evaluation_started_at_seoul=started,
-        config_frozen_before_prediction=experiment['frozen_at_seoul'] <= started,
-        before=before, after=after, raw_hashes=raw, experiment_sha256=experiment_hash,
-        new_model_fits=0, preprocessing_fits=0, original_main_candidate='A',
-        code_sha256={name: sha(ROOT / 'src' / name) for name in ['temporal_generalization_validation.py',
-                     'generalization_history.py', 'generalization_visuals.py', 'generalization_report.py']},
-        package_versions={name: importlib.metadata.version(name) for name in ['numpy', 'pandas', 'scikit-learn', 'matplotlib', 'joblib']},
-    ))
-    print(pd.read_csv(OUT / 'model_comparison_summary.csv').to_string(index=False), flush=True)
 
 
 # 전체 검사 후 동일한 결과로 보고서의 테스트 항목만 확정
-def finalize():
-    if (OUT / 'final_verification.json').exists():
-        raise FileExistsError('Stage10 final verification already exists')
-    manifest = json.loads((OUT / 'run_manifest.json').read_text(encoding='utf-8'))
-    for name, expected in manifest['before'].items():
-        assert sha(ROOT / name) == expected
-    cases = ET.parse(OUT / 'test_results.xml').getroot().findall('.//testcase')
-    failed = [f"{case.get('classname')}::{case.get('name')}" for case in cases
-              if case.find('failure') is not None or case.find('error') is not None]
-    expected = {'tests.test_diagnostics::test_existing_results_and_models_unchanged',
-                'tests.test_models::test_eda_and_sources_preserved_report_complete',
-                'tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files'}
-    assert set(failed) == expected
-    new = [case for case in cases if case.get('classname', '').endswith('test_temporal_generalization_validation')]
-    assert all(case.find('failure') is None and case.find('error') is None for case in new)
-    passed = sum(case.find('failure') is None and case.find('error') is None and case.find('skipped') is None for case in cases)
-    status = dict(passed=passed, failed=len(failed), failed_tests=failed, new_tests=len(new), new_failures=0)
-    experiment = json.loads((OUT / 'experiment_config.json').read_text(encoding='utf-8'))
-    from .generalization_report import build_report
-    build_report(experiment, test_status=status)
-    write_json(OUT / 'final_verification.json', dict(
-        completed_at_seoul=now(), test_status=status, prior_files_unchanged=len(manifest['before']),
-        raw_files_unchanged=10, new_model_fits=0, confirmed_independent_rows=0,
-        final_model_selection_changed=False,
-        final_report_sha256={name: sha(ROOT / 'reports' / name) for name in
-                             ['temporal_generalization_validation_report.html',
-                              'temporal_generalization_validation_summary.md', 'temporal_generalization_limitations.md']},
-        graph_validation_sha256=sha(OUT / 'graph_value_checks.csv'),
-    ))
-    print('FINAL TESTS', status, flush=True)
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--finalize', action='store_true')
-    args = parser.parse_args()
-    try:
-        finalize() if args.finalize else run()
-    except Exception:
-        logging.exception('Generalization validation failed')
-        raise

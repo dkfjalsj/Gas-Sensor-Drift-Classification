@@ -8,7 +8,6 @@ import pandas as pd
 import pytest
 
 from src.common.hashing import sha256_bytes
-from src.data import ROOT, FEATURES
 from src.model_management import registry as r, runtime, ui
 from src.retraining import datasets
 from src.retraining.candidates import (

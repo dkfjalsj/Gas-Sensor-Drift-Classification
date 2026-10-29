@@ -1,4 +1,0 @@
-INFO:root:calibration rows=1483 windows=14 alerts=1
-INFO:root:internal rows=1484 windows=14 alerts=1
-INFO:root:batch7 rows=3613 windows=36 alerts=36
-INFO:root:batch8 rows=294 windows=2 alerts=2

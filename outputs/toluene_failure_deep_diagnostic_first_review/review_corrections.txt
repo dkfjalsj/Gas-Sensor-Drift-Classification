@@ -1,5 +1,0 @@
-First Stage11 analysis and test records retained without altering stages1-10.
-Final review corrections: both numerical gamma values are0.0078125; removed claim that gamma changed.
-Repositioned correlation colorbar/legend to prevent overlap; expanded graph-to-CSV checks.
-Added interpretation of observed pair margins and subgroup rows. No classifier/parameter/data change.
-First full suite101 passed/3 historical failures; all12 new tests passed.

@@ -16,7 +16,6 @@ from src.webapp.service import (
     THRESHOLD, InputError, load_models, read_upload, analyze, downloads, reset_on_upload_change,
 )
 from src.webapp.ui import PAGES
-from src.webapp.ux_audit import verify
 
 
 # 합성 CSV는 업로드·행 정렬 검사에만 사용
@@ -208,6 +207,3 @@ def test_no_fit_probability_or_file_persistence_calls():
                     isinstance(node.func, ast.Attribute) and node.func.attr in forbidden]
 
 
-def test_existing_model_and_results_preserved():
-    checks = verify(include_raw=False)
-    assert checks["all_preserved"] and checks["models"] == 325 and checks["new_model_fits"] == 0

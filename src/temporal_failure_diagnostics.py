@@ -2,8 +2,6 @@
 # 모델·전처리 재학습 없이 기존 예측 재현 및 원본 보존 확인
 
 import json
-import logging
-from pathlib import Path
 
 import joblib
 import numpy as np
@@ -12,9 +10,9 @@ from scipy.stats import wasserstein_distance
 from sklearn.metrics.pairwise import euclidean_distances
 from threadpoolctl import threadpool_limits
 
-from .data import ROOT, FEATURES, GASES, load_dataset, read_config
+from .data import ROOT, FEATURES, GASES
 from .train_models import evaluate
-from .temporal_expansion import sha, now, write_json
+from .temporal_expansion import sha
 
 OUT = ROOT / 'outputs/temporal_failure_diagnostics'
 PREVIOUS = ROOT / 'outputs/temporal_expansion'
@@ -285,74 +283,5 @@ def dependence_tables(frame, models, chosen):
 
 
 # 새 경로에서 진단 실행 및 기존 파일 지문 보존
-def run():
-    targets = ['temporal_failure_diagnostic_report.html', 'temporal_failure_improvement_proposal.md']
-    if OUT.exists() or any((ROOT / 'reports' / name).exists() for name in targets):
-        raise FileExistsError('Diagnostic outputs already exist')
-    before = {str(p.relative_to(ROOT)): sha(p)
-              for name in ['src', 'tests', 'reports', 'models', 'outputs']
-              for p in (ROOT / name).rglob('*') if p.is_file() and '__pycache__' not in p.parts}
-    frame, source = load_dataset(read_config())
-    raw = dict(zip(source.file, source.sha256))
-    previous = json.loads((PREVIOUS / 'run_manifest.json').read_text(encoding='utf-8'))
-    if raw != previous['raw_hashes']:
-        raise ValueError('Raw dataset mismatch')
-    OUT.mkdir(parents=True)
-    write_json(OUT / 'analysis_protocol.json', dict(
-        recorded_at_seoul=now(), train_batches=list(range(1, 7)),
-        validation_batches=[7, 8], exploratory_evaluation_batches=[9, 10],
-        models=TRIALS, new_model_fits=0, preprocessing_fits=0,
-        pca_umap_used=False, model_or_threshold_changes=False,
-        feature_plot_selection='Top three of 128 features for each focus target: '
-        'Toluene batch9 and Acetaldehyde batch10, ranked by univariate Wasserstein '
-        'distance from same-gas Train divided by same-gas Train population SD; '
-        'feature name breaks ties; diagnostic plots only, no model feature selection.',
-        extreme_rule='abs(z)>3 and >5 using frozen SVM Train scaler; descriptive, not removal.',
-        proximity='Euclidean distance in frozen SVM Train standardized 128-D space; '
-        'class labels describe neighbors, not a newly trained classifier. '
-        'No use of diagnostic results for model tuning.',
-        independent_test=False,
-    ))
-    print('Checking existing models and reproducing predictions', flush=True)
-    models, wide = replay_models(frame)
-    scores, classes, confusion = performance_tables(wide)
-    agreement = agreement_tables(wide)
-    print('Summarizing 128 features and conditional Wasserstein shifts', flush=True)
-    shifts, chosen = feature_tables(frame, models['SVM'])
-    proximity = proximity_tables(frame, models['SVM'], wide)
-    dependence = dependence_tables(frame, models, chosen)
-    shift_average = shifts[shifts.gas_id > 0].groupby(['batch', 'gas_id']).agg(
-        mean_conditional_wasserstein=('wasserstein_same_gas_train_sd', 'mean'),
-        mean_global_sd_wasserstein=('wasserstein_train_global_sd', 'mean'),
-    ).reset_index()
-    joined = classes.merge(shift_average, on=['batch', 'gas_id'], validate='many_to_one')
-    save('shift_and_performance', joined)
-    save('batch_class_counts', frame.groupby(['batch', 'gas']).size().rename('n').reset_index())
-    print('Creating diagnostic report', flush=True)
-    from .temporal_failure_report import build_report
-    build_report(frame, wide, scores, classes, confusion, agreement, shifts,
-                 chosen, proximity, dependence)
-    after = {name: sha(ROOT / name) for name in before}
-    if before != after:
-        raise RuntimeError('Preserved file changed')
-    directory = Path(read_config()['data_dir'])
-    if any(sha(directory / name) != value for name, value in raw.items()):
-        raise RuntimeError('Raw file changed')
-    write_json(OUT / 'run_manifest.json', dict(
-        completed_at_seoul=now(), before=before, after=after, raw_hashes=raw,
-        existing_files_unchanged=True, raw_files_unchanged=True,
-        new_model_fits=0, preprocessing_fits=0, independent_test=False,
-        code_sha256={name: sha(ROOT / 'src' / name) for name in
-                     ['temporal_failure_diagnostics.py', 'temporal_failure_report.py']},
-    ))
-    print(scores.to_string(index=False), flush=True)
-    print(agreement[((agreement.batch == 9) & (agreement.gas_id == 6)) |
-                    ((agreement.batch == 10) & (agreement.gas_id == 4))].to_string(index=False))
 
 
-if __name__ == '__main__':
-    try:
-        run()
-    except Exception:
-        logging.exception('Temporal failure diagnostics failed')
-        raise

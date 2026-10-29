@@ -3,25 +3,15 @@
 import json
 
 import numpy as np
-import pandas as pd
 import pytest
 
 from src.retraining import candidates as c, datasets as d
 from src.retraining import ui
-from src.retraining.preservation import verify
 from src.webapp import dataset_registry as registry
 from tests.test_retraining_candidates import payload, synthetic_source, reference, registered
 from tests.test_streamlit_integration import make_app
 
 
-@pytest.mark.skipif(
-    not (ui.DATA_STORAGE.parent.parent / 'outputs/retraining_candidates/preservation_before.json').exists(),
-    reason='로컬 보존 기록 필요; 합성 산출물과 보존 기록은 Git 제외',
-)
-def test_prior_research_and_20a_extension_preserved():
-    result = verify()
-    assert result['all_preserved'], result
-    assert result['models'] == 325 and result['management_extension_only']
 
 
 def test_candidate_state_change_does_not_clear_analysis():

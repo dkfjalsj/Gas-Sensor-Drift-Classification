@@ -1,13 +1,7 @@
 # 저장된 두 SVM의 Toluene 실패 점수·거리·센서 구조 진단
 # 분류기 변경 없이 Train 전용 PCA와 사후 군집 분석 수행
 
-import argparse
-import importlib.metadata
 import itertools
-import json
-import logging
-from pathlib import Path
-import xml.etree.ElementTree as ET
 
 import joblib
 import numpy as np
@@ -17,15 +11,11 @@ from scipy.spatial.distance import cdist, pdist, squareform
 from scipy.stats import wasserstein_distance
 from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score
-from threadpoolctl import threadpool_limits
 
-from .data import ROOT, FEATURES, GASES, KINDS, load_dataset, read_config
-from .temporal_expansion import now, sha, write_json
+from .data import ROOT, FEATURES, GASES, KINDS
+from .temporal_expansion import sha, write_json
 
 OUT = ROOT / 'outputs/toluene_failure_deep_diagnostic'
-REPORTS = ['toluene_failure_deep_diagnostic_report.html',
-           'toluene_failure_deep_diagnostic_summary.md',
-           'toluene_failure_hypothesis_review.md']
 PAIRS = list(itertools.combinations(range(6), 2))
 SOURCES = {
     'uci': 'https://archive.ics.uci.edu/dataset/224/gas+sensor+array+drift+dataset',
@@ -41,58 +31,9 @@ def save(name, rows):
 
 
 # 기존 파일의 해시 목록 수집
-def snapshot():
-    files = [p for directory in ['src', 'tests', 'reports', 'models', 'outputs']
-             for p in (ROOT / directory).rglob('*')
-             if p.is_file() and '__pycache__' not in p.parts and OUT not in p.parents]
-    files += [ROOT / name for name in ['config.json', 'training_config.json',
-                                      'README.md', 'requirements.txt',
-                                      'requirements-lock.txt', '.gitignore']]
-    return {str(p.relative_to(ROOT)): sha(p) for p in files}
 
 
 # 분석 전 모델·방법·사후 선택 기준 고정
-def freeze():
-    if OUT.exists() or any((ROOT / 'reports' / name).exists() for name in REPORTS):
-        raise FileExistsError('Stage11 output already exists')
-    old = json.loads((ROOT / 'outputs/temporal_generalization_validation/experiment_config.json')
-                     .read_text(encoding='utf-8'))
-    for meta in old['models'].values():
-        assert sha(ROOT / meta['path']) == meta['sha256']
-    OUT.mkdir(parents=True)
-    config = dict(
-        frozen_at=now(), models=old['models'], seed=42, sources=SOURCES,
-        focus_gases=[4, 6], batches=[8, 9, 10],
-        classifier_fits=0, preprocessing_fits=0,
-        diagnostic_pca='Two separate 2-D PCA fits, only each frozen model training rows; '
-        'svd_solver=full. Never used by classifier. No other estimator fit.',
-        ovo='Stored classifier._decision_function on frozen transformed data; verified '
-        'against copied classifier with public decision_function_shape=ovo. '
-        'Positive pair score favors earlier classes_ entry; zero treated as later '
-        'for libsvm votes. OvR reconstruction separately uses dec<0 as installed sklearn.',
-        boundary='For three focus pairs raw margin divided by exact RBF RKHS weight '
-        'norm. This is signed distance to binary hyperplane in RKHS, not input-space '
-        'distance, probability, calibrated confidence or nearest multiclass boundary. '
-        'Compare empirical Train abs-distance quartile; no operational threshold.',
-        neighbors='Exact Euclidean, all 128 frozen preprocessed features. k=1,5; '
-        'stable Train-row-order ties. Native A/B spaces plus A-space range control.',
-        sensor_mapping='UCI224 confirms 16 consecutive 8-feature blocks: delta_R, '
-        'normalized_R, EMA rise .001/.01/.1, EMA decay .001/.01/.1. '
-        'Sensor index is feature block; physical hardware serial mapping unavailable.',
-        sensor_selection='Post-hoc diagnostic only. Rank 16 sensors by mean of eight '
-        'Wasserstein distances: Batch9 Toluene vs Train1-7 Toluene, divided by '
-        'same-gas Train population SD; choose top two, sensor id tie break. '
-        'All sensors and 128 features retained in original classifiers.',
-        sensor_space='Common frozen A scaler for comparable means/correlations/PCA '
-        'support plots. Conditional Wasserstein normalization per reference gas SD.',
-        clustering='Batch9 Toluene only, frozen A standardized 128-D; Ward '
-        'hierarchical descriptive partitions k=2,3,4, no prediction model fit. '
-        'No choice of best k; k2 main display, others sensitivity, not sessions.',
-        independent_test=False, model_selection_changed=False,
-        interpretation='Retrospective diagnostic, not causal attribution or model selection.',
-    )
-    write_json(OUT / 'experiment_config.json', config)
-    return config
 
 
 # OvO 점수에서 OvR 점수와 투표 재구성
@@ -481,75 +422,8 @@ def projection_and_groups(frame, models, scores):
 
 
 # 분석 순서 및 기존 파일 보존 검증
-def run():
-    before = snapshot()
-    config = freeze()
-    config_sha = sha(OUT / 'experiment_config.json')
-    frame, source = load_dataset(read_config())
-    raw = dict(zip(source.file, source.sha256))
-    old = json.loads((ROOT / 'outputs/temporal_generalization_validation/run_manifest.json').read_text(encoding='utf-8'))
-    assert raw == old['raw_hashes']
-    assert len(frame) == 13910 and len(frame[(frame.batch == 9) & (frame.gas == 6)]) == 101
-    save('batch_class_support', frame.groupby(['batch', 'gas']).size().rename('n').reset_index())
-    with threadpool_limits(limits=2):
-        models, focus, scores = score_models(frame, config)
-        neighbor_analysis(frame, models, focus)
-        print('Sensor and correlation diagnostics', flush=True)
-        sensor_analysis(frame, models)
-        projection_and_groups(frame, models, scores)
-    from .toluene_deep_visuals import create_visuals
-    create_visuals()
-    from .toluene_deep_report import build_report
-    build_report(None)
-    assert all(sha(ROOT / name) == value for name, value in before.items())
-    assert all(sha(Path(read_config()['data_dir']) / name) == value for name, value in raw.items())
-    assert sha(OUT / 'experiment_config.json') == config_sha
-    write_json(OUT / 'run_manifest.json', dict(
-        completed_at=now(), before=before, raw_hashes=raw, experiment_sha256=config_sha,
-        classifier_fits=0, preprocessing_fits=0, diagnostic_pca_fits=2,
-        hierarchical_diagnostic_partitions=[2, 3, 4], prior_files_unchanged=True,
-        code_sha256={name: sha(ROOT / 'src' / name) for name in [
-            'toluene_deep_diagnostic.py', 'toluene_deep_visuals.py', 'toluene_deep_report.py']},
-        package_versions={name: importlib.metadata.version(name) for name in [
-            'numpy', 'scipy', 'pandas', 'scikit-learn', 'matplotlib', 'joblib']},
-    ))
-    print(pd.read_csv(OUT / 'decision_summary.csv').to_string(index=False), flush=True)
 
 
 # 전체 테스트 후 보고서의 검사 결과 확정
-def finalize():
-    if (OUT / 'final_verification.json').exists():
-        raise FileExistsError('Stage11 finalized already')
-    manifest = json.loads((OUT / 'run_manifest.json').read_text(encoding='utf-8'))
-    assert all(sha(ROOT / name) == value for name, value in manifest['before'].items())
-    cases = ET.parse(OUT / 'test_results.xml').getroot().findall('.//testcase')
-    failures = [f"{c.get('classname')}::{c.get('name')}" for c in cases
-                if c.find('failure') is not None or c.find('error') is not None]
-    legacy = {'tests.test_diagnostics::test_existing_results_and_models_unchanged',
-              'tests.test_models::test_eda_and_sources_preserved_report_complete',
-              'tests.test_temporal_failure_diagnostics::test_no_new_fit_calls_or_new_model_files'}
-    assert set(failures) == legacy
-    new = [c for c in cases if c.get('classname', '').endswith('test_toluene_deep_diagnostic')]
-    status = dict(passed=len(cases) - len(failures), failed=len(failures),
-                  legacy_failures=failures, new_tests=len(new), new_failures=0)
-    from .toluene_deep_report import build_report
-    build_report(status)
-    write_json(OUT / 'final_verification.json', dict(
-        completed_at=now(), test_status=status, prior_files_unchanged=len(manifest['before']),
-        raw_files_unchanged=10, models_unchanged=len(list((ROOT / 'models').rglob('*.joblib'))),
-        report_sha256={name: sha(ROOT / 'reports' / name) for name in REPORTS},
-        classifier_fits=0, preprocessing_fits=0, diagnostic_pca_fits=2,
-        model_selection_changed=False,
-    ))
-    print('FINAL', status, flush=True)
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--finalize', action='store_true')
-    args = parser.parse_args()
-    try:
-        finalize() if args.finalize else run()
-    except Exception:
-        logging.exception('Stage11 diagnostic failed')
-        raise

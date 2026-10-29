@@ -1,27 +1,15 @@
 # 정답이 확인된 동일 시기 소량 자료를 추가한 SVM 적응 비교
 # 고정 평가 집합·중첩 교정 표본·과거 회귀 검사 및 기존 자료 보존
 
-import argparse
 import json
-import logging
-import importlib.metadata
-import platform
-import time
-from pathlib import Path
 
-import joblib
 import numpy as np
 import pandas as pd
-from threadpoolctl import threadpool_limits
 
-from .data import ROOT, FEATURES, GASES, load_dataset, read_config
-from .temporal_expansion import now, sha
-from .temporal_svm_ensemble import audit_model
-from .nonlinear_feature_transformation import build_pipeline, score_predictions, row_digest, digest
+from .data import ROOT, FEATURES, GASES
 
 OUT = ROOT/'outputs/temporal_calibration'
 MODEL_DIR = ROOT/'models/temporal_calibration'
-REPORTS = [f'temporal_calibration_{s}' for s in ['report.html','summary.md','limitations.md']]
 FOLDS = {'A':(3,6),'B':(6,7),'C':(7,8)}
 SEEDS = [11,23,42]
 RATES = [0,5,10,20]
@@ -108,17 +96,6 @@ def make_split(frame, fold, seed):
 
 
 # 기존 코드·모델·산출물의 바이트 지문 기록
-def snapshot():
-    result = {}
-    for folder in ['src','tests','outputs','reports','models']:
-        for p in (ROOT/folder).rglob('*'):
-            if (not p.is_file() or '__pycache__' in p.parts or OUT in p.parents or
-                    MODEL_DIR in p.parents or (p.parent == ROOT/'reports' and p.name in REPORTS)):
-                continue
-            result[str(p.relative_to(ROOT))] = sha(p)
-    for name in ['README.md','config.json','training_config.json','.gitignore','requirements.txt','requirements-lock.txt']:
-        result[name] = sha(ROOT/name)
-    return result
 
 
 # 학습·평가·교정·과거 회귀 자료의 정확 중복 검사
@@ -142,103 +119,6 @@ def check_partition(frame, split, fold):
 
 
 # 표본을 뽑기 전에 추출 규칙·예산·판정 기준 먼저 고정
-def freeze():
-    if OUT.exists() or MODEL_DIR.exists() or any((ROOT/'reports'/n).exists() for n in REPORTS):
-        raise FileExistsError('Stage17 outputs already exist')
-    frame, raw = load_dataset(read_config())
-    frame = frame[frame.batch <= 8].copy()
-    source = pd.read_csv(ROOT/'outputs/nonlinear_feature_transformation/model_registry.csv')
-    source_records = []
-    for fold,(end,_) in FOLDS.items():
-        r = source[(source.fold == fold)&(source.method == 'baseline')].iloc[0]
-        assert sha(ROOT/r.path) == r.sha256
-        audit_model(joblib.load(ROOT/r.path),frame[frame.batch <= end],end)
-        source_records.append(dict(fold=fold,path=r.path,sha256=r.sha256))
-    old_splits = pd.read_csv(ROOT/'outputs/model_comparison/split_assignments.csv')
-    regression_ids = frame.loc[frame.batch.isin([4,5]),'row_id']
-    prior = old_splits[(old_splits.experiment == 'B_history')&old_splits.batch.isin([4,5])]
-    assert set(prior.row_id) == set(regression_ids) and set(prior.partition) == {'validation','test'}
-    before = snapshot()
-    OUT.mkdir()
-    plan = dict(stage=17,frozen_at=now(),folds=FOLDS,seeds=SEEDS,rates=RATES,
-        split='Per Fold/seed whole target Batch: Evaluation=floor(N/2); remaining rows candidate pool. '
-              'Evaluation per-gas Hamilton allocation with >=1 and <=n_g-1; ties lower gas id. '
-              'Per-gas SeedSequence(seed,target_batch,gas) permutation, first quota Evaluation, rest pool.',
-        calibration='Counts floor(N*rate/100), denominator full target Batch. Start1 per gas; '
-                    'sequential proportional-deficit fill using pool class counts, capacity-capped, '
-                    'tie lower gas id. Same per-gas pool permutation prefix for5/10/20 so nested.',
-        impossible='If any class<2 or calibration target<6 or capacity insufficient, stop before fits; '
-                   'no class synthesis, silent relaxation, new seed or ratio.',
-        labels='True labels used for retrospective stratified split. Only selected calibration labels '
-               'enter refit. Collecting class-balanced calibration prospectively may require controlled '
-               'gas exposures/additional labels; percentages are training-label counts, not proven deployment cost.',
-        temporal='Past Train precedes target Batch. Calibration/Evaluation are random same-Batch subsets; '
-                 'no exact within-Batch timestamps, so not proof of chronological online adaptation.',
-        svm=dict(kernel='rbf',C=1.,gamma='scale',class_weight='balanced',probability=False,random_state=42),
-        pipeline='Train-only median imputer -> StandardScaler -> SVC. Refit from scratch on past+calibration. '
-                 'balanced n/(6*n_g) from combined Train labels only; no sample_weight.',
-        metric='Accuracy, MacroF1 present true classes, WeightedF1, per-gas P/R/F1/support/predicted_n, '
-               '6x6 confusion, zero recall, directional focus errors. Unsupported truth NA not zero.',
-        aggregation='Primary: for each seed equal3-Fold MacroF1 mean, then equal3-seed mean. '
-                    'Per-gas supported-Fold mean within seed then equal-seed mean; other-four F1 '
-                    'equal gas means1,2,3,5. Seed SD ddof1 descriptive only; overlapping repeated data.',
-        protection=dict(macro_gain_min=.005,per_gas_mean_recall_loss_max=.05,
-                        focus_mean_precision_recall_f1_loss_max=.05,
-                        other_four_mean_f1_loss_max=.02,no_new_zero=True,inclusive=True,tolerance=1e-12),
-        consistency='A requires all3 Fold mean paired MacroF1 deltas>1e-12, >=2/3 seed mean '
-                    'deltas>1e-12 and>=6/9 paired Fold-seed deltas>1e-12, plus all guards.',
-        conclusion='Per rate independently: A if guards+consistency; B otherwise if any paired '
-                   'Fold-seed MacroF1 gain>1e-12 or any gas aggregate F1 gain>1e-12; C otherwise. '
-                   'Do not pick a winning ratio or replace official Model A.',
-        regression='Fold A only: existing B_history Validation Batch4 and Test Batch5,358 rows, '
-                   'five true gas classes with no Toluene. Re-register as past held-out retention '
-                   'diagnostic, not independent future test; disjoint from Train1-3 and target6. '
-                   'B/C no past rows outside full past Train; retention unavailable. No Train-score proxy.',
-        budget=dict(max_new_adaptive_SVM_fits=27,baseline_unique_models=3,
-                    baseline_evaluation_conditions=9,adaptive_evaluation_conditions=27,
-                    regression_logical_conditions=12,baseline_fallback_fits=0),
-        reuse='Verify source sha, Train medians/scaler/support vectors/classes/params before fitting. '
-              'If unavailable stop and report required replacements, do not train extra baseline.',
-        stop='No tuning, extra seeds/ratios, feature selection, weighting experiment, new algorithm, '
-             'ensemble, drift detector or Batch9/10 scientific evaluation. Fit failure recorded; '
-             'no altered retry. Leakage or preservation failure aborts.',
-        source_models=source_records,
-        official_model=dict(path='models/temporal_expansion/B_SVM_balanced.joblib',train_end=6,
-                            sha256=sha(ROOT/'models/temporal_expansion/B_SVM_balanced.joblib')),
-        environment=dict(python=platform.python_version(),packages={k:importlib.metadata.version(k)
-                         for k in ['scikit-learn','numpy','pandas','scipy','joblib']}),
-        independent_test=False,future_batches_evaluated=[],warning=CAUTION)
-    write('experiment_plan.json',plan)
-    (OUT/'protocol.md').write_text('# 17단계 사전 고정 계획\n\n'+CAUTION+'\n\n```json\n'+
-        json.dumps(plan,ensure_ascii=False,indent=2)+'\n```',encoding='utf-8')
-    write('plan_lock.json',dict(plan_sha256=sha(OUT/'experiment_plan.json'),protocol_sha256=sha(OUT/'protocol.md')))
-    write('preservation_before.json',dict(files=before,raw={r.file:r.sha256 for r in raw.itertuples()}))
-    # 계획을 쓴 다음에만 실제 신규 분할 생성
-    rows, supports, overlaps = [],[],[]
-    for fold in FOLDS:
-        for seed in SEEDS:
-            split = make_split(frame,fold,seed)
-            check_partition(frame,split,fold)
-            parts = dict(past=split['past'],evaluation=split['evaluation'],pool=split['pool'],
-                         **{f'cal{r:02d}':ids for r,ids in split['calibration'].items() if r})
-            if fold == 'A':
-                parts['regression'] = frame.index[frame.batch.isin([4,5])].to_numpy()
-            for part,ids in parts.items():
-                sub = frame.loc[ids]
-                rows.extend(dict(fold=fold,seed=seed,partition=part,row_id=r.row_id,
-                                 batch=int(r.batch),source_line=int(r.source_line),gas_id=int(r.gas))
-                            for r in sub.itertuples())
-                supports.extend(dict(fold=fold,seed=seed,partition=part,gas_id=g,n=int((sub.gas == g).sum())) for g in GASES)
-            for rate in RATES:
-                overlaps.append(dict(fold=fold,seed=seed,rate=rate,train_n=len(split['past'])+len(split['calibration'][rate]),
-                                     calibration_n=len(split['calibration'][rate]),evaluation_n=len(split['evaluation']),
-                                     whole_batch_n=int((frame.batch == FOLDS[fold][1]).sum()),
-                                     train_evaluation_overlap=0,exact_feature_overlap=0,nested=True))
-    save('split_assignments',rows)
-    save('split_support',supports)
-    save('overlap_checks',overlaps)
-    write('split_lock.json',dict(assignments_sha256=sha(OUT/'split_assignments.csv'),support_sha256=sha(OUT/'split_support.csv')))
-    print('Stage17 protocol and nested splits frozen; no classifier fits',flush=True)
 
 
 # 각 비율을 같은 평가 행의 0%와 대응 비교
@@ -280,138 +160,10 @@ def rate_decisions(metrics,classes):
     return decisions
 
 
-def verify():
-    before = json.loads((OUT/'preservation_before.json').read_text(encoding='utf-8'))
-    checks = [dict(kind='existing',path=n,expected=s,actual=sha(ROOT/n)) for n,s in before['files'].items()]
-    raw_dir = Path(read_config()['data_dir'])
-    checks.extend(dict(kind='raw',path=n,expected=s,actual=sha(raw_dir/n)) for n,s in before['raw'].items())
-    table = save('preservation_audit',checks)
-    assert table.expected.eq(table.actual).all()
-    lock = json.loads((OUT/'plan_lock.json').read_text(encoding='utf-8'))
-    assert sha(OUT/'experiment_plan.json') == lock['plan_sha256']
-    assert sha(OUT/'protocol.md') == lock['protocol_sha256']
-    split_lock = json.loads((OUT/'split_lock.json').read_text(encoding='utf-8'))
-    assert sha(OUT/'split_assignments.csv') == split_lock['assignments_sha256']
-    assert sha(OUT/'split_support.csv') == split_lock['support_sha256']
-    return dict(all_preserved=True,plan_unchanged=True,raw_files=len(before['raw']),
-                existing_models=sum(n.endswith('.joblib') for n in before['files']),existing_files=len(before['files']))
 
 
 # 과거+교정 자료만 학습하고 고정 평가·회귀 집합 예측
-def run():
-    if (OUT/'started.json').exists():
-        raise FileExistsError('Already started; no duplicate fit')
-    verify()
-    write('started.json',dict(started_at=now()))
-    logging.basicConfig(filename=OUT/'execution_log.txt',encoding='utf-8',level=logging.INFO)
-    plan = json.loads((OUT/'experiment_plan.json').read_text(encoding='utf-8'))
-    frame,_ = load_dataset(read_config())
-    frame = frame[frame.batch <= 8].copy()
-    models = {}
-    for source in plan['source_models']:
-        assert sha(ROOT/source['path']) == source['sha256']
-        model = joblib.load(ROOT/source['path'])
-        audit_model(model,frame[frame.batch <= FOLDS[source['fold']][0]],FOLDS[source['fold']][0])
-        models[source['fold']] = model
-    MODEL_DIR.mkdir()
-    records,metrics,classes,predictions,matrices,audits,weights = [],[],[],[],[],[],[]
-    old_predictions = pd.read_csv(ROOT/'outputs/nonlinear_feature_transformation/predictions.csv')
-    with threadpool_limits(limits=1):
-        for fold,(end,batch) in FOLDS.items():
-            for seed in SEEDS:
-                split = make_split(frame,fold,seed)
-                check_partition(frame,split,fold)
-                evaluation = frame.loc[split['evaluation']]
-                for rate in RATES:
-                    ids = np.sort(np.concatenate([split['past'],split['calibration'][rate]]))
-                    train = frame.loc[ids]
-                    if rate == 0:
-                        model = models[fold]
-                        path = ROOT/next(s['path'] for s in plan['source_models'] if s['fold']==fold)
-                        fit_seconds = 0.
-                    else:
-                        model = build_pipeline('baseline')
-                        write(f'fit_started_{fold}_{seed}_{rate:02d}.json',dict(at=now(),train_n=len(train),
-                              train_rows_sha256=row_digest(train.row_id),train_input_sha256=digest(train[FEATURES])))
-                        tick = time.perf_counter()
-                        model.fit(train[FEATURES],train.gas)
-                        fit_seconds = time.perf_counter()-tick
-                        path = MODEL_DIR/f'{fold}_seed{seed}_cal{rate:02d}.joblib'
-                        joblib.dump(model,path)
-                    # 적응 모델은 같은 target Batch의 선택 Calibration만 추가한 과거 학습
-                    audit_model(model,train,batch if rate else end)
-                    transformed = model['scaler'].transform(model['imputer'].transform(train[FEATURES]))
-                    audits.append(dict(fold=fold,seed=seed,rate=rate,train_n=len(train),
-                        calibration_n=len(split['calibration'][rate]),train_row_sha256=row_digest(train.row_id),
-                        train_input_sha256=digest(train[FEATURES]),evaluation_row_sha256=row_digest(evaluation.row_id),
-                        feature_order_sha256=row_digest(FEATURES),scaler_n=int(model['scaler'].n_samples_seen_),
-                        actual_gamma=float(model['classifier']._gamma),transformed_variance=float(np.var(transformed)),
-                        train_only=True,evaluation_in_fit=False))
-                    for g in GASES:
-                        count = int((train.gas == g).sum())
-                        weights.append(dict(fold=fold,seed=seed,rate=rate,gas_id=g,train_support=count,
-                                            class_weight=float(model['classifier'].class_weight_[g-1]),
-                                            expected_weight=len(train)/(6*count)))
-                    records.append(dict(fold=fold,seed=seed,rate=rate,path=str(path.relative_to(ROOT)),
-                                        sha256=sha(path),new_fit=rate>0,fit_seconds=fit_seconds,
-                                        train_n=len(train),calibration_n=len(split['calibration'][rate]),
-                                        classifier_params=model['classifier'].get_params()))
-                    scopes = [('evaluation',evaluation)]
-                    if fold == 'A':
-                        scopes.append(('regression',frame[frame.batch.isin([4,5])]))
-                    for scope,sub in scopes:
-                        tick = time.perf_counter()
-                        predicted = model.predict(sub[FEATURES])
-                        predict_seconds = time.perf_counter()-tick
-                        np.testing.assert_array_equal(joblib.load(path).predict(sub[FEATURES]),predicted)
-                        if rate==0 and scope=='evaluation':
-                            old = old_predictions[(old_predictions.fold==fold)&(old_predictions.method=='baseline')].set_index('row_id')
-                            np.testing.assert_array_equal(predicted,old.loc[sub.row_id,'y_pred'])
-                        score,gas,cm = score_predictions(sub.gas,predicted)
-                        meta = dict(fold=fold,seed=seed,rate=rate,scope=scope,target_batch=batch,
-                                    calibration_n=len(split['calibration'][rate]),train_n=len(train))
-                        metrics.append(dict(**meta,**score,fit_seconds=fit_seconds,predict_seconds=predict_seconds))
-                        classes.extend(gas.assign(**meta).to_dict('records'))
-                        predictions.extend(dict(**meta,row_id=r,batch=int(b),y_true=int(y),y_pred=int(p))
-                            for r,b,y,p in zip(sub.row_id,sub.batch,sub.gas,predicted))
-                        matrices.extend(dict(**meta,true_gas=g,predicted_gas=h,n=int(cm[g-1,h-1])) for g in GASES for h in GASES)
-                    logging.info('%s seed%s rate%s cal%s fit%.3fs',fold,seed,rate,len(split['calibration'][rate]),fit_seconds)
-                    print(f'{fold} seed{seed} calibration{rate}% n={len(split["calibration"][rate])}',flush=True)
-                    write('model_registry.json',records)
-    metric_table = save('metrics',metrics)
-    class_table = save('class_metrics',classes)
-    save('predictions',predictions)
-    save('confusion',matrices)
-    save('train_only_audit',audits)
-    save('class_weights',weights)
-    matrix_table = pd.DataFrame(matrices)
-    save('error_directions',matrix_table[matrix_table.true_gas != matrix_table.predicted_gas])
-    decisions = rate_decisions(metric_table[metric_table.scope=='evaluation'],class_table[class_table.scope=='evaluation'])
-    write('rate_decisions.json',dict(rates=decisions,official_model='Model A unchanged',
-          new_adaptive_fits=27,reused_unique_models=3,baseline_evaluation_conditions=9,
-          adaptive_evaluation_conditions=27,regression_conditions=12,future_batches_evaluated=[]))
-    write('actual_settings.json',dict(pipeline='Median Imputer -> StandardScaler -> SVC',
-          classifier=models['A']['classifier'].get_params(),rates=RATES,seeds=SEEDS,
-          label_budget='Selected training labels only; retrospective label-aware split',physical_sensor_calibration=False))
-    from .temporal_calibration_report import render
-    render()
-    write('final_verification.json',{**verify(),'completed_at':now()})
-    print(json.dumps(decisions,ensure_ascii=False,default=lambda x:x.item()),flush=True)
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('action',choices=['freeze','run','report'])
-    action = parser.parse_args().action
-    if action=='freeze':
-        freeze()
-    elif action=='run':
-        run()
-    else:
-        from .temporal_calibration_report import render
-        render()
-        write('final_verification.json',{**verify(),'checked_at':now()})
 
 
-if __name__=='__main__':
-    main()

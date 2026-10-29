@@ -1,2 +1,0 @@
-setting,baseline,mean_macro_delta,paired_seed_sd,positive_fold_n,neutral_fold_n,positive_seed_n,toluene_delta,acetaldehyde_delta,macro_guard,focus_guard,other_guard,fold_guard,seed_guard,balanced_success,expansion_eligible,conclusion
-spread_max,spread_max,0.0,0.0,0,3,0,0.0,0.0,False,True,True,False,False,False,False,C
