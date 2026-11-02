@@ -4,12 +4,23 @@
 
 | 항목 | 내용 |
 |---|---|
-| 기간 | 2026.10 |
+| 기간 | 2026.10.26 ~ 2026.10.29 |
 | 소속 | 휴먼AI교육센터 · 인공지능(AI)서비스 기반 웹 개발자 심화 과정 머신러닝 프로젝트 |
 | 인원 | 1명 (개인 프로젝트) |
 | 역할 | 데이터 분석 · 모델링 · 분포 변화 감지 · Streamlit 웹앱 · 모델 관리 기능 전체 |
+| 배포 | [Streamlit 웹앱 바로가기](https://gas-sensor-drift-classification-a8wov35rhoci8ibcm5wbel.streamlit.app/) |
+| 수행내역서 | [AI개발 수행내역서 (PDF, 29쪽)](docs/AI개발_수행내역서.pdf) |
 | 데이터 | [UCI Gas Sensor Array Drift Dataset (ID 224)](https://doi.org/10.24432/C5RP6W) |
 | 실행·설치 상세 | [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) |
+
+## 🚀 바로가기
+
+| 구분 | 링크 |
+|---|---|
+| 웹앱 (Streamlit Cloud) | https://gas-sensor-drift-classification-a8wov35rhoci8ibcm5wbel.streamlit.app/ |
+| 수행내역서 | [docs/AI개발_수행내역서.pdf](docs/AI개발_수행내역서.pdf) — 분석 과정 · 그래프 · 실험 세부 결과 |
+
+> 공개 웹앱은 공식 모델(Model A)의 **읽기 전용 분석**만 제공합니다. `sample_data/test_sensor.csv`를 업로드하면 분류 · 분포 변화 감지 결과를 바로 확인할 수 있습니다. 정답 등록 · 재학습 · 승인 · 롤백은 로컬 환경에서만 동작합니다.
 
 ## 목차
 
@@ -275,7 +286,7 @@ flowchart LR
 
 ---
 
-## 실행 방법
+## 로컬 실행 방법
 
 ```powershell
 python -m venv .venv
