@@ -1,6 +1,6 @@
 # 로컬 웹앱 실행
 
-최신 프로젝트 구조·설치·모델 준비·테스트는 [README.md](README.md)를 따른다.
+최신 프로젝트 구조·설치·모델 준비·테스트는 [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md)를 따른다.
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements-streamlit.txt
